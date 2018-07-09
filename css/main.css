@@ -922,6 +922,7 @@ pre .javascript .function {
 .post-body .tabs ul.nav-tabs li.tab.active a {
   cursor: default;
   color: #555;
+  font-size: 14px;
 }
 .post-body .tabs .tab-content {
   background-color: #fff;
@@ -1935,7 +1936,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffffc2;
+  background: #4fff6c;
 }
 .links-of-blogroll {
   font-size: 13px;
