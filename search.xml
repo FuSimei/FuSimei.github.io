@@ -6,13 +6,7 @@
     <content type="text"><![CDATA[这是我搭建好博客后的第一篇文章，一切都会有个好的开始。 我是一个前端的小菜鸟，可能很多东西理解的也不太对，欢迎大家留言指正。 搭建博客博客基础这里主要借助的是 GitHub + Hexo 来进行搭建博客。可能你也像我一样是技术小白，可能你也正为如何搭建博客而烦恼，如果你想新建属于自己的博客，点击 这里 查看。 博客主题样式配置如果你想更换博客主题,配置自己喜欢的样式,点击 这里 查看。 上传本地博客相信看到这里的你已经按照以上的步骤配置好了属于自己的博客,此时博客只是在本地运行的,想要让本地博客能在浏览器里访问，快借助GitHub来进行配置吧！主要方法(在cmd工具栏中进入搭建博客的本地文件夹，输入如下命令)：1$ hexo g 1$ hexo d 具体可以参照 这里 来进行配置！ 新建文章新建页面配置好所有的环境之后，就可以在本地编辑器里写自己的博客内容了。首先，当然是要新建博客写作页面了。在hexo里面有三种新建的方式。在cmd里执行以下命令：1$ hexo new [layout] &lt;title&gt; 其中，layout为新建的位置，包含以下三个值：布局—————-路径post—————source/_posts (一般新建单个博客页面时使用)page—————source (用来配置和引入资源,包括图片,以及在搭建博客时的标签,分类页)draft—————source/_drafts (新建草稿)举个栗子:1$ hexo new post hello,hexo 1$ hexo new page tags 现在，你可以找到source文件夹查看具体区别。 配置参数每新建好一个文件，你可以看到最上面有用--- ---来隔开一个部分，这是用来进行参数匹配的。参数—————————-描述——————————-默认值layout————————–布局title—————————–标题date—————————-建立日期—————————文件建立日期updated———————–更新日期—————————文件更新日期comments——————–开启文章的评论功能—————truetags—————————–标签（不适用于分页）categories——————–分类（不适用于分页）permalink——————–覆盖文章网址 在本篇博客里，我的配置是这样的：1234567---title: Hello MyBlogdate: 2018-07-08 09:58:00tags: [hexo,blog,essay]categories: 搭建博客comments: true--- 其中，tags和categories参数你需要先建立页面1$ hexo new page tags 1$ hexo new page categories 并在source文件夹下找到对应的tags页面，配置以下参数：12345---title: tagsdate: 2018-07-07 13:23:03type: &apos;tags&apos;--- 同理，在categories页面中配置：12345---title: categoriesdate: 2018-07-08 21:21:28type: &apos;categories&apos;--- 到这里，页面基本参数就配置好了，接下来主要就是要发布的博客内容。 文章标题一级标题：&lt;h1&gt;&lt;/h1&gt; –表示方法：# 名称二级标题：&lt;h2&gt;&lt;/h2&gt; –表示方法：## 名称三级标题：&lt;h3&gt;&lt;/h3&gt; –表示方法：### 名称一般我们标题都是用来语义化表示题目内容的，不宜嵌套太深，主要常用的就是前三级标题 网址链接表示方式：1[要显示的内容](与该内容相关的网址) 1[这里](https://www.jianshu.com/p/9d1b865217a5) 其他内容就正常书写就好啦！ 上传博客内容写到这里本篇博客内容页该结束啦！此时想要把本地写好的博客内容上传到浏览器里查看，只要执行以下代码就可以啦！开心~~~12$ hexo g$ hexo d 具体内容可以点击 这里 查看hexo官方文档]]></content>
       <categories>
         <category>搭建博客</category>
-        <category>js</category>
       </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>blog</tag>
-        <tag>essay</tag>
-      </tags>
   </entry>
   <entry>
     <title><![CDATA[Hello World]]></title>
