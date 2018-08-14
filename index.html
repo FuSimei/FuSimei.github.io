@@ -501,11 +501,9 @@
       
         
           
-            <p>##一.bfc–块级格式化上下文<br>具有bfc特性的元素可以看做是隔离了的独立容器。容器里面的元素无论怎样变化，都不会在布局上影响到外面的元素，并具有普通元素没有的特性。</p>
-<p>##二.能够触发bfc特性的<br>以下任意一个条件均能触发元素的bfc属性：<br>float: left / right(除none);<br>overflow: hidden / auto / scroll(除visible);<br>position: absolute / fixed;<br>display: inline-block / flex / inline-flex / table-cell /table-caption;<br>根标签body;</p>
-<p>##三.bfc的用途</p>
-<p>###1.清除浮动</p>
-<h2 id="以下情况需要清除浮动："><a href="#以下情况需要清除浮动：" class="headerlink" title="以下情况需要清除浮动："></a>以下情况需要清除浮动：</h2><div class="wrapper"><br>    <div></div><br>    <div></div><br></div>
+            <h2 id="一-bfc–块级格式化上下文"><a href="#一-bfc–块级格式化上下文" class="headerlink" title="一.bfc–块级格式化上下文"></a>一.bfc–块级格式化上下文</h2><p>具有bfc特性的元素可以看做是隔离了的独立容器。容器里面的元素无论怎样变化，都不会在布局上影响到外面的元素，并具有普通元素没有的特性。</p>
+<h2 id="二-能够触发bfc特性的"><a href="#二-能够触发bfc特性的" class="headerlink" title="二.能够触发bfc特性的"></a>二.能够触发bfc特性的</h2><h2 id="以下任意一个条件均能触发元素的bfc属性："><a href="#以下任意一个条件均能触发元素的bfc属性：" class="headerlink" title="以下任意一个条件均能触发元素的bfc属性："></a>以下任意一个条件均能触发元素的bfc属性：</h2><p>float: left / right(除none);<br>overflow: hidden / auto / scroll(除visible);<br>position: absolute / fixed;<br>display: inline-block / flex / inline-flex / table-cell /table-caption;</p>
+<h2 id="根标签body"><a href="#根标签body" class="headerlink" title="根标签body;"></a>根标签body;</h2><h2 id="三-bfc的用途"><a href="#三-bfc的用途" class="headerlink" title="三.bfc的用途"></a>三.bfc的用途</h2><h3 id="1-清除浮动"><a href="#1-清除浮动" class="headerlink" title="1.清除浮动"></a>1.清除浮动</h3><h2 id="以下情况需要清除浮动："><a href="#以下情况需要清除浮动：" class="headerlink" title="以下情况需要清除浮动："></a>以下情况需要清除浮动：</h2><div class="wrapper"><br>    <div></div><br>    <div></div><br></div>
 
 <p><style><br>    .wrapper {<br>        background: green;<br>        border: 2px solid #000;<br>        margin-top: 200px;<br>    }</p>
 <pre><code>.wrapper div {
@@ -527,7 +525,7 @@
     background: orange;
 }
 </code></pre><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></style></p><p>清除浮动后的样式:<br><img src="/2018/08/14/关于bfc及用途/float-inline.PNG" alt="清除浮动"><br>这里是通过给父级添加属性’display: inline-block’来实现，你也可以通过其他方法试一试。<br><a href="./浮动.md">清除浮动的其他方法</a></p>
-<p>###2.解决margin塌陷<br>请看下面情况：<br><img src="/2018/08/14/关于bfc及用途/margin-top.PNG" alt="margin塌陷"></p>
+<h3 id="2-解决margin塌陷"><a href="#2-解决margin塌陷" class="headerlink" title="2.解决margin塌陷"></a>2.解决margin塌陷</h3><p>请看下面情况：<br><img src="/2018/08/14/关于bfc及用途/margin-top.PNG" alt="margin塌陷"></p>
 <hr>
 <div class="father"><br>    <div class="son"></div><br></div>
 
@@ -535,10 +533,11 @@
 <h2 id="-2"><a href="#-2" class="headerlink" title=""></a></style></p><p>此时明明给父级和子级都设置了margin-top，但是浏览器所展现出来的只有父级的margin-top。</p>
 <p>盒子模型的组成包括margin + border + padding + content。其中，在此提到的margin为复合属性，包括margin-top, margin-right, margin-bottom, margin-left。<br>浏览器后台的盒子模型如下：<br><img src="/2018/08/14/关于bfc及用途/border-box.PNG" alt="盒子模型"></p>
 <p>margin塌陷指的是margin-top，针对的是具有父子结构嵌套的元素。</p>
-<h2 id="如果想要父级子级的margin-top都能正常的显示，此时只需要触发元素的bfc属性"><a href="#如果想要父级子级的margin-top都能正常的显示，此时只需要触发元素的bfc属性" class="headerlink" title="如果想要父级子级的margin-top都能正常的显示，此时只需要触发元素的bfc属性"></a>如果想要父级子级的margin-top都能正常的显示，此时只需要触发元素的bfc属性</h2><div class="father"><br>    <div class="son"></div><br></div>
+<h2 id="如果想要父级子级的margin-top都能正常的显示，此时只需要触发父级元素的bfc属性。"><a href="#如果想要父级子级的margin-top都能正常的显示，此时只需要触发父级元素的bfc属性。" class="headerlink" title="如果想要父级子级的margin-top都能正常的显示，此时只需要触发父级元素的bfc属性。"></a>如果想要父级子级的margin-top都能正常的显示，此时只需要触发父级元素的bfc属性。</h2><div class="father"><br>    <div class="son"></div><br></div>
 
 <p><style><br>    .father {<br>        overflow: hidden;<br>        margin-top: 200px;<br>        width: 260px;<br>        height: 260px;<br>        background: green;<br>    }<br>    .son {<br>        margin-top: 100px;<br>        width: 150px;<br>        height: 150px;<br>        background: orange;<br>    }</p>
 <h2 id="-3"><a href="#-3" class="headerlink" title=""></a></style></p><p><img src="/2018/08/14/关于bfc及用途/margin-overflow.PNG" alt="解决margin塌陷"></p>
+<p>上面是通过给父级添加overflow: hidden的属性来实现的，用overflow: hidden的缺点就是：如果子级元素大于父级元素时，子级多出父级元素的部分会被隐藏</p>
 
           
         
