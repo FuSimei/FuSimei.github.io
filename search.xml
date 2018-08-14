@@ -3,7 +3,13 @@
   <entry>
     <title><![CDATA[浮动]]></title>
     <url>%2F2018%2F08%2F14%2F%E6%B5%AE%E5%8A%A8%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[我曾经遇到过这样一个面试题，a和b为兄弟结构标签，c为a的子标签，当a标签的z-index为1，b为2，c为3时，页面该如何布局。12345678910111213141516171819202122232425&lt;div class=&apos;a&apos;&gt; &lt;div class=&apos;c&apos;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&apos;b&apos;&gt;&lt;/div&gt;&lt;style&gt; .a, .b &#123; width: 200px; height: 200px; &#125; .a &#123; z-index: 1; background: green; &#125; .b &#123; z-index: 2; background: blue; &#125; .c &#123; z-index: 3; width: 100px; height: 100px; background: orange; &#125;&lt;/style&gt; 你想到该如何布局了吗？跟浮动不一样的是，z-index只是将元素抽离到更高层面进行定位，并不会影响到他原来的布局。z-index默认值为0，当多个元素具有z-index属性时，数字越大的显示时越在上面。W3C 对 z-index 属性的描述中提到在 z-index 属性仅在节点的 position 属性为 relative, absolute 或者 fixed 时生效。 浏览器实际展示效果如下：div为块级元素，独自占据一整行，所以a和b在不同的行显示，c为a的子级，a将包裹着c,但是c的z-index的值大于a,所以c显示在最上面 想象一下，在三维坐标轴中，z轴代表物体的高度，当给物体加上z-index属性时，物体就具有了空间感，就能根据z-index对物体进行定位。 对于同样的标签，当给他设置的是浮动属性而不是z-index时，将会发生什么呢？同样的，改变z-index为float，代码如下：12345678910111213141516171819202122232425&lt;div class=&apos;a&apos;&gt; &lt;div class=&apos;c&apos;&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&apos;b&apos;&gt;&lt;/div&gt;&lt;style&gt; .a, .b &#123; width: 200px; height: 200px; &#125; .a &#123; float: left; background: green; &#125; .b &#123; float: left; background: blue; &#125; .c &#123; float: left; width: 100px; height: 100px; background: orange; &#125;&lt;/style&gt; 具有浮动属性的元素将会脱离正常的文档流，被抽离到更高层面进行定位，所以a和b并排在一起，a里面包裹着他的子元素c。]]></content>
+      <categories>
+        <category>布局</category>
+      </categories>
+      <tags>
+        <tag>浮动</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[关于元素的bfc]]></title>
@@ -14,8 +20,8 @@
       </categories>
       <tags>
         <tag>bfc</tag>
-        <tag>html</tag>
-        <tag>css</tag>
+        <tag>浮动</tag>
+        <tag>margin</tag>
       </tags>
   </entry>
   <entry>
