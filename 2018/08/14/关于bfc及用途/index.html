@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/08/14/关于bfc及用途/overflow.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/关于bfc及用途/bad-overflow.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/08/14/关于bfc及用途/computed-margin.PNG">
-<meta property="og:updated_time" content="2018-08-14T14:43:21.887Z">
+<meta property="og:updated_time" content="2018-08-14T14:52:27.902Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于元素的bfc">
 <meta name="twitter:description" content="bfc–块级格式化上下文具有bfc特性的元素可以看做是隔离了的独立容器。容器里面的元素无论怎样变化，都不会在布局上影响到外面的元素，并具有普通元素没有的特性。 能够触发bfc特性的以下任意一个条件均能触发元素的bfc属性：(1)float: left / right(除none);(2)overflow: hidden / auto / scroll(除visible);(3)position:">
@@ -394,7 +394,8 @@
 <p>可以看到，父级包不住子级的div元素，需要给父级清除浮动触发父级的bfc，使其回到正常的文档流。</p>
 <p>清除浮动的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&apos;wrapper&apos;&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .wrapper &#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">	background: green;</span><br><span class="line">	border: 2px solid #000;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .wrapper div &#123;</span><br><span class="line">	float: left;</span><br><span class="line">	margin: 30px;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">        background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
 <p>清除浮动后的样式:<br><img src="/2018/08/14/关于bfc及用途/float-inline.PNG" alt="清除浮动"><br>这里是通过给父级添加属性’display: inline-block’来实现，你也可以通过其他方法试一试。</p>
-<p><a href="https://fusimei.github.io/2018/08/14/%E6%B5%AE%E5%8A%A8/" target="_blank" rel="noopener">清除浮动的其他方法</a><br><!-- [清除浮动的其他方法](./浮动.md) --></p>
+<!-- [清除浮动的其他方法](https://fusimei.github.io/2018/08/14/%E6%B5%AE%E5%8A%A8/) -->
+<!-- [清除浮动的其他方法](./浮动.md) -->
 <h3 id="II-解决margin塌陷"><a href="#II-解决margin塌陷" class="headerlink" title="II.解决margin塌陷"></a>II.解决margin塌陷</h3><p>请看下面情况：<br>此时明明给父级和子级都设置了margin-top，但是浏览器所展现出来的只有父级的margin-top。<br><img src="/2018/08/14/关于bfc及用途/margin-top.PNG" alt="margin塌陷"></p>
 <p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">	width: 260px;</span><br><span class="line">	height: 260px;</span><br><span class="line">	background: green;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">	margin-top: 100px;</span><br><span class="line">	width: 150px;</span><br><span class="line">	height: 150px;</span><br><span class="line">	background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
 <p>这里涉及到盒子模型的概念。盒子模型的组成包括margin + border + padding + content。其中，在此提到的margin为复合属性，包括margin-top, margin-right, margin-bottom, margin-left。<br>浏览器后台的盒子模型如下：<br><img src="/2018/08/14/关于bfc及用途/border-box.PNG" alt="盒子模型"></p>
@@ -442,8 +443,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/12/常用算法/" rel="next" title="'常用算法'">
-                <i class="fa fa-chevron-left"></i> '常用算法'
+              <a href="/2018/08/12/常用算法/" rel="next" title="常用算法">
+                <i class="fa fa-chevron-left"></i> 常用算法
               </a>
             
           </div>
