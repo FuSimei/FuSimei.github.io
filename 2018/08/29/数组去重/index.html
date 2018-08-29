@@ -88,7 +88,7 @@
 <meta property="og:description" content="数组去重数组去重是后续编程以及面试中都会经常会遇到的问题，最近在复习中特意整理了以下几种方法来供参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组 具体实现（原型链上编程）：12345678910111213141516171819Array.prototype.unique = function ()">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/08/29/数组去重/set-array.PNG">
-<meta property="og:updated_time" content="2018-08-29T15:33:03.590Z">
+<meta property="og:updated_time" content="2018-08-29T15:38:53.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组去重">
 <meta name="twitter:description" content="数组去重数组去重是后续编程以及面试中都会经常会遇到的问题，最近在复习中特意整理了以下几种方法来供参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组 具体实现（原型链上编程）：12345678910111213141516171819Array.prototype.unique = function ()">
@@ -401,6 +401,7 @@
 <h3 id="filter-按一定规则遍历数组"><a href="#filter-按一定规则遍历数组" class="headerlink" title="filter()按一定规则遍历数组"></a>filter()按一定规则遍历数组</h3><p>原理：<br>用filter来遍历生成满足条件的新数组，判断的条件需要借助indexOf()来判断当前元素的索引是否等于当前的索引</p>
 <p>方法：<br>filter(item, index, array) 有三个参数，第一个为数组的每一项(相当于arr[i])，第二个为当前元素的索引(i)，第三个为原来的数组(即调用filter的那个数组)。<br>该方法会返回一个满足条件的新数组。</p>
 <p>具体实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique = function () &#123;</span><br><span class="line">	var newArr = this.filter(function (item, index, array) &#123;</span><br><span class="line">		return array.indexOf(item) === index;</span><br><span class="line">	&#125;) </span><br><span class="line">	return newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 1, 2, 1, 13, 2, 3, 4, 34];</span><br><span class="line">var uniqueArr = arr.unique();	    //方法调用</span><br><span class="line">console.log(uniqueArr); 	    //[1, 2, 13, 3, 4, 34]</span><br></pre></td></tr></table></figure></p>
+<p>看到这里相信你应该已经明白，filter()方法就相当于for循环的封装，本质上还是取出数组中的当前项和当前索引，看该元素的索引值是不是第一次出现</p>
 <h3 id="Set-数据结构"><a href="#Set-数据结构" class="headerlink" title="Set()数据结构"></a>Set()数据结构</h3><p>原理：<br>调用ES6中的Set数据结构可以用于数组去重</p>
 <p>具体实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [1, 1, 2, 1, 13, 2, 3, 4, 34];</span><br><span class="line">var setArr = new Set(arr);</span><br><span class="line">console.log(setArr);</span><br></pre></td></tr></table></figure></p>
 <p>结果：<img src="/2018/08/29/数组去重/set-array.PNG" alt="Set去重"></p>
