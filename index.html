@@ -445,7 +445,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/快速排序和冒泡排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/冒泡排序和选择排序/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Better">
@@ -464,7 +464,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/08/30/快速排序和冒泡排序/" itemprop="url">快速排序和冒泡排序</a></h1>
+                <a class="post-title-link" href="/2018/08/30/冒泡排序和选择排序/" itemprop="url">冒泡排序和选择排序</a></h1>
         
 
         <div class="post-meta">
@@ -543,7 +543,7 @@
 <p>空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况</p>
 <p>稳定性：如果a = b，a在b的前面，排序后a任然在b的前面</p>
 <p>不稳定性：如果a = b，a在b的前面，排序后a在b的后面</p>
-<p>具体的归纳情况可以见下图：<br><img src="/2018/08/30/快速排序和冒泡排序/sort.PNG" alt="数组的比较"></p>
+<p>具体的归纳情况可以见下图：<br><img src="/2018/08/30/冒泡排序和选择排序/sort.PNG" alt="数组的比较"></p>
 <h2 id="数组的排序方法"><a href="#数组的排序方法" class="headerlink" title="数组的排序方法"></a>数组的排序方法</h2><h3 id="冒泡排序法"><a href="#冒泡排序法" class="headerlink" title="冒泡排序法"></a>冒泡排序法</h3><p>原理：<br>依次比较数组里面每相邻的两个元素。如果前面的数比后面的数大，则将两个数交换顺序。也就是找到数组的最大数放在最后一位。</p>
 <p>重复相同的规律，每次找出剩下数组里面的最大数放在最后面，直到数组有序排列为止。</p>
 <p>具体实现(原型链编程)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.bubbleSort = function () &#123;</span><br><span class="line">    var temple;</span><br><span class="line">    for (var i = 0; i &lt; this.length - 1; i++) &#123;     //this指向被调用的对象</span><br><span class="line">        for (var j = 0; j &lt; this.length - 1 - i; j++) &#123;</span><br><span class="line">            if (this[j] &gt; this[j+1]) &#123;</span><br><span class="line">                temple = this[j];</span><br><span class="line">                this[j] = this[j+1];</span><br><span class="line">                this[j+1] = temple;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];</span><br><span class="line">var arrSort = arr.bubbleSort();     //方法调用</span><br><span class="line">console.log(arrSort);   //[1, 2, 2, 3, 4, 5, 7, 13, 34]</span><br></pre></td></tr></table></figure></p>
