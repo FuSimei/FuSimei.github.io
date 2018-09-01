@@ -1,21 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[数组中的元素不全是数字时去重]]></title>
-    <url>%2F2018%2F08%2F30%2F%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0%E6%98%AF%E5%85%B6%E4%BB%96%E7%B1%BB%E5%9E%8B%E6%97%B6%E5%A6%82%E4%BD%95%E5%8E%BB%E9%87%8D%2F</url>
-    <content type="text"><![CDATA[数组中的数据可以是任意类型。 一般我们经常见到的可能是对数字进行去重，可是如果条件是对字符串去重或者是一个数组里面同时含有数字和字符串，亦或是还含有其他数据类型呢？ 对原生方法进行测试： 测试用例1（数组中的元素为数字）：123var arr = [1, 1, 2, 1, 13, 2, 3, 4, 34];var uniqueArr = arr.unique(); //方法调用console.log(uniqueArr); //[1, 2, 13, 3, 4, 34] 字符串去重测试用例2（数组中的元素为字符串）：12var arr1 = [&apos;a&apos;, &apos;d&apos;, &apos;d&apos;, &apos;a&apos;, &apos;c&apos;, &apos;b&apos;];console.log(arr1.unique()); //[&quot;a&quot;, &quot;d&quot;, &quot;c&quot;, &quot;b&quot;] 我们通常遇到的情况可能是，给定一个字符串，要求去除字符串中的重复元素。 (1)可以对字符串的每一项拆分，将字符串拆分成数组。str.split() (2)数组去重。 (3)将去重后的数组拼接成字符串。 str.join() 具体的字符串去重方法： 测试用例3（数组中含有数字和字符串）：12var arr2 = [&apos;b&apos;, 2, &apos;b&apos;, 1, 2, 12, &apos;a&apos;, &apos;c&apos;];console.log(arr2.unique()); //[&quot;b&quot;, 2, 1, 12, &quot;a&quot;, &quot;c&quot;] 测试用例4（数组中含有任意类型的原始值）：12var arr3 = [&apos;b&apos;, undefined, &apos;b&apos;, 2, null, true, true, NaN, NaN, null, undefined];console.log(arr3.unique()); //[&quot;b&quot;, undefined, 2, null, true, NaN, NaN]]]></content>
-      <categories>
-        <category>数组的操作</category>
-      </categories>
-      <tags>
-        <tag>Array</tag>
-        <tag>字符串， 数据类型</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[数组排序的几种方法]]></title>
     <url>%2F2018%2F08%2F30%2F%E6%95%B0%E7%BB%84%E6%8E%92%E5%BA%8F%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度： 空间复杂度： 稳定性： 不稳定性： 数组的排序方法冒泡排序法选择排序]]></content>
+    <content type="text"><![CDATA[关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度：一个程序执行所需要的时间，主要针对的是for循环 空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况 稳定性：如果a = b，a在b的前面，排序后a任然在b的前面 不稳定性：如果a = b，a在b的前面，排序后a在b的后面 具体的归纳情况可以见下图： 数组的排序方法冒泡排序法原理：依次比较相邻的两个元素。如果前面的数比后面的数大，则两个数交换顺序，第一次排序的结果是选出最大的数放在最后面。 重复相同的规律，每次找出剩下数组里面的最大数放在最后面，直到数组有序排列为止。 具体实现(原型链编程)：1234567891011121314151617Array.prototype.bubbleSort = function () &#123; var temple; for (var i = 0; i &lt; this.length - 1; i++) &#123; //this指向被调用的对象 for (var j = 0; j &lt; this.length - 1 - i; j++) &#123; if (this[j] &gt; this[j+1]) &#123; temple = this[j]; this[j] = this[j+1]; this[j+1] = temple; &#125; &#125; &#125; return this;&#125;var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];var arrSort = arr.bubbleSort(); //方法调用console.log(arrSort); //[1, 2, 2, 3, 4, 5, 7, 13, 34] 需要注意的是，每两个数进行比较大小时，知道第n - 1个数，则可以比较出第n - 1个数和第n个数的大小。所以第一圈循环终止条件为arr.length - 1。 第二圈循环时，当i = 0时，需要循环的次数为arr.length - 1,第一次循环结束时选出最大的数放在数组最后，即排序后的数组为[1, 2, 5, 7, 2, 3, 4, 13, 34]。 当i = 1时，循环次数为arr.length - 1 - 1，即最后一个数已经确定大小，不需要比较。还有余下数组的最后以为也不需要比较。 当然啦，这样做是为了节省时间复杂度，当两圈循环的终止条件改为arr.length也是可以的。 选择排序原理：选择排序是指选出第一个数依次和后面的每个数作比较，如果后面的数比第一个数小，交换顺序。选出最小的数放在第一位。 再选出第二个数依次和后面的每个数作比较，选出余下数组里面最小的放在第二位。 重复以上规律，知道数组有序为止。 具体实现：12345678910111213141516Array.prototype.selectSort = function () &#123; for (var i = 0; i &lt; this.length - 1; i++) &#123; //this指向被调用的对象 for (var j = i + 1; j &lt; this.length; j++) &#123; if (this[i] &gt; this[j]) &#123; temple = this[i]; this[i] = this[j]; this[j] = temple; &#125; &#125; &#125; return this;&#125;var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];var arrSelect = arr.selectSort(); //方法调用console.log(arrSelect); //[1, 2, 2, 3, 4, 5, 7, 13, 34] 冒泡排序和选择排序的区别比较冒泡排序和选择排序，发现他们其实实现原理都是一样的。 区别在于，冒泡排序是每两个相邻元素作比较，每次排序的结果是选出当前数组中的最大元素放在数组最后。选择排序是第一个元素依次和后面的每个元素比，选出最小的元素放在数组第一位。依次重复类推。 冒泡排序是先确定最大元素放在最后，选择排序先确定最小元素放在第一位，所以他们最终的结果都是数组里面的数升序排列。 快速排序原理： 具体实现：]]></content>
       <categories>
         <category>数组的操作</category>
       </categories>
