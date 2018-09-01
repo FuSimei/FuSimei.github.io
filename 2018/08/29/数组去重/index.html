@@ -88,7 +88,7 @@
 <meta property="og:description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组 具体实现（原型链上编程）：12345678910111213141516171819Array.prototype.unique = function (">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/08/29/数组去重/set-array.PNG">
-<meta property="og:updated_time" content="2018-08-30T10:02:08.898Z">
+<meta property="og:updated_time" content="2018-09-01T14:23:07.071Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组去重">
 <meta name="twitter:description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组 具体实现（原型链上编程）：12345678910111213141516171819Array.prototype.unique = function (">
@@ -392,7 +392,7 @@
 <h3 id="利用对象的属性名无重复"><a href="#利用对象的属性名无重复" class="headerlink" title="利用对象的属性名无重复"></a>利用对象的属性名无重复</h3><p>原理：<br>对象的属性名是没有重复的，取出数组的每一位，看对象里面是否存在（即取出对象的属性名，看对应的属性值是否存在。如果不存在，则证明对象中没有这个属性，该元素在数组中是第一次出现，并将该元素添加到新数组中）。此时需要给不存在的属性赋值做标记</p>
 <p>具体实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique = function () &#123;</span><br><span class="line">	var obj = &#123;&#125;;</span><br><span class="line">	var newArr = [];</span><br><span class="line">	for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">		if(!obj[this[i]]) &#123;</span><br><span class="line">			obj[this[i]] = 1;</span><br><span class="line">			newArr.push(this[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 1, 2, 1, 13, 2, 3, 4, 34];</span><br><span class="line">var uniqueArr = arr.unique();	    //方法调用</span><br><span class="line">console.log(uniqueArr); 	    //[1, 2, 13, 3, 4, 34]</span><br></pre></td></tr></table></figure></p>
 <h3 id="调用splice-删除重复元素"><a href="#调用splice-删除重复元素" class="headerlink" title="调用splice()删除重复元素"></a>调用splice()删除重复元素</h3><p>原理：<br>取出数组中的每一个元素依次和后面的每一个元素对比，如果后面的元素有相同的则为重复元素，删除该元素</p>
-<p>相关方法：<br>splice(start, length) 从第几位开始删除数组，删除几个长度，直接操作原数组</p>
+<p>相关方法：<br>splice(start, length) 从第几位开始删除数组，删除几个长度，直接操作原数组，并返回原数组，数组中的每一项为删除的数据</p>
 <p>slice(start, end) 截取数组的start位到end位（但不包括end位）的值，返回一个新数组。原数组不改变</p>
 <p>具体实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique = function () &#123;</span><br><span class="line">	for (var i = 0; i &lt; this.length; i++) &#123;     //谁调用的unique方法，this指向谁（arr)</span><br><span class="line">		for (var j = i + 1; j &lt; this.length; j++) &#123;</span><br><span class="line">			if (this[i] === this[j]) &#123;</span><br><span class="line">				this.splice(j, 1);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 1, 2, 1, 13, 2, 3, 4, 34];</span><br><span class="line">var uniqueArr = arr.unique();	    //方法调用</span><br><span class="line">console.log(uniqueArr); 	    //[1, 2, 13, 3, 4, 34]</span><br></pre></td></tr></table></figure></p>
 <h3 id="indexOf-找出符合条件的第一个"><a href="#indexOf-找出符合条件的第一个" class="headerlink" title="indexOf()找出符合条件的第一个"></a>indexOf()找出符合条件的第一个</h3><p>原理：<br>根据indexOf()来判断该元素是否是第一次出现，即看当前元素的索引值是否是满足条件的第一个索引值。</p>
@@ -455,8 +455,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/30/数组排序的几种方法/" rel="prev" title="数组排序的几种方法">
-                数组排序的几种方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/30/快速排序和冒泡排序/" rel="prev" title="快速排序和冒泡排序">
+                快速排序和冒泡排序 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -543,7 +543,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
