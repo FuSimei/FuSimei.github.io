@@ -289,6 +289,154 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/二分查找法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/二分查找法/" itemprop="url">二分查找法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T15:27:45+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数组的操作/" itemprop="url" rel="index">
+                    <span itemprop="name">数组的操作</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="二分查找法"><a href="#二分查找法" class="headerlink" title="二分查找法"></a>二分查找法</h2><p>二分查找法也称折半查找法，适用于在已知排列顺序的有序数组查找某个特定元素。</p>
+<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><p>(1)首先，从数组的中间位置开始查找。如果要查找的元素等于中间元素，返回中间元素索引。否则，进行第二步。</p>
+<p>(2)如果要查找的元素大于中间元素，则在数组大于中间元素的那半区域进行查找；</p>
+<p>如果要查找的元素小于中间元素，则在数组小于中间元素的那半区域进行查找。</p>
+<p>然后重复第一步的操作。</p>
+<p>(3)如果要查找的元素不存在，则返回-1。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function search (data, target) &#123;</span><br><span class="line">    var start = 0,</span><br><span class="line">        end = data.length - 1;</span><br><span class="line">    while (start &lt;= end) &#123;</span><br><span class="line">        var middle = Math.floor((start + end) / 2);     //找到中间元素</span><br><span class="line">        if (target === data[middle]) &#123;</span><br><span class="line">            return middle;</span><br><span class="line">        &#125;else if (target &gt; data[middle]) &#123;</span><br><span class="line">            start = middle + 1;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            end = middle - 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;     //要查找的元素不存在</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];</span><br><span class="line">var result = search(arr, 7);   //方法调用</span><br><span class="line">console.log(result);    //3,返回目标元素的索引</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/快速排序法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -387,9 +535,7 @@
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>(1)选基准：选择数组里面的任意一个元素作为基准数(我以中间元素为例)。</p>
 <p>(2)划分数组：<br>   小于基准数的元素放在’基准’左边；<br>   大于基准数的元素放在’基准’右边；<br>   等于基准数的元素和’基准’放在一起。</p>
 <p>(3)递归：对’基准’左边和右边两个子集，不断重复第一步和第二步，直到所有子集只剩一个元素为止。</p>
-<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr) &#123;</span><br><span class="line">    if (arr.length === 1) &#123;        //递归出口，当数组长度为1时返回</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var temple = Math.floor(arr.length / 2);</span><br><span class="line">    var flag = arr.splice(temple, 1)[0];</span><br><span class="line">    var left = [],</span><br><span class="line">        middle = [flag],</span><br><span class="line">        right = [];</span><br><span class="line"></span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (arr[i] &lt; flag) &#123;</span><br><span class="line">            left.push(arr[i]);</span><br><span class="line">        &#125;else if (arr[i] &gt; flag) &#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            middle.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return quickSort(left).concat(middle, quickSort(right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [2, 5, 23, 10, 7, 8, 12, 7, 6];</span><br><span class="line">var newArr = quickSort(arr);</span><br><span class="line">console.log(newArr);</span><br></pre></td></tr></table></figure>
-<h3 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h3><p>用递归方法实现快排时，当数组长度大于3时，会堆溢出报错。见下图：<br><img src="/2018/09/01/快速排序法/quickSort.PNG" alt="堆溢出报错"></p>
-<p>只有被待排序数组长度在3以内时，才能正常调用，如下图：<br><img src="/2018/09/01/快速排序法/waitArr.PNG" alt="正常显示"></p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr) &#123;</span><br><span class="line">    if (arr.length &lt;= 1) &#123;        //递归出口，当数组长度小于等于1时返回</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var temple = Math.floor(arr.length / 2);</span><br><span class="line">    var flag = arr.splice(temple, 1)[0];</span><br><span class="line">    var left = [],</span><br><span class="line">        middle = [flag],</span><br><span class="line">        right = [];</span><br><span class="line"></span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (arr[i] &lt; flag) &#123;</span><br><span class="line">            left.push(arr[i]);</span><br><span class="line">        &#125;else if (arr[i] &gt; flag) &#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            middle.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return quickSort(left).concat(middle, quickSort(right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [2, 5, 23, 10, 7, 8, 12, 7, 6];</span><br><span class="line">var newArr = quickSort(arr);</span><br><span class="line">console.log(newArr);      //[2, 5, 6, 7, 7, 8, 10, 12, 23]</span><br></pre></td></tr></table></figure>
 <p>待排序数组每次调用quickSort方法时，都会被分成左，中，右三个数组。对左边和右边的数组再用相同的方法进行排序，最后返回排序完成的数组。</p>
 <h3 id="相关方法："><a href="#相关方法：" class="headerlink" title="相关方法："></a>相关方法：</h3><p>(1) Math.floor() 向下取整</p>
 <p>temple = Math.floor(arr.length / 2);</p>
@@ -399,7 +545,7 @@
 <p>(3) Array.concat(arr1, arr2, …) 多个数组arr1, arr2和数组Array进行拼接成一个数组，返回拼接完成后的数组</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我和阮一峰老师快排的不同主要在于多了一个middle数组来接收和’基准’一样的元素。</p>
 <p>用递归方法来实现时，需要考虑到每次进行操作时共同点在哪（即找规律，找公式）。</p>
-<p>还要考虑到当满足一定条件时跳出（即出口），否则程序将会陷入死循环。可是递归的次数依然是一个不容忽视的问题。</p>
+<p>还要考虑到当满足一定条件时跳出（即出口），否则程序将会陷入死循环。</p>
 
           
         
@@ -1576,7 +1722,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
