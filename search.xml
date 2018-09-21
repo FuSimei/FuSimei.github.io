@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[行内元素和块级元素]]></title>
+    <url>%2F2018%2F09%2F21%2F%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%2F</url>
+    <content type="text"><![CDATA[元素分类块级元素(block)常用元素：div p ul li ol form address h(h1-h6) 特点：元素独自占据一整行，可以给元素设置宽和高 具体设置如下：12345678910111213&lt;div class=&quot;red&quot;&gt;&lt;/div&gt;&lt;div class=&quot;blue&quot;&gt;&lt;/div&gt;&lt;style&gt; div &#123; width: 100px; height: 100px; background: red; &#125; .blue &#123; background: blue; &#125;&lt;/style&gt; 行内元素(inline)常用元素：span a em del strong 特点：根据自身内容占据空间大小，不能给元素设置宽和高 具体设置如下：12&lt;span&gt;1&lt;/span&gt;&lt;span&gt;2&lt;/span&gt; 行级元素可以给他设置字体大小(font-size)，字体颜色(color)，字体样式(font-family)等和字体相关的属性 行级块元素(inline-block)常用元素：img input 特点：根据自身内容占据大小，又可以给元素设置宽和高 具体设置如下：12345678910&lt;input type = &quot;text&quot;&gt;&lt;input type = &quot;text&quot;&gt;&lt;style&gt; input &#123; width: 200px; height: 30px; margin-right: 30px; &#125;&lt;/style&gt; 相互转换关系块级元素默认display: block 行内元素默认display: inline 行级块元素默认display: inline-block 当给块级元素设置display: inline或设置display: inline-block时，块级元素可以转换为行内元素或者行级块元素，并具有行级元素或行级块元素独有的特性。以此类推。 注意点块级元素包括margin(margin-top, margin-right, margin-bottom, margin-left)和padding(padding-top, padding-right, padding-bottom, padding-left)值 但行内元素只有margin-left, margin-right, padding-left, padding-right值 根据默认margin和padding分类只有默认margin值：body p form h(h1-h6) 只有默认padding值：input img textarea button 有默认padding和margin：ol ul 没有默认padding和margin：div span]]></content>
+      <categories>
+        <category>元素分类</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
+        <tag>行内元素</tag>
+        <tag>块级元素</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[数组扁平化]]></title>
+    <url>%2F2018%2F09%2F21%2F%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96%2F</url>
+    <content type="text"><![CDATA[你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。我们通常需要的只是一维的数组，此时就需要将数组扁平化处理]]></content>
+      <categories>
+        <category>数组的操作</category>
+      </categories>
+      <tags>
+        <tag>Array</tag>
+        <tag>js</tag>
+        <tag>Object</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[二分查找法]]></title>
     <url>%2F2018%2F09%2F03%2F%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95%2F</url>
     <content type="text"><![CDATA[二分查找法二分查找法也称折半查找法，适用于在已知排列顺序的有序数组查找某个特定元素。 原理：(1)首先，从数组的中间位置开始查找。如果要查找的元素等于中间元素，返回中间元素索引。否则，进行第二步。 (2)如果要查找的元素大于中间元素，则在数组大于中间元素的那半区域进行查找； 如果要查找的元素小于中间元素，则在数组小于中间元素的那半区域进行查找。 然后重复第一步的操作。 (3)如果要查找的元素不存在，则返回-1。 具体实现12345678910111213141516171819function search (data, target) &#123; var start = 0, end = data.length - 1; while (start &lt;= end) &#123; var middle = Math.floor((start + end) / 2); //找到中间元素 if (target === data[middle]) &#123; return middle; &#125;else if (target &gt; data[middle]) &#123; start = middle + 1; &#125;else &#123; end = middle - 1; &#125; &#125; return -1; //要查找的元素不存在&#125;var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];var result = search(arr, 7); //方法调用console.log(result); //3,返回目标元素的索引]]></content>
