@@ -382,29 +382,31 @@
       
         
           
-            <h2 id="元素分类"><a href="#元素分类" class="headerlink" title="元素分类"></a>元素分类</h2><h3 id="块级元素-block"><a href="#块级元素-block" class="headerlink" title="块级元素(block)"></a>块级元素(block)</h3><p>常用元素：<br>div  p  ul  li  ol  form  address  h(h1-h6)</p>
+            <h2 id="元素分类"><a href="#元素分类" class="headerlink" title="元素分类"></a>元素分类</h2><h3 id="块级元素-block"><a href="#块级元素-block" class="headerlink" title="块级元素(block)"></a>块级元素(block)</h3><p>常用元素：div / p / ul / li / ol / form / address  h(h1-h6)</p>
 <p>特点：<br>元素独自占据一整行，可以给元素设置宽和高</p>
 <p>具体设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;red&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;blue&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    div &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: red;</span><br><span class="line">    &#125;</span><br><span class="line">    .blue &#123;</span><br><span class="line">        background: blue;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/09/21/行内元素和块级元素/block.PNG" alt="块级元素样式"></p>
-<h3 id="行内元素-inline"><a href="#行内元素-inline" class="headerlink" title="行内元素(inline)"></a>行内元素(inline)</h3><p>常用元素：<br>span  a  em  del  strong</p>
+<p>在浏览器中展示如下：<br><img src="/2018/09/21/行内元素和块级元素/block.PNG" alt="块级元素样式"><br>可以看到，第一个div的宽度只有100px, 但是他占据了浏览器的一整行。使得第二个div换行展示</p>
+<h3 id="行内元素-inline"><a href="#行内元素-inline" class="headerlink" title="行内元素(inline)"></a>行内元素(inline)</h3><p>常用元素：span / a / em / del / strong</p>
 <p>特点：<br>根据自身内容占据空间大小，不能给元素设置宽和高</p>
 <p>具体设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;1&lt;/span&gt;</span><br><span class="line">&lt;span&gt;2&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/09/21/行内元素和块级元素/inline.PNG" alt="行级元素样式"></p>
+<p>在浏览器中展示如下：<br><img src="/2018/09/21/行内元素和块级元素/inline.PNG" alt="行级元素样式"><br>span根据自身的内容占据了相应的大小，后面的span紧挨着进行展示</p>
 <p>行级元素可以给他设置字体大小(font-size)，字体颜色(color)，字体样式(font-family)等和字体相关的属性</p>
-<h3 id="行级块元素-inline-block"><a href="#行级块元素-inline-block" class="headerlink" title="行级块元素(inline-block)"></a>行级块元素(inline-block)</h3><p>常用元素：<br>img  input</p>
+<h3 id="行级块元素-inline-block"><a href="#行级块元素-inline-block" class="headerlink" title="行级块元素(inline-block)"></a>行级块元素(inline-block)</h3><p>常用元素：img / input</p>
 <p>特点：<br>根据自身内容占据大小，又可以给元素设置宽和高</p>
 <p>具体设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type = &quot;text&quot;&gt;</span><br><span class="line">&lt;input type = &quot;text&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    input &#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 30px;</span><br><span class="line">        margin-right: 30px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/2018/09/21/行内元素和块级元素/inline.PNG" alt="行级元素样式"></p>
+<p>在浏览器中展示如下：<br><img src="/2018/09/21/行内元素和块级元素/inline.PNG" alt="行级元素样式"></p>
 <h3 id="相互转换关系"><a href="#相互转换关系" class="headerlink" title="相互转换关系"></a>相互转换关系</h3><p>块级元素默认display: block</p>
 <p>行内元素默认display: inline</p>
 <p>行级块元素默认display: inline-block</p>
 <p>当给块级元素设置display: inline或设置display: inline-block时，块级元素可以转换为行内元素或者行级块元素，并具有行级元素或行级块元素独有的特性。以此类推。</p>
-<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>块级元素包括margin(margin-top, margin-right, margin-bottom, margin-left)和padding(padding-top, padding-right, padding-bottom, padding-left)值</p>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>margin和padding为复合属性，默认顺序为(上 右 下 左)。</p>
+<p>块级元素的margin值包括(margin-top, margin-right, margin-bottom, margin-left)，padding值包括(padding-top, padding-right, padding-bottom, padding-left)</p>
 <p>但行内元素只有margin-left, margin-right, padding-left, padding-right值</p>
-<h2 id="根据默认margin和padding分类"><a href="#根据默认margin和padding分类" class="headerlink" title="根据默认margin和padding分类"></a>根据默认margin和padding分类</h2><p>只有默认margin值：<br>body  p  form  h(h1-h6)  </p>
-<p>只有默认padding值：<br>input  img  textarea  button </p>
-<p>有默认padding和margin：<br>ol  ul  </p>
-<p>没有默认padding和margin：<br>div  span</p>
+<h2 id="根据默认margin和padding分类"><a href="#根据默认margin和padding分类" class="headerlink" title="根据默认margin和padding分类"></a>根据默认margin和padding分类</h2><p>只有默认margin值：body / p / form  h(h1-h6)  </p>
+<p>只有默认padding值：input / img / textarea / button </p>
+<p>有默认padding和margin：ol / ul  </p>
+<p>没有默认padding和margin：div / span</p>
+<p>常用的处理方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, img &#123;padding: 0; margin: 0;&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
