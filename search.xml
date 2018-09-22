@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[typeof返回值]]></title>
+    <url>%2F2018%2F09%2F22%2Ftypeof%E8%BF%94%E5%9B%9E%E5%80%BC%2F</url>
+    <content type="text"><![CDATA[js基本数据类型js里面基本数据类型分为原始值和引用值两大类。其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 typeof的返回值typeof的返回值包括”number” ，”string” ，”boolean” ，”undefined” , “object” ， “function”六类 其调用形式如下：(1)typeof num(2)typeof(num)其中，typeof后面跟的为需要判断数据类型的变量。变量可以直接跟在typeof后面以空格分开，也可以直接写在括号里 看如下例子：123typeof 123; //&quot;number&quot;typeof NaN; //&quot;number&quot;typeof Infinity; //&quot;number&quot; 但凡是数学计算能产生的结果都是数字类型，数字类型的返回值为”number” 12345var str = &apos;123abc&apos;;typeof str; //&quot;string&quot; typeof +str; //&quot;number&quot;typeof !!str; //&quot;boolean&quot;typeof str + &apos;&apos;; //&quot;string&quot; 输入一个字符串，字符串可以通过运算符改变其类型 1typeof a; //&quot;undefined&quot; 在js中，一个变量未经声明就使用，只有在一种情况下不会报错，那就是将变量放在typeof里面查看类型 综上总结，可以将基本数据类型和typeof的返回值做如下对应关系：typeof的返回值: “number” ，”string” ，”boolean” ，”undefined” , “function” ，”object”“number”为数字类型(number)的返回值“string”为字符串类型(string)的返回值“boolean”为布尔值(boolean)的返回值, 布尔值包括0和1“undefined”为undefined的返回值(即值未定义)“function”为函数function的返回值比较特殊的是，”object”为null，数组array，对象object的返回值 注意点typeof的返回值均为字符串，即number类型的字符串，string类型的字符串，boolean类型的字符串，undefined类型的字符串，function类型的字符串，object类型的字符串 即typeof(typeof “number”) =&gt; “string” 特殊情况考虑以下情况，当基本数据类型的首字母大写时，相应的typeof是否也会发生改变呢？ typeof Number =&gt; “string”typeof String =&gt; “string”typeof Boolean =&gt; “string”typeof Undefined =&gt; “undefined”typeof Null =&gt; “undefined”typeof Array =&gt; “string”typeof Object =&gt; “string”typeof Function =&gt; “string” 总结起来就是返回值为”string”包括：Number / String / Boolean / Array / Object / Function返回值为”undefined”包括：Undefined / Null]]></content>
+      <categories>
+        <category>js</category>
+      </categories>
+      <tags>
+        <tag>js</tag>
+        <tag>typeof</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[行内元素和块级元素]]></title>
     <url>%2F2018%2F09%2F21%2F%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%2F</url>
     <content type="text"><![CDATA[元素分类块级元素(block)常用元素：div / p / ul / li / ol / form / address / h(h1-h6) 特点：元素独自占据一整行，可以给元素设置宽和高 具体设置如下：12345678910111213&lt;div class=&quot;red&quot;&gt;&lt;/div&gt;&lt;div class=&quot;blue&quot;&gt;&lt;/div&gt;&lt;style&gt; div &#123; width: 100px; height: 100px; background: red; &#125; .blue &#123; background: blue; &#125;&lt;/style&gt; 在浏览器中展示如下：可以看到，第一个div的宽度只有100px, 但是他占据了浏览器的一整行。使得第二个div换行展示 行内元素(inline)常用元素：span / a / em / del / strong 特点：根据自身内容占据空间大小，不能给元素设置宽和高 具体设置如下：12&lt;span&gt;1&lt;/span&gt;&lt;span&gt;2&lt;/span&gt; 在浏览器中展示如下：可以看到，span根据自身的内容占据了相应的大小，后面的span紧挨着进行展示 行级元素虽然不可以设置宽高，但可以给他设置字体大小(font-size)，字体颜色(color)，字体样式(font-family)等和字体相关的属性 行级块元素(inline-block)也叫内联元素，常用元素：img / input 特点：根据自身内容占据大小，又可以给元素设置宽和高 具体设置如下：12345678910&lt;input type = &quot;text&quot;&gt;&lt;input type = &quot;text&quot;&gt;&lt;style&gt; input &#123; width: 200px; height: 30px; margin-right: 30px; &#125;&lt;/style&gt; 在浏览器中展示如下： 行级块元素input设置了宽和高，第一个input占据的宽度仅为设置的宽度，第二个input紧挨着第一个进行展示 行级块元素通常会被分类在行内元素里面 相互转换关系块级元素默认display: block 行内元素默认display: inline 行级块元素默认display: inline-block 当给块级元素设置display: inline或设置display: inline-block时，块级元素可以转换为行内元素或者行级块元素，并具有行级元素或行级块元素独有的特性。以此类推。 注意点margin和padding为复合属性，默认顺序为(上 右 下 左)。 块级元素的margin值包括(margin-top, margin-right, margin-bottom, margin-left)，padding值包括(padding-top, padding-right, padding-bottom, padding-left) 但行内元素只有margin-left, margin-right, padding-left, padding-right值 根据默认margin和padding分类只有默认margin值：body / p / form h(h1-h6) 只有默认padding值：input / img / textarea / button 有默认padding和margin：ol / ul 没有默认padding和margin：div / span body默认有8px的margin值 只有清除默认的padding和margin值我们设置的css样式才不会有偏差，样式才能布满整个页面 常用的处理方式：一般在css全局里面定义以下代码：1234* &#123; padding: 0; margin: 0;&#125; 也可以在总样式文件里面定义如下内容：1body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, img &#123;padding: 0; margin: 0;&#125; 即选出css中可能用到的具有margin和padding的标签，将其初始化]]></content>
@@ -16,13 +28,13 @@
   <entry>
     <title><![CDATA[数组扁平化]]></title>
     <url>%2F2018%2F09%2F21%2F%E6%95%B0%E7%BB%84%E6%89%81%E5%B9%B3%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。我们通常需要的只是一维的数组，此时就需要将数组扁平化处理]]></content>
+    <content type="text"><![CDATA[你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。 我们通常需要的只是一维的数组，此时就需要将数组扁平化处理]]></content>
       <categories>
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>js</tag>
+        <tag>Array</tag>
         <tag>Object</tag>
       </tags>
   </entry>
@@ -34,8 +46,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>js</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -46,8 +58,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>js</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -58,8 +70,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>js</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>
@@ -70,8 +82,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>Array</tag>
         <tag>js</tag>
+        <tag>Array</tag>
       </tags>
   </entry>
   <entry>

@@ -289,6 +289,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/typeof返回值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/22/typeof返回值/" itemprop="url">typeof返回值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T16:50:55+08:00">
+                2018-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="js基本数据类型"><a href="#js基本数据类型" class="headerlink" title="js基本数据类型"></a>js基本数据类型</h2><p>js里面基本数据类型分为原始值和引用值两大类。其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。引用值包括数组array，对象object，函数function三种。</p>
+<h2 id="typeof判断数据类型"><a href="#typeof判断数据类型" class="headerlink" title="typeof判断数据类型"></a>typeof判断数据类型</h2><p>当传入一个变量时，可以用typeof来判断基本的数据类型。</p>
+<h3 id="typeof的返回值"><a href="#typeof的返回值" class="headerlink" title="typeof的返回值"></a>typeof的返回值</h3><p>typeof的返回值包括”number” ，”string” ，”boolean” ，”undefined” , “object” ， “function”六类</p>
+<p>其调用形式如下：<br>(1)typeof num<br>(2)typeof(num)<br>其中，typeof后面跟的为需要判断数据类型的变量。变量可以直接跟在typeof后面以空格分开，也可以直接写在括号里</p>
+<p>看如下例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof 123;        //&quot;number&quot;</span><br><span class="line">typeof NaN;        //&quot;number&quot;</span><br><span class="line">typeof Infinity;   //&quot;number&quot;</span><br></pre></td></tr></table></figure></p>
+<p>但凡是数学计算能产生的结果都是数字类型，数字类型的返回值为”number”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;123abc&apos;;</span><br><span class="line">typeof  str;        //&quot;string&quot;  </span><br><span class="line">typeof +str;        //&quot;number&quot;</span><br><span class="line">typeof !!str;       //&quot;boolean&quot;</span><br><span class="line">typeof str + &apos;&apos;;    //&quot;string&quot;</span><br></pre></td></tr></table></figure>
+<p>输入一个字符串，字符串可以通过运算符改变其类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof a;    //&quot;undefined&quot;</span><br></pre></td></tr></table></figure>
+<p>在js中，一个变量未经声明就使用，只有在一种情况下不会报错，那就是将变量放在typeof里面查看类型</p>
+<p>综上总结，可以将基本数据类型和typeof的返回值做如下对应关系：<br>typeof的返回值: “number” ，”string” ，”boolean” ，”undefined” , “function” ，”object”<br>“number”为数字类型(number)的返回值<br>“string”为字符串类型(string)的返回值<br>“boolean”为布尔值(boolean)的返回值, 布尔值包括0和1<br>“undefined”为undefined的返回值(即值未定义)<br>“function”为函数function的返回值<br>比较特殊的是，”object”为null，数组array，对象object的返回值</p>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>typeof的返回值均为字符串，即number类型的字符串，string类型的字符串，boolean类型的字符串，undefined类型的字符串，function类型的字符串，object类型的字符串</p>
+<p>即typeof(typeof “number”) =&gt; “string”</p>
+<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><p>考虑以下情况，当基本数据类型的首字母大写时，相应的typeof是否也会发生改变呢？</p>
+<p>typeof Number =&gt; “string”<br>typeof String =&gt; “string”<br>typeof Boolean =&gt; “string”<br>typeof Undefined =&gt; “undefined”<br>typeof Null =&gt; “undefined”<br>typeof Array =&gt; “string”<br>typeof Object =&gt; “string”<br>typeof Function =&gt; “string”</p>
+<p>总结起来就是<br>返回值为”string”包括：Number / String / Boolean / Array / Object / Function<br>返回值为”undefined”包括：Undefined / Null</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/行内元素和块级元素/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -554,7 +711,8 @@
       
         
           
-            <p>你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。我们通常需要的只是一维的数组，此时就需要将数组扁平化处理</p>
+            <p>你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。</p>
+<p>我们通常需要的只是一维的数组，此时就需要将数组扁平化处理</p>
 
           
         
@@ -1693,171 +1851,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/08/hello-hexo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Better">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog-logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/08/hello-hexo/" itemprop="url">Hello MyBlog</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T09:58:00+08:00">
-                2018-07-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/搭建博客/" itemprop="url" rel="index">
-                    <span itemprop="name">搭建博客</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这是我搭建好博客后的第一篇文章，一切都会有个好的开始。</p>
-<p>我是一个前端的小菜鸟，可能很多东西理解的也不太对，欢迎大家留言指正。</p>
-<h2 id="搭建博客"><a href="#搭建博客" class="headerlink" title="搭建博客"></a>搭建博客</h2><h3 id="博客基础"><a href="#博客基础" class="headerlink" title="博客基础"></a>博客基础</h3><p>这里主要借助的是 GitHub + Hexo 来进行搭建博客。<br>可能你也像我一样是技术小白，可能你也正为如何搭建博客而烦恼，如果你想新建属于自己的博客，点击 <a href="https://www.cnblogs.com/fengxiongZz/p/7707219.html" target="_blank" rel="noopener">这里</a> 查看。</p>
-<h3 id="博客主题样式配置"><a href="#博客主题样式配置" class="headerlink" title="博客主题样式配置"></a>博客主题样式配置</h3><p>如果你想更换博客主题,配置自己喜欢的样式,点击 <a href="http://www.cnblogs.com/fengxiongZz/p/7707568.html#top" target="_blank" rel="noopener">这里</a> 查看。</p>
-<h3 id="上传本地博客"><a href="#上传本地博客" class="headerlink" title="上传本地博客"></a>上传本地博客</h3><p>相信看到这里的你已经按照以上的步骤配置好了属于自己的博客,此时博客只是在本地运行的,想要让本地博客能在浏览器里访问，快借助GitHub来进行配置吧！<br>主要方法(在cmd工具栏中进入搭建博客的本地文件夹，输入如下命令)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>具体可以参照 <a href="https://www.jianshu.com/p/9d1b865217a5" target="_blank" rel="noopener">这里</a> 来进行配置！</p>
-<h2 id="新建文章"><a href="#新建文章" class="headerlink" title="新建文章"></a>新建文章</h2><h3 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h3><p>配置好所有的环境之后，就可以在本地编辑器里写自己的博客内容了。首先，当然是要新建博客写作页面了。在hexo里面有三种新建的方式。<br>在cmd里执行以下命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [layout] &lt;title&gt;</span><br></pre></td></tr></table></figure></p>
-<p>其中，layout为新建的位置，包含以下三个值：<br>布局—————-路径<br>post—————source/_posts (一般新建单个博客页面时使用)<br>page—————source (用来配置和引入资源,包括图片,以及在搭建博客时的标签,分类页)<br>draft—————source/_drafts (新建草稿)<br>举个栗子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new post hello,hexo</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>现在，你可以找到source文件夹查看具体区别。</p>
-<h3 id="配置参数"><a href="#配置参数" class="headerlink" title="配置参数"></a>配置参数</h3><p>每新建好一个文件，你可以看到最上面有用<code>---</code> <code>---</code>来隔开一个部分，这是用来进行参数匹配的。<br><img src="/2018/07/08/hello-hexo/config.PNG" alt="配置参数"></p>
-<p>在本篇博客里，我的配置是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello MyBlog</span><br><span class="line">date: 2018-07-08 09:58:00</span><br><span class="line">tags: [hexo,blog,essay]</span><br><span class="line">categories: 搭建博客</span><br><span class="line">comments: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>其中，tags和categories参数你需要先建立页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>并在source文件夹下找到对应的tags页面，配置以下参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2018-07-07 13:23:03</span><br><span class="line">type: &apos;tags&apos;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>同理，在categories页面中配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2018-07-08 21:21:28</span><br><span class="line">type: &apos;categories&apos;</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>到这里，页面基本参数就配置好了，接下来主要就是要发布的博客内容。</p>
-<h3 id="文章标题"><a href="#文章标题" class="headerlink" title="文章标题"></a>文章标题</h3><p>一级标题：<code>&lt;h1&gt;&lt;/h1&gt;</code> –表示方法：# 名称<br>二级标题：<code>&lt;h2&gt;&lt;/h2&gt;</code> –表示方法：## 名称<br>三级标题：<code>&lt;h3&gt;&lt;/h3&gt;</code> –表示方法：### 名称<br>一般我们标题都是用来语义化表示题目内容的，不宜嵌套太深，主要常用的就是前三级标题</p>
-<h3 id="网址链接"><a href="#网址链接" class="headerlink" title="网址链接"></a>网址链接</h3><p>表示方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[要显示的内容](与该内容相关的网址)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[这里](https://www.jianshu.com/p/9d1b865217a5)</span><br></pre></td></tr></table></figure>
-<p>其他内容就正常书写就好啦！</p>
-<h3 id="上传博客内容"><a href="#上传博客内容" class="headerlink" title="上传博客内容"></a>上传博客内容</h3><p>写到这里本篇博客内容页该结束啦！此时想要把本地写好的博客内容上传到浏览器里查看，只要执行以下代码就可以啦！开心~~~<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-<p>具体内容可以点击 <a href="https://hexo.io/zh-cn/docs/writing.html" target="_blank" rel="noopener">这里</a> 查看hexo官方文档</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1912,7 +1905,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1923,7 +1916,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1934,7 +1927,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
