@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。 其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。 引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 根据传入的数据类型进行划分，typeof的返回值包括”number”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T10:12:36.989Z">
+<meta property="og:updated_time" content="2018-09-22T10:17:17.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="typeof返回值">
 <meta name="twitter:description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。 其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。 引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 根据传入的数据类型进行划分，typeof的返回值包括”number”">
@@ -392,7 +392,7 @@
 <p>输入一个字符串，字符串可以通过运算符改变其类型，typeof会根据类型返回特定的值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof a;    //&quot;undefined&quot;</span><br></pre></td></tr></table></figure>
 <p>在js中，一个变量未经声明就使用，只有在一种情况下不会报错，那就是将变量放在typeof里面查看类型</p>
-<p>综上总结，可以将基本数据类型和typeof的返回值做如下对应关系：<br>typeof的返回值: “number”，”string”，”boolean”，”undefined”, “function”，”object”<br>返回值为”number”包括：数字类型(number)<br>返回值为”string”包括：字符串类型(string)<br>返回值为”boolean”包括：布尔值(boolean)<br>返回值为”undefined”包括：undefined(即值未定义)<br>返回值为”function”包括：函数function<br>比较特殊的是，返回值为”object”包括：null，数组array，对象object</p>
+<p>综上总结，可以将基本数据类型和typeof的返回值做如下对应关系：<br>typeof的返回值: “number” ，”string” ，”boolean” ，”undefined” , “function” ，”object”<br>返回值为”number”包括：数字类型(number)<br>返回值为”string”包括：字符串类型(string)<br>返回值为”boolean”包括：布尔值(boolean)<br>返回值为”undefined”包括：undefined(即值未定义)<br>返回值为”function”包括：函数function<br>比较特殊的是，返回值为”object”包括：null，数组array，对象object</p>
 <p>所以当需要判断具体的”object”类型时，需要对null，array，object进行判断</p>
 <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>typeof的返回值均为字符串，即number类型的字符串，string类型的字符串，boolean类型的字符串，undefined类型的字符串，function类型的字符串，object类型的字符串</p>
 <p>即typeof(typeof “number”) =&gt; “string”</p>
