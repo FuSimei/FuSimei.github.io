@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 typeof的返回值typeof的返回值包括”number” ，”stri">
+<meta name="description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。 其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。 引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 根据传入的数据类型进行划分，typeof的返回值包括”number”">
 <meta name="keywords" content="js,typeof">
 <meta property="og:type" content="article">
 <meta property="og:title" content="typeof返回值">
 <meta property="og:url" content="http://yoursite.com/2018/09/22/typeof返回值/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 typeof的返回值typeof的返回值包括”number” ，”stri">
+<meta property="og:description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。 其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。 引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 根据传入的数据类型进行划分，typeof的返回值包括”number”">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-22T09:54:14.224Z">
+<meta property="og:updated_time" content="2018-09-22T10:08:36.416Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="typeof返回值">
-<meta name="twitter:description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 typeof的返回值typeof的返回值包括”number” ，”stri">
+<meta name="twitter:description" content="js基本数据类型js里面基本数据类型分为原始值和引用值两大类。 其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。 引用值包括数组array，对象object，函数function三种。 typeof判断数据类型当传入一个变量时，可以用typeof来判断基本的数据类型。 根据传入的数据类型进行划分，typeof的返回值包括”number”">
 
 
 
@@ -379,17 +379,21 @@
       
 
       
-        <h2 id="js基本数据类型"><a href="#js基本数据类型" class="headerlink" title="js基本数据类型"></a>js基本数据类型</h2><p>js里面基本数据类型分为原始值和引用值两大类。其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。引用值包括数组array，对象object，函数function三种。</p>
+        <h2 id="js基本数据类型"><a href="#js基本数据类型" class="headerlink" title="js基本数据类型"></a>js基本数据类型</h2><p>js里面基本数据类型分为原始值和引用值两大类。</p>
+<p>其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。</p>
+<p>引用值包括数组array，对象object，函数function三种。</p>
 <h2 id="typeof判断数据类型"><a href="#typeof判断数据类型" class="headerlink" title="typeof判断数据类型"></a>typeof判断数据类型</h2><p>当传入一个变量时，可以用typeof来判断基本的数据类型。</p>
-<h3 id="typeof的返回值"><a href="#typeof的返回值" class="headerlink" title="typeof的返回值"></a>typeof的返回值</h3><p>typeof的返回值包括”number” ，”string” ，”boolean” ，”undefined” , “object” ， “function”六类</p>
-<p>其调用形式如下：<br>(1)typeof num<br>(2)typeof(num)<br>其中，typeof后面跟的为需要判断数据类型的变量。变量可以直接跟在typeof后面以空格分开，也可以直接写在括号里</p>
+<p>根据传入的数据类型进行划分，typeof的返回值包括”number” ，”string” ，”boolean” ，”undefined” , “object” ， “function”六种</p>
+<p>其调用形式如下：<br>(1)typeof num<br>(2)typeof(num)</p>
+<p>其中，typeof后面跟的为需要判断数据类型的变量。传入的变量可以直接跟在typeof后面以空格分隔开，也可以直接写在括号里</p>
 <p>看如下例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof 123;        //&quot;number&quot;</span><br><span class="line">typeof NaN;        //&quot;number&quot;</span><br><span class="line">typeof Infinity;   //&quot;number&quot;</span><br></pre></td></tr></table></figure></p>
 <p>但凡是数学计算能产生的结果都是数字类型，数字类型的返回值为”number”</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;123abc&apos;;</span><br><span class="line">typeof  str;        //&quot;string&quot;  </span><br><span class="line">typeof +str;        //&quot;number&quot;</span><br><span class="line">typeof !!str;       //&quot;boolean&quot;</span><br><span class="line">typeof str + &apos;&apos;;    //&quot;string&quot;</span><br></pre></td></tr></table></figure>
-<p>输入一个字符串，字符串可以通过运算符改变其类型</p>
+<p>输入一个字符串，字符串可以通过运算符改变其类型，typeof会根据类型返回特定的值</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof a;    //&quot;undefined&quot;</span><br></pre></td></tr></table></figure>
 <p>在js中，一个变量未经声明就使用，只有在一种情况下不会报错，那就是将变量放在typeof里面查看类型</p>
-<p>综上总结，可以将基本数据类型和typeof的返回值做如下对应关系：<br>typeof的返回值: “number” ，”string” ，”boolean” ，”undefined” , “function” ，”object”<br>“number”为数字类型(number)的返回值<br>“string”为字符串类型(string)的返回值<br>“boolean”为布尔值(boolean)的返回值, 布尔值包括0和1<br>“undefined”为undefined的返回值(即值未定义)<br>“function”为函数function的返回值<br>比较特殊的是，”object”为null，数组array，对象object的返回值</p>
+<p>综上总结，可以将基本数据类型和typeof的返回值做如下对应关系：<br>typeof的返回值: “number”，”string”，”boolean”，”undefined”, “function”，”object”<br>返回值为”number”包括：数字类型(number)<br>返回值为”string”包括：字符串类型(string)<br>返回值为”boolean”包括：布尔值(boolean)<br>返回值为”undefined”包括：undefined(即值未定义)<br>返回值为”function”包括：函数function<br>比较特殊的是，返回值为”object”包括：null，数组array，对象object</p>
+<p>所以当需要判断具体的”object”类型时，需要对null，array，object进行判断</p>
 <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>typeof的返回值均为字符串，即number类型的字符串，string类型的字符串，boolean类型的字符串，undefined类型的字符串，function类型的字符串，object类型的字符串</p>
 <p>即typeof(typeof “number”) =&gt; “string”</p>
 <h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><p>考虑以下情况，当基本数据类型的首字母大写时，相应的typeof是否也会发生改变呢？</p>
@@ -576,7 +580,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js基本数据类型"><span class="nav-number">1.</span> <span class="nav-text">js基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof判断数据类型"><span class="nav-number">2.</span> <span class="nav-text">typeof判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#typeof的返回值"><span class="nav-number">2.1.</span> <span class="nav-text">typeof的返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">2.2.</span> <span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊情况"><span class="nav-number">2.3.</span> <span class="nav-text">特殊情况</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#js基本数据类型"><span class="nav-number">1.</span> <span class="nav-text">js基本数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#typeof判断数据类型"><span class="nav-number">2.</span> <span class="nav-text">typeof判断数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注意点"><span class="nav-number">2.1.</span> <span class="nav-text">注意点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊情况"><span class="nav-number">2.2.</span> <span class="nav-text">特殊情况</span></a></li></ol></li></ol></div>
             
 
           </div>
