@@ -399,8 +399,7 @@
 <p>所以当需要判断具体的”object”类型时，需要对null，array，object进行判断</p>
 <h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>typeof的返回值均为字符串，即number类型的字符串，string类型的字符串，boolean类型的字符串，undefined类型的字符串，function类型的字符串，object类型的字符串</p>
 <p>即typeof(typeof “number”) =&gt; “string”</p>
-<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><p>考虑以下情况，当基本数据类型的首字母大写时，相应的typeof是否也会发生改变呢？</p>
-<p>typeof Number =&gt; “string”<br>typeof String =&gt; “string”<br>typeof Boolean =&gt; “string”<br>typeof Undefined =&gt; “undefined”<br>typeof Null =&gt; “undefined”<br>typeof Array =&gt; “string”<br>typeof Object =&gt; “string”<br>typeof Function =&gt; “string”</p>
+<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><p>考虑以下情况，当基本数据类型的首字母大写时，相应的typeof是否也会发生改变呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typeof Number       //&quot;string&quot;</span><br><span class="line">typeof String       //&quot;string&quot;</span><br><span class="line">typeof Boolean      //&quot;string&quot;</span><br><span class="line">typeof Undefined    //&quot;undefined&quot;</span><br><span class="line">typeof Null         //&quot;undefined&quot;</span><br><span class="line">typeof Array        //&quot;string&quot;</span><br><span class="line">typeof Object       //&quot;string&quot;</span><br><span class="line">typeof Function     //&quot;string&quot;</span><br></pre></td></tr></table></figure></p>
 <p>总结起来就是<br>返回值为”string”包括：Number / String / Boolean / Array / Object / Function<br>返回值为”undefined”包括：Undefined / Null</p>
 
           
