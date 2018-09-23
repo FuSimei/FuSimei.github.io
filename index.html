@@ -424,6 +424,8 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.toString()    //error</span><br></pre></td></tr></table></figure>
 <p>这里趋向于变量调用该方法进行转换，数字直接调用时会报错。</p>
 <p>如果传入的数据为数字类型时，应该采用如下方式处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num = 3;num.toString()      //&quot;3&quot;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num = 070; num.toString()   //56</span><br><span class="line">var num=0110;num.toString()     //&quot;72&quot;</span><br></pre></td></tr></table></figure>
+<p>当数字第一位为0时，会被默认为八进制，然后将其转换为十进制。即将八进制的070转换为十进制</p>
 <p>再看以下例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3.toString()        //error</span><br><span class="line">3..toString()       //&quot;3&quot;</span><br><span class="line">3...toString()      //error, Unexpected token .</span><br></pre></td></tr></table></figure></p>
 <p>3..toString()中，3..相当于3.0来调用toString()的方法进行转换。</p>
 <p>换句话说就是，如果数字直接调用toString()方法时，只有数字类型为小数(浮点型)才不会报错。否则都应该以变量声明的形式来调用。</p>
