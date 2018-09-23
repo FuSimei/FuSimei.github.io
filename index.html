@@ -289,6 +289,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/23/类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/23/类型转换/" itemprop="url">强制类型转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T12:20:26+08:00">
+                2018-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在js里面声明变量时并没有直接定义该变量是什么类型，变量的类型由为他赋值时所定义的值所决定(var num = 123,定义了该变量为数字)。</p>
+<p>但是有这么一种情况，当我们需要的变量是一个数字类型，但用户输入时给定的却是一个字符串。除了给用户提示输入正确的数据类型外，是否可以从前端的角度做一些关于数据类型的处理？</p>
+<p>这就出现了数据类型的转换。当一个变量从某种类型转化为另外一种类型时，则可以调用对应变量类型的方法。</p>
+<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>针对js中的数据类型原始值(number，string，boolean，undefined，null)和引用值(array，object，function)，当不同的数据类型调用不同的方法时，看其相应的返回值。</p>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><p>该方法会把任意类型的数据转换为数字类型。</p>
+<p>数字类型包括四个值：具体的数字，NaN，Infinity，-Infinity<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Number(123.0)   //123</span><br><span class="line">Number(030)     //30</span><br><span class="line">Number(0/0)     //NaN</span><br><span class="line">Number(1/0)     //Infinity</span><br><span class="line">Number(-1/0)    //-Infinity</span><br><span class="line">Number(6/2)     //3</span><br></pre></td></tr></table></figure></p>
+<p>当输入具体数据时，直接输出数据。但是会对数据做以下处理：<br>(1)如果数字的最高位为0，删除最高位的0，返回有效的数据<br>(2)如果小数点后面有0，删除小数点后面无效的0<br>(3)如果输入的数据需要计算，则返回最后的计算结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;123&apos;)           //123</span><br><span class="line">Number(&apos;abc&apos;)           //NaN</span><br><span class="line">Number(&apos;123abc&apos;)        //NaN</span><br></pre></td></tr></table></figure>
+<p>当输入字符串时，会出现3种情况：<br>(1)输入的字符串为纯数字，则返回具体数字<br>(2)输入的字符串为纯字符，则直接返回NaN<br>(3)输入的字符串同时包含数字和字符，返回NaN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number(true)        //1</span><br><span class="line">Number(false)       //0</span><br></pre></td></tr></table></figure>
+<p>当输入布尔值时，true =&gt; 1，false =&gt; 0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number(undefined)       //NaN</span><br><span class="line">Number(null)            //0</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，输入null时返回的是0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number(&#123;a:1,b:2,c:&#123;d:1&#125;&#125;)   //NaN</span><br><span class="line">Number([1,2,3])             //NaN</span><br><span class="line">Number([1])                 //1</span><br></pre></td></tr></table></figure>
+<p>输入引用类型的数据时，返回的值为NaN。</p>
+<p>但有一种特殊的情况就是当要转换的变量为数组，切数组的长度为1时，该数据类型可以直接转换为相应的数据</p>
+<h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><p>该方法趋向于将字符串转换为数字类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(112)        //112</span><br><span class="line">parseInt(112.14)     //112</span><br></pre></td></tr></table></figure></p>
+<p>输入数字时，该方法会有截取的功能，截取数字的整数部分。</p>
+<p>即可以调用该方法将数字直接转化为整型数字(没有小数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;112&apos;)     //112</span><br><span class="line">parseInt(&apos;112px&apos;)   //112</span><br><span class="line">parseInt(&apos;abc&apos;)     //NaN</span><br></pre></td></tr></table></figure>
+<p>当输入字符串时，会出现3种情况：<br>(1)输入的字符串为纯数字，则返回具体数字<br>(2)输入的字符串为纯字符，则直接返回NaN<br>(3)输入的字符串同时包含数字和字符，该方法会有截取的效果。则从第一个字符串开始，到非数字位截止。返回截取的数字部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">parseInt(true)          //NaN</span><br><span class="line">parseInt(undefined)     //NaN</span><br><span class="line">parseInt(null)          //NaN</span><br><span class="line">parseInt(&#123;a:1&#125;)         //NaN</span><br><span class="line">parseInt(&#123;1:1&#125;)         //NaN</span><br><span class="line">parseInt([1])           //1</span><br><span class="line">parseInt([1,2])         //1</span><br></pre></td></tr></table></figure>
+<p>当变量类型为引用值时，直接返回NaN。但需要注意的是，当定义的数组为第一位为数字时，返回该数组的第一位。</p>
+<p>该方法的关键在于，趋向于将字符串转换为数字。当定义的变量不是字符串时，通常返回NaN(数字直接返回截取后的值。数组第一位为数字时，直接返回数组第一位)</p>
+<p>该方法还可以传第二个参数，parseInt(num, radix)表示num是radix进制的数据，以radix为基底将num转换为十进制的数字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;123a&apos;, 16)    //4666</span><br></pre></td></tr></table></figure></p>
+<p>该例子表示将16进制(包括0-9, a-f)的123a转换成十进制对应的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;112&apos;, 2)      //3</span><br><span class="line">parseInt(&apos;121&apos;, 2)      //1</span><br></pre></td></tr></table></figure>
+<p>当要转换的数据超出了该进制所包含的值时，会从超出进制的数据位对该数据进行截取，再对截取后的数据调用该方法进行转换。</p>
+<p>将’112’的二进制转换为十进制的数据时，因为二进制只能包括0和1，所以会对’112’进行截取，截取后的数据为’11’，再将’11’转化为十进制</p>
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><p>将字符串转换为数字类型，parseInt()不同的是：<br>(1)可以在parseInt()的基础上保留一个小数点，即可以将数据转化为浮点型(含有小数)<br>(2)没有第二个参数，即没有进制间的转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;123.020&apos;)       //123.02</span><br><span class="line">parseFloat(&apos;123.020.21&apos;)    //123.02</span><br></pre></td></tr></table></figure>
+<p>以上三个方法都是将变量转换为数字。</p>
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean()"></a>Boolean()</h3><p>将变量转换为布尔值(0或1)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Boolean(123)    //true</span><br><span class="line">Boolean(&quot;&quot;)     //false</span><br></pre></td></tr></table></figure></p>
+<p>转换成布尔值为false的有：NaN, 0, “”, false, undefined, null</p>
+<p>其他值转换为布尔值均为true</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String()"></a>String()</h3><p>将变量转化为字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String(123)         //&quot;123&quot;</span><br><span class="line">String(true)        //&quot;true&quot;</span><br><span class="line">String(undefined)   //&quot;undefined&quot;</span><br><span class="line">String(null)        //&quot;null&quot;</span><br></pre></td></tr></table></figure>
+<p>将任意类型直接转换为字符串，即相当于num + “”</p>
+<h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>将变量转化为字符串，除undefined, null</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.toString()    //error</span><br></pre></td></tr></table></figure>
+<p>这里趋向于变量调用该方法进行转换，数字直接调用时会报错。</p>
+<p>如果传入的数据为数字类型时，应该采用如下方式处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num = 3;num.toString()      //&quot;3&quot;</span><br></pre></td></tr></table></figure></p>
+<p>再看以下例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3.toString()        //error</span><br><span class="line">3..toString()       //&quot;3&quot;</span><br><span class="line">3...toString()      //error, Unexpected token .</span><br></pre></td></tr></table></figure></p>
+<p>3..toString()中，3..相当于3.0来调用toString()的方法进行转换。</p>
+<p>换句话说就是，如果数字直接调用toString()方法时，只有数字类型为小数(浮点型)才不会报错。否则都应该以变量声明的形式来调用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">3.1.toString()  //&quot;3.1&quot;</span><br><span class="line">3.0.toString()  //&quot;3&quot;</span><br></pre></td></tr></table></figure>
+<p>再看其他类型的数据调用该方法时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">true.toString()             //&quot;true&quot;</span><br><span class="line">undefined.toString()        //err</span><br><span class="line">[1,2].toString()            //&quot;1,2&quot;</span><br><span class="line">&#123;a: 1, b: 2&#125;.toString()     //err</span><br></pre></td></tr></table></figure></p>
+<p>通过以上例子我们发现，当数组调用toString()方法时，会将数组直接转换为字符串。</p>
+<p>但以上数组的组成均为数字，如果数组中含有其他类型的变量时，是否依然成立呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, &apos;a&apos;, &apos;b&apos;, 8].toString()   //&quot;1,2,a,b,8&quot;</span><br><span class="line">[1, [4, &apos;a&apos;], &#123;b : 1&#125;, &apos;c&apos;].toString()  //&quot;1,4,a,[object Object],c&quot;</span><br><span class="line">[1, undefined, &apos;b&apos;, null].toString()   //&quot;1,,b,&quot;</span><br></pre></td></tr></table></figure></p>
+<p>首先，null, undefined是不能调用toString()方法的，直接调用时报错。在数组中调用时，数组对应的位置为空。</p>
+<p>对象调用toString()方法也直接报错，在数组中时，返回该数据的类型[object Object]。</p>
+<p>该方法还可以传第二个参数，variable.toString(k)表示将十进制的variable转换为k进制的数据，即将十进制转换为k进制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num = 123; num.toString(16)     //&quot;7b&quot;</span><br></pre></td></tr></table></figure></p>
+<p>再看以下例子：将二进制10101010转换为16进制的数据</p>
+<p>分析题目并结合以上知识点可以想到，先将二进制的数据转换为十进制，再将十进制转化为十六进制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num2 = 10101010;</span><br><span class="line">var num10 = parseInt(num2, 2);</span><br><span class="line">var num16 = num10.toString(16);</span><br><span class="line">console.log(num16);     //&quot;aa&quot;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/typeof返回值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1692,168 +1887,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/14/关于bfc及用途/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Better">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog-logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/14/关于bfc及用途/" itemprop="url">关于元素的bfc</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T18:21:28+08:00">
-                2018-08-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/布局/" itemprop="url" rel="index">
-                    <span itemprop="name">布局</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="bfc–块级格式化上下文"><a href="#bfc–块级格式化上下文" class="headerlink" title="bfc–块级格式化上下文"></a>bfc–块级格式化上下文</h2><p>具有bfc特性的元素可以看做是隔离了的独立容器。容器里面的元素无论怎样变化，都不会在布局上影响到外面的元素，并具有普通元素没有的特性。</p>
-<h2 id="能够触发bfc特性的"><a href="#能够触发bfc特性的" class="headerlink" title="能够触发bfc特性的"></a>能够触发bfc特性的</h2><p>以下任意一个条件均能触发元素的bfc属性：<br>(1)float: left / right(除none);<br>(2)overflow: hidden / auto / scroll(除visible);<br>(3)position: absolute / fixed;<br>(4)display: inline-block / flex / inline-flex / table-cell /table-caption;<br>(5)根标签body;</p>
-<h2 id="bfc的用途"><a href="#bfc的用途" class="headerlink" title="bfc的用途"></a>bfc的用途</h2><h3 id="I-清除浮动"><a href="#I-清除浮动" class="headerlink" title="I.清除浮动"></a>I.清除浮动</h3><p>当给子级元素设置浮动属性时，需要给父级清除浮动。<br>浏览器呈现的情况如下：<br><img src="/2018/08/14/关于bfc及用途/float-inline.PNG" alt="浮动"><br>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&apos;wrapper&apos;&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .wrapper &#123;</span><br><span class="line">	background: green;</span><br><span class="line">	border: 2px solid #000;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .wrapper div &#123;</span><br><span class="line">	float: left;</span><br><span class="line">	margin: 30px;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">        background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>可以看到，父级包不住子级的div元素，需要给父级清除浮动触发父级的bfc，使其回到正常的文档流。</p>
-<p>清除浮动的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&apos;wrapper&apos;&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .wrapper &#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">	background: green;</span><br><span class="line">	border: 2px solid #000;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .wrapper div &#123;</span><br><span class="line">	float: left;</span><br><span class="line">	margin: 30px;</span><br><span class="line">	width: 100px;</span><br><span class="line">	height: 100px;</span><br><span class="line">        background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>清除浮动后的样式:<br><img src="/2018/08/14/关于bfc及用途/clear-inline.PNG" alt="清除浮动"><br>这里是通过给父级添加属性’display: inline-block’来实现，你也可以通过其他方法试一试。</p>
-<!-- [清除浮动的其他方法](https://fusimei.github.io/2018/08/14/%E6%B5%AE%E5%8A%A8/) -->
-<!-- [清除浮动的其他方法](./浮动.md) -->
-<h3 id="II-解决margin塌陷"><a href="#II-解决margin塌陷" class="headerlink" title="II.解决margin塌陷"></a>II.解决margin塌陷</h3><p>请看下面情况：<br>此时明明给父级和子级都设置了margin-top，但是浏览器所展现出来的只有父级的margin-top。<br><img src="/2018/08/14/关于bfc及用途/margin-top.PNG" alt="margin塌陷"></p>
-<p>代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">	width: 260px;</span><br><span class="line">	height: 260px;</span><br><span class="line">	background: green;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">	margin-top: 100px;</span><br><span class="line">	width: 150px;</span><br><span class="line">	height: 150px;</span><br><span class="line">	background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>这里涉及到盒子模型的概念。盒子模型的组成包括margin + border + padding + content。其中，在此提到的margin为复合属性，包括margin-top, margin-right, margin-bottom, margin-left。<br>浏览器后台的盒子模型如下：<br><img src="/2018/08/14/关于bfc及用途/border-box.PNG" alt="盒子模型"></p>
-<p>margin塌陷指的是margin-top，针对的是具有父子结构嵌套的元素。</p>
-<h4 id="解决margin塌陷的方法1"><a href="#解决margin塌陷的方法1" class="headerlink" title="解决margin塌陷的方法1"></a>解决margin塌陷的方法1</h4><p>如果想要父级子级的margin-top都能正常的显示，此时只需要触发父级元素的bfc属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">	width: 260px;</span><br><span class="line">	height: 260px;</span><br><span class="line">	background: green;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">	margin-top: 100px;</span><br><span class="line">	width: 150px;</span><br><span class="line">	height: 150px;</span><br><span class="line">	background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>修改后的展示如下：<br><img src="/2018/08/14/关于bfc及用途/margin-overflow.PNG" alt="解决margin塌陷"></p>
-<p>上面是通过给父级添加overflow: hidden的属性来实现的，用overflow: hidden的缺点就是：如果子级元素大于父级元素时，子级多出父级元素的部分会被隐藏。</p>
-<p>当子级溢出部分没有被隐藏时，实际展示效果如下：<br><img src="/2018/08/14/关于bfc及用途/overflow.PNG" alt="元素溢出"></p>
-<p>此时和上面不同的只是使子级元素的宽度大于父级，多出的部分会超出父级正常显示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">	width: 260px;</span><br><span class="line">	height: 260px;</span><br><span class="line">	background: green;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">	margin-top: 100px;</span><br><span class="line">	width: 300px;</span><br><span class="line">	height: 150px;</span><br><span class="line">	background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>给父级设置overflow：hidden属性后，浏览器显示如下：<br><img src="/2018/08/14/关于bfc及用途/bad-overflow.PNG" alt="overflow弊端"><br>相应代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">	width: 260px;</span><br><span class="line">	height: 260px;</span><br><span class="line">	background: green;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">	margin-top: 100px;</span><br><span class="line">	width: 300px;</span><br><span class="line">	height: 150px;</span><br><span class="line">	background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>此时虽然能解决margin塌陷带来的坏处，但是却使子级多出父级的部分溢出隐藏，如果想要使子级多出的部分正常显示，就可以采取其他的方法来触发元素的bfc属性。</p>
-<h4 id="解决margin塌陷的方法2"><a href="#解决margin塌陷的方法2" class="headerlink" title="解决margin塌陷的方法2"></a>解决margin塌陷的方法2</h4><p>通过计算解决：当子级元素的margin-top大于父级时，实际展示效果将以子级的margin-top为准，子级会带动父级一起向下运动。<br><img src="/2018/08/14/关于bfc及用途/computed-margin.PNG" alt="计算解决margin塌陷"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">  .father &#123;</span><br><span class="line">	margin-top: 200px;</span><br><span class="line">	width: 260px;</span><br><span class="line">	height: 260px;</span><br><span class="line">	background: green;</span><br><span class="line">  &#125;</span><br><span class="line">  .son &#123;</span><br><span class="line">	margin-top: 300px;</span><br><span class="line">	width: 300px;</span><br><span class="line">	height: 150px;</span><br><span class="line">	background: orange;</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
-<p>以上代码通过计算来解决margin塌陷，实际上在浏览器中最终所展示的margin-top为300px,而且不会影响到子级元素的大小。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1908,7 +1941,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1930,7 +1963,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
