@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js,类型转换," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="做所有不动声色的努力">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2018/09/index.html">
+<meta name="description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换那么也会有隐式类型转换。 隐式类型转换转换为数字类型。以下几种情况会有数据的默认转换： isNaN()翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为数字来进行比较">
+<meta name="keywords" content="js,类型转换">
+<meta property="og:type" content="article">
+<meta property="og:title" content="隐式类型转换">
+<meta property="og:url" content="http://yoursite.com/2018/09/24/隐式类型转换/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="做所有不动声色的努力">
+<meta property="og:description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换那么也会有隐式类型转换。 隐式类型转换转换为数字类型。以下几种情况会有数据的默认转换： isNaN()翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为数字来进行比较">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-28T15:47:03.615Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
-<meta name="twitter:description" content="做所有不动声色的努力">
+<meta name="twitter:title" content="隐式类型转换">
+<meta name="twitter:description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换那么也会有隐式类型转换。 隐式类型转换转换为数字类型。以下几种情况会有数据的默认转换： isNaN()翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为数字来进行比较">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2018/09/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/09/24/隐式类型转换/"/>
 
 
 
 
 
-  <title>归档 | Blog</title>
+  <title>隐式类型转换 | Blog</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right page-archive">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
    <a href="https://github.com/">
       <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
@@ -274,296 +276,203 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/隐式类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">隐式类型转换</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T10:34:07+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共计 14 篇日志。 继续努力。
-      </span>
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
 
-      
-
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2018">2018</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/24/隐式类型转换/" itemprop="url">
-              
-                <span itemprop="name">隐式类型转换</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-24T10:34:07+08:00"
-              content="2018-09-24" >
-          09-24
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/23/类型转换/" itemprop="url">
-              
-                <span itemprop="name">强制类型转换</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-23T12:20:26+08:00"
-              content="2018-09-23" >
-          09-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/22/typeof返回值/" itemprop="url">
-              
-                <span itemprop="name">typeof返回值</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-22T16:50:55+08:00"
-              content="2018-09-22" >
-          09-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？</p>
+<p>上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换那么也会有隐式类型转换。</p>
+<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>转换为数字类型。以下几种情况会有数据的默认转换：</p>
+<h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN()"></a>isNaN()</h3><p>翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为数字来进行比较。</p>
+<p>数字类型包括四个值：具体的数字，NaN，Infinity，-Infinity</p>
+<p>如果转换为数字时，返回的值刚好是NaN，则调用isNaN()时返回true。</p>
+<p>具体步骤为：isNaN(demo) =&gt; Number(demo) =&gt; NaN =&gt; true / false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isNaN(23)       //false</span><br><span class="line">isNaN(&apos;a&apos;)      //true</span><br><span class="line">isNaN(NaN)      //true</span><br><span class="line">isNaN(null)     //false</span><br></pre></td></tr></table></figure>
+<p>当调用Number()数据是怎么转换的，可以参考上一篇(强制类型转换)。Number(null)值为0</p>
+<h3 id="–"><a href="#–" class="headerlink" title="++/–, +/-"></a>++/–, +/-</h3><p>++ / – 分为前置++和后置++，区别在于变量的输出顺序不同。<br>+/- 为一元正负运算符，并不是通常所说的数学中的加和减。即+4, -3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+3      //3</span><br><span class="line">-5      //-5</span><br><span class="line">+&apos;a&apos;    //NaN</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;a&apos;;</span><br><span class="line">console.log(str ++);    //NaN</span><br></pre></td></tr></table></figure>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><p>-, * , / , %(取余)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;2&quot; * &quot;a&quot;   //NaN</span><br><span class="line">8 - &quot;2&quot;     //6</span><br><span class="line">5 / &quot;3&quot;     //1.6666666666666667</span><br><span class="line">5 % &quot;3&quot;     //2</span><br></pre></td></tr></table></figure>
+<p>细心的同学可能会发现，比较运算符里并没有 + 号，这是因为 + 号遇到字符串时，相当于字符串的拼接，他会把加号另外一边不是字符串的值转化为字符串和已知的字符串进行拼接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 + &quot;&quot;      //&quot;2&quot;</span><br><span class="line">2 + &quot; &quot;     //&quot;2 &quot;</span><br><span class="line">2 + &quot;5&quot;     //&quot;25&quot;</span><br></pre></td></tr></table></figure>
+<p>空串””和空格字符串” “的区别在于其布尔值，空串””为false，空格字符串” “为true</p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>&amp;&amp;(与) ， ||(或) ， !(非)输出运算结果。运算结果为真实的值<br>(1) &amp;&amp; (2)：找到假为止。他会先取出(1)表达式的值，看是否为真。<br>(1)为真,继续执行(2)，不管(2)结果为真还是为假都输出(2)表达式的运算结果。<br>(1)为假，输出(1)表达式的运算结果。</p>
+<p>(1) || (2)：找到真为止。他会先取出(1)表达式的值，看是否为真。<br>(1)为真，输出(1)表达式的运算结果。<br>(1)为假，继续执行(2)，不管(2)结果为真还是为假都输出(2)表达式的运算结果。</p>
+<p>!(1)：取反。(1)运算结果为真时，取反则为假。(1)为假，取反为真。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 &amp;&amp; 2          //2</span><br><span class="line">&quot;a&quot; || NaN      //&quot;a&quot;</span><br><span class="line">!4              //false</span><br></pre></td></tr></table></figure>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>‘&gt; , &lt; , &gt;= , &lt;= , == , !=’比较结果为布尔值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 == &quot;1&quot;                //true</span><br><span class="line">&quot;a&quot; &gt; &quot;b&quot;               //false</span><br><span class="line">0 == &quot;&quot;                 //true</span><br><span class="line">0 == false              //true</span><br><span class="line">undefined == null       //undefined == null</span><br><span class="line">NaN == NaN              //NaN == NaN</span><br></pre></td></tr></table></figure>
+<p>字符串和数字比较时，会将字符串转化为数字进行比较。字符串比较时，比较的为ASCII值。</p>
+<p>根据undefined和null的特殊性质(undefined和null不等于0，不大于0，不小于0)，所以让他们两个相等。</p>
+<p>NaN不等于任何值，包括他自身。</p>
+<h2 id="不发生类型转换"><a href="#不发生类型转换" class="headerlink" title="不发生类型转换"></a>不发生类型转换</h2><p>===(绝对等于) , !==(绝对不等于)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 == &quot;1&quot;    //true</span><br><span class="line">1 === &quot;1&quot;   //false</span><br></pre></td></tr></table></figure></p>
+<h2 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">11 + &quot;11&quot;</span><br><span class="line">undefined == NaN</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;abc&quot;;</span><br><span class="line">str += 1;</span><br><span class="line">var test = typeof(str);</span><br><span class="line">if (test.length == 6) &#123;</span><br><span class="line">    test.sign = &quot;typeof的返回值可能为string&quot;</span><br><span class="line">&#125;</span><br><span class="line">console.log(test.sign);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = false + 1;</span><br><span class="line">console.log(str);</span><br><span class="line"></span><br><span class="line">var demo = false == 1;</span><br><span class="line">console.log(demo);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">if (typeof(a) &amp;&amp; -true + (+undefined) + &quot;&quot;) &#123;</span><br><span class="line">    console.log(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if (11 + &quot;11&quot; * 2 == 33) &#123;</span><br><span class="line">    console.log(&quot;smile&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">!!&quot; &quot; + !!&quot;&quot; - !!false || console.log(&apos;no&apos;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[3 &lt; 1 &lt; 2, 1 &gt; 2 &gt; 3];</span><br><span class="line"></span><br><span class="line">[3 &lt; 1 &lt; 2, 3 &lt; 1 &lt;= 0];</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof typeof(undefined);</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/21/行内元素和块级元素/" itemprop="url">
-              
-                <span itemprop="name">行内元素和块级元素</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-21T19:40:54+08:00"
-              content="2018-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/21/数组扁平化/" itemprop="url">
-              
-                <span itemprop="name">数组扁平化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-21T12:24:39+08:00"
-              content="2018-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/03/二分查找法/" itemprop="url">
-              
-                <span itemprop="name">二分查找法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-03T15:27:45+08:00"
-              content="2018-09-03" >
-          09-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/01/快速排序法/" itemprop="url">
-              
-                <span itemprop="name">快速排序法</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T20:41:35+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/类型转换/" rel="tag"># 类型转换</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/23/类型转换/" rel="next" title="强制类型转换">
+                <i class="fa fa-chevron-left"></i> 强制类型转换
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -571,6 +480,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzkyNS8xNDQ1NQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -591,8 +509,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -656,6 +583,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#隐式类型转换"><span class="nav-number">1.</span> <span class="nav-text">隐式类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#isNaN"><span class="nav-number">1.1.</span> <span class="nav-text">isNaN()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#–"><span class="nav-number">1.2.</span> <span class="nav-text">++/–, +/-</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算数运算符"><span class="nav-number">1.3.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">1.4.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较运算符"><span class="nav-number">1.5.</span> <span class="nav-text">比较运算符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不发生类型转换"><span class="nav-number">2.</span> <span class="nav-text">不发生类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小练习"><span class="nav-number">3.</span> <span class="nav-text">小练习</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -802,6 +745,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -830,6 +777,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="在js里面声明变量时并没有直接定义该变量是什么类型，变量的类型由为他赋值时所定义的值所决定(var num = 123,定义了该变量为数字)。 但是有这么一种情况，当我们需要的变量是一个数字类型，但用户输入时给定的却是一个字符串。除了给用户提示输入正确的数据类型外，是否可以从前端的角度做一些关于数据类型的处理？ 这就出现了数据类型的转换。当一个变量从某种类型转化为另外一种类型时，则可以调用对应变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-23T15:06:29.573Z">
+<meta property="og:updated_time" content="2018-09-24T02:33:00.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="强制类型转换">
 <meta name="twitter:description" content="在js里面声明变量时并没有直接定义该变量是什么类型，变量的类型由为他赋值时所定义的值所决定(var num = 123,定义了该变量为数字)。 但是有这么一种情况，当我们需要的变量是一个数字类型，但用户输入时给定的却是一个字符串。除了给用户提示输入正确的数据类型外，是否可以从前端的角度做一些关于数据类型的处理？ 这就出现了数据类型的转换。当一个变量从某种类型转化为另外一种类型时，则可以调用对应变量">
@@ -408,7 +408,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;112&apos;, 2)      //3</span><br><span class="line">parseInt(&apos;121&apos;, 2)      //1</span><br></pre></td></tr></table></figure>
 <p>当要转换的数据超出了该进制所包含的值时，会从超出进制的数据位对该数据进行截取，再对截取后的数据调用该方法进行转换。</p>
 <p>将’112’的二进制转换为十进制的数据时，因为二进制只能包括0和1，所以会对’112’进行截取，截取后的数据为’11’，再将’11’转化为十进制</p>
-<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><p>将字符串转换为数字类型，parseInt()不同的是：<br>(1)可以在parseInt()的基础上保留一个小数点，即可以将数据转化为浮点型(含有小数)<br>(2)没有第二个参数，即没有进制间的转换</p>
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><p>将字符串转换为数字类型，parseInt()不同的是：<br>(1)可以在parseInt()的基础上保留一个小数点，即可以将数据转化为浮点型(含有小数)并去除无效的0<br>(2)没有第二个参数，即没有进制间的转换</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;123.020&apos;)       //123.02</span><br><span class="line">parseFloat(&apos;123.020.21&apos;)    //123.02</span><br></pre></td></tr></table></figure>
 <p>以上三个方法都是将变量转换为数字。</p>
 <h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean()"></a>Boolean()</h3><p>将变量转换为布尔值(0或1)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Boolean(123)    //true</span><br><span class="line">Boolean(&quot;&quot;)     //false</span><br></pre></td></tr></table></figure></p>
@@ -426,7 +426,7 @@
 <p>再看以下例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3.toString()        //error</span><br><span class="line">3..toString()       //&quot;3&quot;</span><br><span class="line">3...toString()      //error, Unexpected token .</span><br></pre></td></tr></table></figure></p>
 <p>3..toString()中，3..相当于3.0来调用toString()的方法进行转换。</p>
 <p>换句话说就是，如果数字直接调用toString()方法时，只有数字类型为小数(浮点型)才不会报错。否则都应该以变量声明的形式来调用。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3.1.toString()  //&quot;3.1&quot;</span><br><span class="line">3.0.toString()  //&quot;3&quot;</span><br><span class="line">3.900.toString()  //&quot;3.9&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3.1.toString()      //&quot;3.1&quot;</span><br><span class="line">3.0.toString()      //&quot;3&quot;</span><br><span class="line">3.900.toString()    //&quot;3.9&quot;</span><br></pre></td></tr></table></figure>
 <p>该方法可以去除小数点后面无效的0</p>
 <p>再看其他类型的数据调用该方法时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">true.toString()             //&quot;true&quot;</span><br><span class="line">undefined.toString()        //err</span><br><span class="line">[1,2].toString()            //&quot;1,2&quot;</span><br><span class="line">&#123;a: 1, b: 2&#125;.toString()     //err</span><br></pre></td></tr></table></figure></p>
 <p>通过以上例子我们发现，当数组调用toString()方法时，会将数组直接转换为字符串。</p>
@@ -477,6 +477,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/09/24/隐式类型转换/" rel="prev" title="隐式类型转换">
+                隐式类型转换 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -562,7 +566,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
