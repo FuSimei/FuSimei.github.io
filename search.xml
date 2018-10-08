@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[笔试易错题整理]]></title>
     <url>%2F2018%2F10%2F08%2F%E7%AC%94%E8%AF%95%E6%98%93%E9%94%99%E9%A2%98%E6%95%B4%E7%90%86%2F</url>
-    <content type="text"><![CDATA[答笔试就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。 下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。 写出下面程序的运行结果(1)123456789101112131415var str = &apos;hello&apos;;var fn1 = function () &#123; console.log(str); //HELLO&#125;str = &apos;HELLO&apos;;var fn2 = function () &#123; var str = &apos;world&apos;; fn1(); str = &apos;WORLD&apos;;&#125; fn2(); 函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中函数this时，才需要注意函数的执行环境)。 函数fn1是在全局定义的，且定义时函数内部并没有定义变量，他能访问到的变量的作用域是全局window下的。 (2)12345678let message = &quot;Hi&quot;;let start = new Date();wait = (message) =&gt; &#123; setTimeout(() =&gt; console.log(message), 1000);&#125;wait(&quot;Hello&quot;);while (new Date() - start &lt; 1000) &#123;&#125;;console.log(&quot;Tom&quot;); 输出结果： (3)123456789var a = [6, 7, 8];var b = a; //[6, 7, 8](function (x) &#123; x.length = 0; //[],把数组a清空 x.push(2, 3, 4, 5);&#125;(a))console.log(a); //[2, 3, 4, 5]console.log(b); //[2, 3, 4, 5] 数组存在栈里，复制时，复制的是引用值的地址。当一个值发生改变时，另外一个值也会发生改变。x.length = 0可以将数组清空为空数组。 (4)123456789101112function func () &#123; var i = 0; return function () &#123; console.log(i++); &#125;&#125;var func1 = func(), func2 = func();func1(); //0func1(); //1func2(); //0 考察闭包。一个函数(func)的执行结果是返回另外一个函数(return function ())，返回出去的函数任然能访问到原来的作用域链(变量i)。 func1和func2保存的都为func的执行结果，即返回出去的函数return function，func1和func2互不影响。 func1()执行时，第一次访问到的i为函数func里面声明的变量i。第二次执行时，访问到的i为第一次func1()的执行结果，即i++。 需要注意前置++和后置++的执行顺序，前置++为先++再输出，后置++为先输出后++。这里如果改为console.log(i++);输出顺序应该是1, 2, 1 (5)类似考察闭包的还有：1234567891011121314function f1 () &#123; var n = 99; add = function () &#123; n += 1; &#125; function f2 () &#123; console.log(n); &#125; return f2;&#125;var result = f1();result(); //99add();result(); //100 函数f1()的执行结果是返回f2，f2任能访问到原来的作用域链。add执行时与执行环境无关，看原来的定义环境，能访问到i。所以第二次result()的执行结果为add()执行后的i (6)123456789101112let i = 0;var j = 0;var k = 0;for(; i &lt; 10, j &lt; 6; i++, j++) &#123; setTimeout(() =&gt; &#123; k = i + j; console.log(i, j, k) &#125;, 0)&#125;setTimeout(() =&gt; &#123; console.log(k)&#125;, 100) 当for循环和定时器(异步操作)联系在一起时，一定要考虑到闭包问题!!!!!!! for循环每次的执行结果是返回一个定时器setTimeout()。当j == 6时，是for循环终止的条件，此时i == j == 6;k = i + j。访问到的i, k, j都是满足for循环终止条件的最后一次的值。 输出结果： (7)1234567891011121314151617181920var id = 21;var obj = &#123; id: 22&#125;function fn1 () &#123; setTimeout(function () &#123; console.log(this.id); &#125;)&#125;fn1(); //21fn1.call(obj); //21function fn2 () &#123; setTimeout(() =&gt; &#123; console.log(this.id); &#125;)&#125;fn2(); //21fn2.call(obj); //22 关于this指向，call()第一个参数用来改变this指向，后面的值为实参。 关于this指向：(8)123456789101112function foo (num) &#123; console.log(num); console.log(&apos;foo&apos;, this.count++);&#125;foo.count = 0;for (var i = 0; i &lt; 8; i++) &#123; if(i &gt; 3) &#123; foo(i); &#125;&#125;console.log(&apos;win&apos;, this.count); 函数foo()执行时是在for循环里即全局window下执行的，此时this指向window。this.count =&gt; window.count，用window.count的方式访问一个全局没有声明的变量时，会把该变量当做全局window的属性挂载到全局window下，此时访问该变量的值为undefined。 ++默认会有隐式转换，即把变量转换为数字类型再进行计算，此时undefined =&gt; NaN，所以打印出的this.count为NaN. this.count一共经历的转换过程为：this.count =&gt; window.count =&gt; undefined =&gt; NaN. 执行结果： 当变量在全局已经声明时：1234567891011121314var count = 0;function foo (num) &#123; console.log(num); console.log(&apos;foo&apos;, this.count++);&#125;foo.count = 0;for (var i = 0; i &lt; 8; i++) &#123; if(i &gt; 3) &#123; foo(i); &#125;&#125;console.log(&apos;win&apos;, this.count); 用window.count的方式访问一个全局已经声明的变量时，window.count =&gt; count，此时直接找到count的值进行相应计算即可。 执行结果： (9)1234567let x = &#123;a: 3&#125;;let obj = &#123; __proto__: null, b: 2, ...x &#125;console.log(obj); 输出结果如下： (10)1234let [x, y, ...z] = [&apos;a&apos;];console.log(x); //aconsole.log(y); //undefinedconsole.log(z); //[] (11)123456var b = 3;(function () &#123; b = 4; var b = 5;&#125;)();console.log(b); //3 在全局作用域声明b = 3;在函数里面也声明了b, 根据函数的执行顺序，声明b时，其值为undefined。当b = 4时，会在函数里面查找是否声明过变量b,如果声明过，则将函数里面b的值由undefined转换为4。 这并不是通常所说的在函数里面没有var则代表隐式声明全局作用域b。当函数里面没有声明过b时，则为隐式声明全局变量b。如下： 123456var b = 3;(function () &#123; b = 4; var c = 5;&#125;)();console.log(b); //4 (12)123456789101112131415var foo = &apos;hello&apos;;(function () &#123; var foo = foo || &apos;world&apos;; console.log(foo); //world&#125;)();(function (fn) &#123; var foo = fn || &apos;world&apos;; console.log(foo); //hello&#125;)(foo);(function () &#123; console.log(foo); //undefined var foo = foo || &apos;world&apos;;&#125;)(); 此题与函数执行时查找变量的顺序有关。(1) || (2)找到真为止，(1)为假时，继续执行(2), 并把(2)的计算结果输出。]]></content>
+    <content type="text"><![CDATA[答笔试就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。 下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。 写出下面程序的运行结果(1)函数的执行环境123456789101112131415var str = &apos;hello&apos;;var fn1 = function () &#123; console.log(str); //HELLO&#125;str = &apos;HELLO&apos;;var fn2 = function () &#123; var str = &apos;world&apos;; fn1(); str = &apos;WORLD&apos;;&#125; fn2(); 函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中函数this时，才需要注意函数的执行环境)。 函数fn1是在全局定义的，且定义时函数内部并没有定义变量，他能访问到的变量的作用域是全局window下的。 (2)定时器问题12345678let message = &quot;Hi&quot;;let start = new Date();wait = (message) =&gt; &#123; setTimeout(() =&gt; console.log(message), 1000);&#125;wait(&quot;Hello&quot;);while (new Date() - start &lt; 1000) &#123;&#125;;console.log(&quot;Tom&quot;); 输出结果： (3)数组的复制及清空123456789var a = [6, 7, 8];var b = a; //[6, 7, 8](function (x) &#123; x.length = 0; //[],把数组a清空 x.push(2, 3, 4, 5);&#125;(a))console.log(a); //[2, 3, 4, 5]console.log(b); //[2, 3, 4, 5] 数组存在栈里，复制时，复制的是引用值的地址。当一个值发生改变时，另外一个值也会发生改变。x.length = 0可以将数组清空为空数组。 (4)闭包123456789101112function func () &#123; var i = 0; return function () &#123; console.log(i++); &#125;&#125;var func1 = func(), func2 = func();func1(); //0func1(); //1func2(); //0 考察闭包。一个函数(func)的执行结果是返回另外一个函数(return function ())，返回出去的函数任然能访问到原来的作用域链(变量i)。 func1和func2保存的都为func的执行结果，即返回出去的函数return function，func1和func2互不影响。 func1()执行时，第一次访问到的i为函数func里面声明的变量i。第二次执行时，访问到的i为第一次func1()的执行结果，即i++。 需要注意前置++和后置++的执行顺序，前置++为先++再输出，后置++为先输出后++。这里如果改为console.log(i++);输出顺序应该是1, 2, 1 (5)类似考察闭包的还有：1234567891011121314function f1 () &#123; var n = 99; add = function () &#123; n += 1; &#125; function f2 () &#123; console.log(n); &#125; return f2;&#125;var result = f1();result(); //99add();result(); //100 函数f1()的执行结果是返回f2，f2任能访问到原来的作用域链。add执行时与执行环境无关，看原来的定义环境，能访问到i。所以第二次result()的执行结果为add()执行后的i (6)定时器里的闭包123456789101112let i = 0;var j = 0;var k = 0;for(; i &lt; 10, j &lt; 6; i++, j++) &#123; setTimeout(() =&gt; &#123; k = i + j; console.log(i, j, k) &#125;, 0)&#125;setTimeout(() =&gt; &#123; console.log(k)&#125;, 100) ！！！！当for循环和定时器(异步操作)联系在一起时，一定要考虑到闭包问题。 for循环每次的执行结果是返回一个定时器setTimeout()。当j == 6时，是for循环终止的条件，此时i == j == 6;k = i + j。访问到的i, k, j都是满足for循环终止条件的最后一次的值。 输出结果： (7)关于this指向1234567891011121314151617181920var id = 21;var obj = &#123; id: 22&#125;function fn1 () &#123; setTimeout(function () &#123; console.log(this.id); &#125;)&#125;fn1(); //21fn1.call(obj); //21function fn2 () &#123; setTimeout(() =&gt; &#123; console.log(this.id); &#125;)&#125;fn2(); //21fn2.call(obj); //22 关于this指向，call()第一个参数用来改变this指向，后面的值为实参。 (8)全局环境下的this123456789101112function foo (num) &#123; console.log(num); console.log(&apos;foo&apos;, this.count++);&#125;foo.count = 0;for (var i = 0; i &lt; 8; i++) &#123; if(i &gt; 3) &#123; foo(i); &#125;&#125;console.log(&apos;win&apos;, this.count); 函数foo()执行时是在for循环里即全局window下执行的，此时this指向window。this.count =&gt; window.count，用window.count的方式访问一个全局没有声明的变量时，会把该变量当做全局window的属性挂载到全局window下，此时访问该变量的值为undefined。 ++默认会有隐式转换，即把变量转换为数字类型再进行计算，此时undefined =&gt; NaN，所以打印出的this.count为NaN. this.count一共经历的转换过程为：this.count =&gt; window.count =&gt; undefined =&gt; NaN. 执行结果： 当变量在全局已经声明时：1234567891011121314var count = 0;function foo (num) &#123; console.log(num); console.log(&apos;foo&apos;, this.count++);&#125;foo.count = 0;for (var i = 0; i &lt; 8; i++) &#123; if(i &gt; 3) &#123; foo(i); &#125;&#125;console.log(&apos;win&apos;, this.count); 用window.count的方式访问一个全局已经声明的变量时，window.count =&gt; count，此时直接找到count的值进行相应计算即可。 执行结果： (9)对象的解构赋值及原型链1234567let x = &#123;a: 3&#125;;let obj = &#123; __proto__: null, b: 2, ...x &#125;console.log(obj); 输出结果如下： (10)数组的解构赋值1234let [x, y, ...z] = [&apos;a&apos;];console.log(x); //aconsole.log(y); //undefinedconsole.log(z); //[] (11)函数执行时的预编译123456var b = 3;(function () &#123; b = 4; var b = 5;&#125;)();console.log(b); //3 在全局作用域声明b = 3;在函数里面也声明了b, 根据函数的执行顺序，声明b时，其值为undefined。当b = 4时，会在函数里面查找是否声明过变量b,如果声明过，则将函数里面b的值由undefined转换为4。 这并不是通常所说的在函数里面没有var则代表隐式声明全局作用域b。当函数里面没有声明过b时，则为隐式声明全局变量b。如下： 123456var b = 3;(function () &#123; b = 4; var c = 5;&#125;)();console.log(b); //4 (12)预编译和逻辑运算符123456789101112131415var foo = &apos;hello&apos;;(function () &#123; var foo = foo || &apos;world&apos;; console.log(foo); //world&#125;)();(function (fn) &#123; var foo = fn || &apos;world&apos;; console.log(foo); //hello&#125;)(foo);(function () &#123; console.log(foo); //undefined var foo = foo || &apos;world&apos;;&#125;)(); 此题与函数执行时查找变量的顺序有关。(1) || (2)找到真为止，(1)为假时，继续执行(2), 并把(2)的计算结果输出。]]></content>
       <categories>
         <category>易错点整理</category>
       </categories>
@@ -83,8 +83,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>Array</tag>
+        <tag>js</tag>
         <tag>Object</tag>
       </tags>
   </entry>
@@ -96,8 +96,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>Array</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -108,8 +108,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>Array</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -120,8 +120,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>Array</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
@@ -132,8 +132,8 @@
         <category>数组的操作</category>
       </categories>
       <tags>
-        <tag>js</tag>
         <tag>Array</tag>
+        <tag>js</tag>
       </tags>
   </entry>
   <entry>
