@@ -382,7 +382,7 @@
       
         
           
-            <p>答笔试就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。</p>
+            <p>答笔试题就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。</p>
 <p>下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。</p>
 <p>写出下面程序的运行结果<br>(1)函数的执行环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">var fn1 = function () &#123;</span><br><span class="line">    console.log(str);       //HELLO</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">str = &apos;HELLO&apos;;</span><br><span class="line"></span><br><span class="line">var fn2 = function () &#123;</span><br><span class="line">    var str = &apos;world&apos;;</span><br><span class="line">    fn1();</span><br><span class="line">    str = &apos;WORLD&apos;;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line">fn2();</span><br></pre></td></tr></table></figure></p>
 <p>函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中函数this时，才需要注意函数的执行环境)。</p>
