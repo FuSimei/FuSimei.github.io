@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="做所有不动声色的努力">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="做所有不动声色的努力">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Blog">
+<meta name="twitter:description" content="做所有不动声色的努力">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+   <a href="https://github.com/">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub">
+    </a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            联系我
+          </a>
+        </li>
+      
+
+
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/11/js中的模块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/11/js中的模块/" itemprop="url">js中的模块</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T22:11:56+08:00">
+                2018-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/模块/" itemprop="url" rel="index">
+                    <span itemprop="name">模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在一个项目中，可能同一个功能会在不同的地方用到过，为了节约开发成本，于是我们主张模块化开发。</p>
+<p>这样不但使重复的功能可以直接复用，而且避免了多人协作开发时引入同名变量造成错误的尴尬。</p>
+<p>在js中模块通常有两种形式，函数模块和ES6中的模块。</p>
+<h2 id="函数模块"><a href="#函数模块" class="headerlink" title="函数模块"></a>函数模块</h2><p>在js中有这样的概念，主张语义化开发，尽可能少的暴露全局变量。这样做的原因是：</p>
+<p>(1)避免全局变量污染。在同一个文件里面定义多个同名的变量可能会导致变量覆盖，以致于调用的方法错误。</p>
+<p>(2)优化代码性能。浏览器在处理时，会把定义在全局的变量挂载到window的属性下，每次查找变量时，会依次查找window下的属性，过多的全局变量会导致查找变量的时间越来越长。</p>
+<p>所以在js中就有了用函数来封闭作用域的现象。</p>
+<p>函数模块就是把要实现的功能封闭在一个函数里，最后导出一个接口来供外部环境调用。他需要满足以下两个条件：</p>
+<p>(1)必须有外部的封闭函数;</p>
+<p>(2)封闭函数必须返回至少一个内部函数。</p>
+<p>具体的举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function func () &#123;</span><br><span class="line">    var n = 1;</span><br><span class="line">    var arr = [8, 5, 6]</span><br><span class="line">    function add() &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    function arrSort() &#123;</span><br><span class="line">        console.log(arr.sort());</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        add: add,</span><br><span class="line">        arrSort: arrSort</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = func();</span><br><span class="line">foo.add();          //2</span><br><span class="line">foo.arrSort();      //[5, 6, 8]</span><br></pre></td></tr></table></figure></p>
+<p>这个返回的对象中含有对内部函数的引用。内部数据变量仍然是隐藏的私有状态(只有函数内部可以被访问到)。</p>
+<p>在这里将返回的对象赋值给foo, 因此就可以通过访问对象属性名的方式来访问到函数里面方法。</p>
+<p>从模块中返回一个对象并不是必须的，也可以直接返回一个内部函数。</p>
+<p>上面是通过函数调用的方式将返回的对象赋值给一个外部变量来调用执行。该方法可以被调用多次，执行多次。</p>
+<p>如果只是想只执行一遍函数的运算过程，保留函数的运行结果来调用的话，可以选择立即执行函数。</p>
+<p>代码修改如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var foo = (function () &#123;</span><br><span class="line">    var n = 1;</span><br><span class="line">    var arr = [8, 5, 6]</span><br><span class="line">    function add() &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    function arrSort() &#123;</span><br><span class="line">        console.log(arr.sort());</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        add: add,</span><br><span class="line">        arrSort: arrSort</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">foo.add();          //2</span><br><span class="line">foo.arrSort();      //[5, 6, 8]</span><br></pre></td></tr></table></figure></p>
+<p>当想要给函数传参时，也是像以前立即函数正常的处理逻辑。</p>
+<h2 id="ES6的模块"><a href="#ES6的模块" class="headerlink" title="ES6的模块"></a>ES6的模块</h2><p>通过上面的内容我们了解到，所谓模块大概就是封装一个接口，导出一个变量(接口)来实现的。在ES6中也是一样，只不过可能导入导出的方式发生了改变。</p>
+<p>ES6中的模块必须被定义在一个独立的文件中(一个文件一个模块)，浏览器在加载时可以同步的导入模块。</p>
+<p>具体举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//myInform.js文件</span><br><span class="line">function person (name) &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125;</span><br><span class="line">export person;</span><br><span class="line"></span><br><span class="line">//sayHello.js文件</span><br><span class="line">import person from &quot;myInform&quot;;</span><br><span class="line"></span><br><span class="line">var myName = &apos;fs&apos;;</span><br><span class="line">function hello () &#123;</span><br><span class="line">    console.log(&apos;Hello &apos; + person(myName));</span><br><span class="line">&#125;</span><br><span class="line">export hello;</span><br><span class="line"></span><br><span class="line">//all.js文件</span><br><span class="line">module myInform from &quot;myInform&quot;;</span><br><span class="line">module sayHello from &quot;sayHello&quot;;</span><br><span class="line"></span><br><span class="line">console.log(myInform.person(&apos;ll&apos;));   //ll</span><br><span class="line">sayHello.hello();       //Hello fs</span><br></pre></td></tr></table></figure></p>
+<p>import可以将模块中的一个或多个API导入到当前的作用域中，并分别绑定在一个变量上(person)。</p>
+<p>module会将整个模块的API导入并绑定到一个变量上(myInform, sayHello)。</p>
+<p>export会将当前模块的一个接口(变量，函数)导出为公共API。</p>
+<h2 id="函数模块和ES6模块的区别"><a href="#函数模块和ES6模块的区别" class="headerlink" title="函数模块和ES6模块的区别"></a>函数模块和ES6模块的区别</h2><p>基于上述两种形式，考虑到ES6是JS的升级版，所以肯定是在函数模块的基础上进行了优化。</p>
+<p>具体区别如下：</p>
+<p>函数模块只有在函数运行时里面的代码才会被考虑进来，因此可以在代码运行时修改代码的API。</p>
+<p>ES6模块在编译时会被导入模块的API检查是否真的存在。如果导入的API不存在，则编译器直接报错。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/08/笔试易错题整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/08/笔试易错题整理/" itemprop="url">笔试易错题整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T17:40:08+08:00">
+                2018-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/易错点整理/" itemprop="url" rel="index">
+                    <span itemprop="name">易错点整理</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>答笔试题就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。</p>
+<p>下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。</p>
+<p>写出下面程序的运行结果<br>(1)函数的执行环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">var fn1 = function () &#123;</span><br><span class="line">    console.log(str);       //HELLO</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">str = &apos;HELLO&apos;;</span><br><span class="line"></span><br><span class="line">var fn2 = function () &#123;</span><br><span class="line">    var str = &apos;world&apos;;</span><br><span class="line">    fn1();</span><br><span class="line">    str = &apos;WORLD&apos;;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line">fn2();</span><br></pre></td></tr></table></figure></p>
+<p>函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中含有this时，才需要注意函数的执行环境)。</p>
+<p>函数fn1是在全局定义的，且定义时函数内部并没有定义变量，他能访问到的变量的作用域是全局window下的。</p>
+<p>(2)Date时间问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let message = &quot;Hi&quot;;</span><br><span class="line">let start = new Date();</span><br><span class="line">wait = (message) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; console.log(message), 1000);</span><br><span class="line">&#125;</span><br><span class="line">wait(&quot;Hello&quot;);</span><br><span class="line">while (new Date() - start &lt; 1000) &#123;&#125;;</span><br><span class="line">console.log(&quot;Tom&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：<br><img src="/2018/10/08/笔试易错题整理/date-one.PNG" alt="Date输出结果"><br>首先，定时器是异步的，js是单线程的，所以定时器里面的内容会被添加到任务队列里。所以输出顺序应该是先输出Tom再输出Hello。</p>
+<p>至于为什么while循环没有陷入死循环能继续执行后面的代码呢？可以在上面代码的基础上while循环之前打印console.log(new Date() - start)会发现每次的值都不确定，大多是0，但是值一定是小于1000的。</p>
+<p>于是可以在循环里面打印出所有的值来查看，在上面的基础上修改代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while (new Date() - start &lt; 1000) &#123;</span><br><span class="line">    console.log(new Date() - start);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器看打印结果(结果只截取了部分)：<br><img src="/2018/10/08/笔试易错题整理/date-two.PNG" alt="Date输出结果"><br>会发现每次获取的结果都是不确定的，唯一可以肯定的就是结果是随获取的时间顺序递增的。我想可能是跟浏览器的刷新速度有关，浏览器每隔16ms刷新一次。</p>
+<p>(3)数组的复制及清空<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = [6, 7, 8];</span><br><span class="line">var b = a;              //[6, 7, 8]</span><br><span class="line">(function (x) &#123;</span><br><span class="line">    x.length = 0;       //[],把数组a清空</span><br><span class="line">    x.push(2, 3, 4, 5);</span><br><span class="line">&#125;(a))</span><br><span class="line"></span><br><span class="line">console.log(a);         //[2, 3, 4, 5]</span><br><span class="line">console.log(b);         //[2, 3, 4, 5]</span><br></pre></td></tr></table></figure></p>
+<p>数组存在栈里，复制时，复制的是引用值的地址。当一个值发生改变时，另外一个值也会发生改变。x.length = 0可以将数组清空为空数组。</p>
+<p>(4)闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function func () &#123;</span><br><span class="line">    var i = 0; </span><br><span class="line">    return function () &#123;</span><br><span class="line">        console.log(i++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var func1 = func(),</span><br><span class="line">    func2 = func();</span><br><span class="line">func1();        //0</span><br><span class="line">func1();        //1</span><br><span class="line">func2();        //0</span><br></pre></td></tr></table></figure></p>
+<p>考察闭包。一个函数(func)的执行结果是返回另外一个函数(return function ())，返回出去的函数任然能访问到原来的作用域链(变量i)。</p>
+<p>func1和func2保存的都为func的执行结果，即返回出去的函数return function，func1和func2互不影响。</p>
+<p>func1()执行时，第一次访问到的i为函数func里面声明的变量i。第二次执行时，访问到的i为第一次func1()的执行结果，即i++。</p>
+<p>需要注意前置++和后置++的执行顺序，前置++为先++再输出，后置++为先输出后++。这里如果改为console.log(++i);输出顺序应该是1, 2, 1</p>
+<p>(5)类似考察闭包的还有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function f1 () &#123;</span><br><span class="line">    var n = 99;</span><br><span class="line">    add = function () &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">    &#125;</span><br><span class="line">    function f2 () &#123;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    return f2;</span><br><span class="line">&#125;</span><br><span class="line">var result = f1();</span><br><span class="line">result();        //99</span><br><span class="line">add();</span><br><span class="line">result();        //100</span><br></pre></td></tr></table></figure></p>
+<p>函数f1()的执行结果是返回f2，f2任能访问到原来的作用域链。add执行时与执行环境无关，看原来的定义环境，能访问到i。所以第二次result()的执行结果为add()执行后的i</p>
+<p>(6)定时器里的闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let i = 0;</span><br><span class="line">var j = 0;</span><br><span class="line">var k = 0;</span><br><span class="line">for(; i &lt; 10, j &lt; 6; i++, j++) &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        k = i + j;</span><br><span class="line">        console.log(i, j, k)</span><br><span class="line">    &#125;, 0)</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(k)</span><br><span class="line">&#125;, 100)</span><br></pre></td></tr></table></figure></p>
+<p>！！！！当for循环和定时器(异步操作)联系在一起时，一定要考虑到闭包问题。</p>
+<p>for循环每次的执行结果是返回一个定时器setTimeout()。当j == 6时，是for循环终止的条件，此时i == j == 6;k = i + j。访问到的i, k, j都是满足for循环终止条件的最后一次的值。</p>
+<p>输出结果：<br><img src="/2018/10/08/笔试易错题整理/setTimeout-one.PNG" alt="定时器的闭包问题"></p>
+<p>(7)关于this指向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var id = 21;</span><br><span class="line">var obj = &#123;</span><br><span class="line">    id: 22</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function fn1 () &#123;</span><br><span class="line">    setTimeout(function () &#123;</span><br><span class="line">        console.log(this.id);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">fn1();              //21</span><br><span class="line">fn1.call(obj);      //21</span><br><span class="line"></span><br><span class="line">function fn2 () &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        console.log(this.id);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">fn2();              //21</span><br><span class="line">fn2.call(obj);      //22</span><br></pre></td></tr></table></figure></p>
+<p>关于this指向，call()第一个参数用来改变this指向，后面的值为实参。</p>
+<p>(8)全局环境下的this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function foo (num) &#123;</span><br><span class="line">    console.log(num);</span><br><span class="line">    console.log(&apos;foo&apos;, this.count++);</span><br><span class="line">&#125;</span><br><span class="line">foo.count = 0;</span><br><span class="line">for (var i = 0; i &lt; 8; i++) &#123;</span><br><span class="line">    if(i &gt; 3) &#123;</span><br><span class="line">      foo(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&apos;win&apos;, this.count);</span><br></pre></td></tr></table></figure></p>
+<p>函数foo()执行时是在for循环里即全局window下执行的，此时this指向window。this.count =&gt; window.count，用window.count的方式访问一个全局没有声明的变量时，会把该变量当做全局window的属性挂载到全局window下，此时访问该变量的值为undefined。</p>
+<p>++默认会有隐式转换，即把变量转换为数字类型再进行计算，此时undefined =&gt; NaN，所以打印出的this.count为NaN.</p>
+<p>this.count一共经历的转换过程为：this.count =&gt; window.count =&gt; undefined =&gt; NaN.</p>
+<p>执行结果：<br><img src="/2018/10/08/笔试易错题整理/this-one.PNG" alt="函数执行结果"></p>
+<p>当变量在全局已经声明时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var count = 0;</span><br><span class="line"></span><br><span class="line">function foo (num) &#123;</span><br><span class="line">    console.log(num);</span><br><span class="line">    console.log(&apos;foo&apos;, this.count++);</span><br><span class="line">&#125;</span><br><span class="line">foo.count = 0;</span><br><span class="line">for (var i = 0; i &lt; 8; i++) &#123;</span><br><span class="line">    if(i &gt; 3) &#123;</span><br><span class="line">      foo(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(&apos;win&apos;, this.count);</span><br></pre></td></tr></table></figure></p>
+<p>用window.count的方式访问一个全局已经声明的变量时，window.count =&gt; count，此时直接找到count的值进行相应计算即可。</p>
+<p>执行结果：<br><img src="/2018/10/08/笔试易错题整理/this-two.PNG" alt="函数执行结果"></p>
+<p>(9)对象的解构赋值及原型链<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let x = &#123;a: 3&#125;;</span><br><span class="line">let obj = &#123;</span><br><span class="line">     __proto__: null,</span><br><span class="line">    b: 2,</span><br><span class="line">    ...x </span><br><span class="line">&#125;</span><br><span class="line">console.log(obj);</span><br></pre></td></tr></table></figure></p>
+<p>输出结果如下：<br><img src="/2018/10/08/笔试易错题整理/jiegou-one.PNG" alt="解构输出结果"></p>
+<p>(10)数组的解构赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let [x, y, ...z] = [&apos;a&apos;];</span><br><span class="line">console.log(x);         //a</span><br><span class="line">console.log(y);         //undefined</span><br><span class="line">console.log(z);         //[]</span><br></pre></td></tr></table></figure></p>
+<p>(11)函数执行时的预编译<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var b = 3;</span><br><span class="line">(function () &#123;</span><br><span class="line">    b = 4; </span><br><span class="line">    var b = 5;</span><br><span class="line">&#125;)();</span><br><span class="line">console.log(b);      //3</span><br></pre></td></tr></table></figure></p>
+<p>在全局作用域声明b = 3;在函数里面也声明了b, 根据函数的执行顺序，声明b时，其值为undefined。当b = 4时，会在函数里面查找是否声明过变量b,如果声明过，则将函数里面b的值由undefined转换为4。</p>
+<p>这并不是通常所说的在函数里面没有var则代表隐式声明全局作用域b。当函数里面没有声明过b时，则为隐式声明全局变量b。如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var b = 3;</span><br><span class="line">(function () &#123;</span><br><span class="line">    b = 4; </span><br><span class="line">    var c = 5;</span><br><span class="line">&#125;)();</span><br><span class="line">console.log(b);      //4</span><br></pre></td></tr></table></figure>
+<p>(12)预编译和逻辑运算符<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var foo = &apos;hello&apos;;</span><br><span class="line">(function () &#123;</span><br><span class="line">    var foo = foo || &apos;world&apos;;</span><br><span class="line">    console.log(foo);       //world</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">(function (fn) &#123;</span><br><span class="line">    var foo = fn || &apos;world&apos;;</span><br><span class="line">    console.log(foo);       //hello</span><br><span class="line">&#125;)(foo);</span><br><span class="line"></span><br><span class="line">(function () &#123;</span><br><span class="line">    console.log(foo);       //undefined</span><br><span class="line">    var foo = foo || &apos;world&apos;;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>此题与函数执行时查找变量的顺序有关。(1) || (2)找到真为止，(1)为假时，继续执行(2), 并把(2)的计算结果输出。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/30/垂直居中对齐/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/30/垂直居中对齐/" itemprop="url">水平垂直居中对齐</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-30T17:18:05+08:00">
+                2018-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/页面布局/" itemprop="url" rel="index">
+                    <span itemprop="name">页面布局</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>实现元素的水平垂直居中对齐是页面布局中很常用的一种方法。一般要实现垂直居中的元素可以是文字，某个块级元素，或者是图片。</p>
+<h2 id="初始化页面高度"><a href="#初始化页面高度" class="headerlink" title="初始化页面高度"></a>初始化页面高度</h2><p>在开始前，需要补充的一个知识点是：如何让页面高度刚好占满屏幕高度？</p>
+<p>若想让一个div的高度与屏幕高度自适应，始终占满屏幕高度，需要从html层开始层层添加height: 100%，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    html, body&#123;</span><br><span class="line">        height:100%; </span><br><span class="line">        width:100%; </span><br><span class="line">        margin:0;</span><br><span class="line">        padding:0;</span><br><span class="line">    &#125;</span><br><span class="line">    .wrapper &#123;</span><br><span class="line">        height: 100%;</span><br><span class="line">        background: #ddd;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>html没有padding和margin，body没有padding有margin，块级元素宽度默认占满整行，所以上面的代码也可以改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    html &#123;</span><br><span class="line">        height: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    body &#123;</span><br><span class="line">        height: 100%;</span><br><span class="line">        margin: 0;</span><br><span class="line">    &#125;</span><br><span class="line">    .wrapper &#123;</span><br><span class="line">        height: 100%;</span><br><span class="line">        background: #ddd;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="行级元素的居中"><a href="#行级元素的居中" class="headerlink" title="行级元素的居中"></a>行级元素的居中</h2><h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;span&gt;要设置的文字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .wrapper &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        border: 1px solid black;</span><br><span class="line">        text-align: center;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>要居中的元素包在块级父层元素内，设置父级text-align: center;行级块元素也可以水平居中(img，input)。<br><img src="/2018/09/30/垂直居中对齐/line-one.PNG" alt="单行文本水平居中"></p>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;span&gt;要设置的文字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .wrapper &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        border: 1px solid black;</span><br><span class="line">        line-height: 100px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>此方法通过给父级(或元素本身)设置line-height等于父级的高度来实现元素的垂直居中。适用于父级高度已知时，给单行文本设置垂直居中。img标签不适用此方法。<br><img src="/2018/09/30/垂直居中对齐/height-one.PNG" alt="单行文本垂直居中"></p>
+<h3 id="水平垂直居中"><a href="#水平垂直居中" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapper&quot;&gt;</span><br><span class="line">    &lt;span&gt;要设置的文字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .wrapper &#123;</span><br><span class="line">        width: 300px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        border: 1px solid black;</span><br><span class="line">        line-height: 100px;</span><br><span class="line">        text-align: center;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<p>父级高度已知的单行文本设置水平垂直居中，通过text-align: center;和line-height等于父级高度来实现。<br><img src="/2018/09/30/垂直居中对齐/line-height-one.PNG" alt="单行文本水平垂直居中"></p>
+<h2 id="块级元素的居中"><a href="#块级元素的居中" class="headerlink" title="块级元素的居中"></a>块级元素的居中</h2><h3 id="水平居中-1"><a href="#水平居中-1" class="headerlink" title="水平居中"></a>水平居中</h3><p>(1)适用于单个块级元素，当左右边距设置为auto时可以设置水平居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    div &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        border: 1px solid black;</span><br><span class="line">        margin: 0 auto;</span><br><span class="line">      &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-inline-one.PNG" alt="单个块级元素水平居中"></p>
+<p>(2)设置元素为行级块元素，让元素根据自身大小占据空间。然后给父级设置text-align来实现子级元素在父级元素水平居中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">   .father &#123;</span><br><span class="line">        text-align: center;</span><br><span class="line">    &#125;</span><br><span class="line">    .father div &#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: orange;</span><br><span class="line">    &#125;</span><br><span class="line">    .father div:not(:last-child) &#123;</span><br><span class="line">        margin-right: 10px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>:not()除什么之外，当有多个元素时，如果给每个子级div都设置右边距时最后一个元素后边相应的也会有边距。然后总体来看就是第一个元素的左边和最后一个元素的右边剩余的大小是不一致的。所以最后一个元素不用设置右边间距。</p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-text-align.PNG" alt="块级元素水平居中"></p>
+<p>(3)flex布局，最常用的居中方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .father &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">        justify-content: center;</span><br><span class="line">    &#125;</span><br><span class="line">    .father div &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: green;</span><br><span class="line">    &#125;</span><br><span class="line">    .father div:not(:last-child) &#123;</span><br><span class="line">        margin-right: 10px;   </span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>主要就是通过给父级元素设置display: flex;属性为弹性弹性元素，然后设置主轴justify-content对齐方式为居中对齐。</p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-flex-line.PNG" alt="块级元素水平居中"></p>
+<h3 id="水平垂直居中-1"><a href="#水平垂直居中-1" class="headerlink" title="水平垂直居中"></a>水平垂直居中</h3><p>如果想让元素刚好在屏幕最中央，需要先对页面进行初始化，让div元素刚好占满屏幕高度来实现页面布局。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    html &#123;</span><br><span class="line">        height: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    body &#123;</span><br><span class="line">        height: 100%;</span><br><span class="line">        margin: 0;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在将页面初始化后，可以通过以下几种方式来实现元素的垂直水平居中。如果不想要元素在整个页面中垂直居中，可以通过调节父级元素的宽高来设置。</p>
+<p>(1)绝对定位 + 负边距实现(需要知道设置的元素的宽，高)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .father &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        height: 100%;</span><br><span class="line">        background: #ddd;</span><br><span class="line">    &#125;</span><br><span class="line">    .son &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        top: 50%;</span><br><span class="line">        left: 50%;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: red;</span><br><span class="line">        margin-top: -50px;</span><br><span class="line">        margin-left: -50px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>父级相对定位，子级绝对定位，子级相对于父级来挪动位置。当给子级设置top: 50%和left: 50%时子级的左顶点刚好在父级中心，所以子级需要相对父级左移，上移。设置子级margin-top和margin-left为自身高度和宽度的负的一半。</p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-center-one.PNG" alt="块级元素水平垂直居中"></p>
+<p>以下几种方法无需知道被居中元素的大小：</p>
+<p>(2)绝对定位 + css3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .father &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        height: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    .son &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        top: 50%;</span><br><span class="line">        left: 50%;</span><br><span class="line">        transform: translate(-50%, -50%);</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: green;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>translate(-50%,-50%) 作用是：往上（x轴）,左（y轴）移动自身宽度，高度的 50%，以使其居于中心位置</p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-center-four.PNG" alt="块级元素水平垂直居中"></p>
+<p>(3)绝对定位 + margin<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .father &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        height: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    .son &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        top: 0;</span><br><span class="line">        left: 0;</span><br><span class="line">        right: 0;</span><br><span class="line">        bottom: 0;</span><br><span class="line">        margin: auto;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: blue;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>子元素相对父元素绝对定位，margin设置为auto时默认只能在水平方向上居中。只有给元素设置top, left, right, bottom时才能看到父级元素的宽和高，此时再设置margin: auto;元素就能根据父级进行居中</p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-center-two.PNG" alt="块级元素水平垂直居中"></p>
+<p>(4)margin + flex<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .father &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">        height: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    .son &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: orange;</span><br><span class="line">        margin: auto;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>margin: auto只能设置水平方向上的居中，所以如果要在垂直方向上居中。首先，需要设置父级高度，然后设置父级为display: flex</p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-center-five.PNG" alt="块级元素水平垂直居中"></p>
+<p>(5)flex布局，最常用的布局方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;father&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;son&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    .father &#123;</span><br><span class="line">        display: flex;</span><br><span class="line">        justify-content: center;</span><br><span class="line">        align-items: center;</span><br><span class="line">        height: 100%;</span><br><span class="line">    &#125;</span><br><span class="line">    .son &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: orange;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>给父级容器设置为弹性盒子，主轴(水平方向)设置justify-content: center，交叉轴(垂直方向)设置align-items: center即可实现元素水平垂直居中。</p>
+<p>其中，这两个属性都是需要设置在父级容器上才会生效。</p>
+<p>页面显示如下：<br><img src="/2018/09/30/垂直居中对齐/block-center-three.PNG" alt="块级元素水平垂直居中"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/24/隐式类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/24/隐式类型转换/" itemprop="url">隐式类型转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T10:34:07+08:00">
+                2018-09-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？</p>
+<p>上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。</p>
+<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>转换为数字类型进行比较运算。以下几种情况会有数据的默认转换：</p>
+<h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN()"></a>isNaN()</h3><p>翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为数字类型来进行比较。</p>
+<p>数字类型包括四个值：具体的数字，NaN，Infinity，-Infinity</p>
+<p>如果转换为数字时，返回的值刚好是NaN，则调用isNaN()时返回true。</p>
+<p>具体步骤为：isNaN(demo) =&gt; Number(demo) =&gt; NaN =&gt; true / false</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">isNaN(23)       //false</span><br><span class="line">isNaN(&apos;a&apos;)      //true</span><br><span class="line">isNaN(NaN)      //true</span><br><span class="line">isNaN(null)     //false</span><br></pre></td></tr></table></figure>
+<p>当调用Number()数据是怎么转换的，可以参考上一篇(强制类型转换)。Number(null)值为0</p>
+<h3 id=""><a href="#" class="headerlink" title="++/- -, +/-"></a>++/- -, +/-</h3><p>++ / - - 分为前置++和后置++，区别在于变量的输出顺序不同。<br>+/- 为一元正负运算符，并不是通常所说的数学中的加和减。即+4, -3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">+3      //3</span><br><span class="line">-5      //-5</span><br><span class="line">+&apos;a&apos;    //NaN</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;a&apos;;</span><br><span class="line">console.log(str ++);    //NaN</span><br></pre></td></tr></table></figure>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><p>‘+ , - , * , / , % (取余) ‘会将符号两边的值转换为数字进行运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">null + 1    //1</span><br><span class="line">&quot;abc&quot; + 1   //&quot;abc1&quot;</span><br><span class="line">&quot;2&quot; * &quot;a&quot;   //NaN</span><br><span class="line">8 - &quot;2&quot;     //6</span><br><span class="line">5 / &quot;3&quot;     //1.6666666666666667</span><br><span class="line">5 % &quot;3&quot;     //2</span><br></pre></td></tr></table></figure>
+<p>需要注意的是： + 号遇到字符串时，相当于字符串的拼接，他会把加号另外一边不是字符串的值转化为字符串，并和已知的字符串进行拼接。</p>
+<p>如果没有字符串时，则将 + 两边的值正常转换为数字类型来进行计算。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2 + &quot;&quot;      //&quot;2&quot;</span><br><span class="line">2 + &quot; &quot;     //&quot;2 &quot;</span><br><span class="line">2 + &quot;5&quot;     //&quot;25&quot;</span><br></pre></td></tr></table></figure>
+<p>空串””和空格字符串” “的区别在于其布尔值，空串””为false，空格字符串” “为true</p>
+<h3 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h3><p>‘ &amp;&amp;(与) ， ||(或) ， !(非) ‘输出运算结果。运算结果为真实的值<br>(1) &amp;&amp; (2)：找到假为止。他会先取出(1)表达式的值，看是否为真。<br>(1)为真,继续执行(2)，不管(2)结果为真还是为假都输出(2)表达式的运算结果。<br>(1)为假，输出(1)表达式的运算结果。</p>
+<p>(1) || (2)：找到真为止。他会先取出(1)表达式的值，看是否为真。<br>(1)为真，输出(1)表达式的运算结果。<br>(1)为假，继续执行(2)，不管(2)结果为真还是为假都输出(2)表达式的运算结果。</p>
+<p>!(1)：取反。(1)运算结果为真时，取反则为假。(1)为假，取反为真。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 &amp;&amp; 2          //2</span><br><span class="line">&quot;a&quot; || NaN      //&quot;a&quot;</span><br><span class="line">!4              //false</span><br></pre></td></tr></table></figure>
+<h3 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h3><p>‘ &gt; , &lt; , &gt;= , &lt;= , == , != ‘比较结果为布尔值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1 == &quot;1&quot;                //true</span><br><span class="line">&quot;a&quot; &gt; &quot;b&quot;               //false</span><br><span class="line">0 == &quot;&quot;                 //true</span><br><span class="line">0 == false              //true</span><br><span class="line">undefined == null       //true</span><br><span class="line">NaN == NaN              //false</span><br></pre></td></tr></table></figure>
+<p>字符串和数字比较时，会将字符串转化为数字进行比较。字符串比较时，比较的为ASCII值。</p>
+<p>根据undefined和null的特殊性质(undefined和null不等于0，不大于0，不小于0)，所以让他们两个相等。</p>
+<p>NaN不等于任何值，包括他自身。</p>
+<h2 id="不发生类型转换"><a href="#不发生类型转换" class="headerlink" title="不发生类型转换"></a>不发生类型转换</h2><p>===(绝对等于) , !==(绝对不等于)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 == &quot;1&quot;    //true</span><br><span class="line">1 === &quot;1&quot;   //false</span><br></pre></td></tr></table></figure></p>
+<h2 id="小练习"><a href="#小练习" class="headerlink" title="小练习"></a>小练习</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">11 + &quot;11&quot;           //&quot;1111&quot;</span><br><span class="line">undefined == NaN    //false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;abc&quot;;</span><br><span class="line">str += 1;                   //&quot;abc1&quot;</span><br><span class="line">var test = typeof(str);     //&quot;string&quot;</span><br><span class="line">if (test.length == 6) &#123;     //new String(str).length = 6;  =&gt; delete</span><br><span class="line">    test.sign = &quot;typeof的返回值可能为string&quot;     </span><br><span class="line">&#125;</span><br><span class="line">console.log(test.sign);     //undefined</span><br></pre></td></tr></table></figure>
+<p>包装类。强行给原始值加上某个属性时可以加上，但是实际访问时并不存在。所以if的条件并不成立，即不能给test加上sign属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = false + 1;        </span><br><span class="line">console.log(str);        //1</span><br><span class="line"></span><br><span class="line">var demo = false == 1;</span><br><span class="line">console.log(demo);       //false</span><br></pre></td></tr></table></figure>
+<p>有赋值和比较运算符时，先比较后赋值。即false != 1, 比较运算符，输出结果为布尔值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof typeof(undefined);       //&quot;string&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (typeof(a) &amp;&amp; -true + (+undefined) + &quot;&quot;) &#123;</span><br><span class="line">    console.log(&quot;hello&quot;);           //hello</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>typeof(a)返回值为”undefined”，数据类型为字符串，为真。接着逻辑运算符后面的代码，-true + (+undefined) + “” =&gt; -1 + NaN + “” =&gt; NaN + “” =&gt; “NaN”，为字符串类型，为真，执行if里面的条件语句。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (11 + &quot;11&quot; * 2 == 33) &#123;</span><br><span class="line">    console.log(&quot;smile&quot;);       //smile</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">!!&quot; &quot; + !!&quot;&quot; - !!false || console.log(&apos;no&apos;);    //1 + 0 - 0 =&gt; 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[3 &lt; 1 &lt; 2, 1 &gt; 2 &gt; 3];     //[true, false]</span><br><span class="line"></span><br><span class="line">[3 &lt; 1 &lt; 2, 3 &lt; 1 &lt;= 0];    //[true, true]</span><br></pre></td></tr></table></figure>
+<p>当有多个比较运算符时，从左到右两个值一起进行比较，并将第一次比较的结果和第二次比较运算符右边的值作比较。</p>
+<p>3 &lt; 1 &lt; 2比较时就是先让3和1比，3 &gt; 1，所以第一个比较的结果返回false(0)，然后再让0和后面的2比，0 &lt; 2, 所以比较结果为真，返回true。</p>
+<p>也就是3 &lt; 1 &lt; 2 =&gt; 0(false) &lt; 2 =&gt; true</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/23/类型转换/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/23/类型转换/" itemprop="url">强制类型转换</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-23T12:20:26+08:00">
+                2018-09-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在js里面声明变量时并没有直接定义该变量是什么类型，变量的类型由为他赋值时所定义的值所决定(var num = 123,定义了该变量为数字)。</p>
+<p>但是有这么一种情况，当我们需要的变量是一个数字类型，但用户输入时给定的却是一个字符串。除了给用户提示输入正确的数据类型外，是否可以从前端的角度做一些关于数据类型的处理？</p>
+<p>这就出现了数据类型的转换。当一个变量从某种类型转化为另外一种类型时，则可以调用对应变量类型的方法。</p>
+<h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>针对js中的数据类型原始值(number，string，boolean，undefined，null)和引用值(array，object，function)，当不同的数据类型调用不同的方法时，看其相应的返回值。</p>
+<h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><p>该方法会把任意类型的数据转换为数字类型。</p>
+<p>数字类型包括四个值：具体的数字，NaN，Infinity，-Infinity<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Number(123.0)   //123</span><br><span class="line">Number(0.300)   //0.3</span><br><span class="line">Number(030)     //30</span><br><span class="line">Number(0/0)     //NaN</span><br><span class="line">Number(1/0)     //Infinity</span><br><span class="line">Number(-1/0)    //-Infinity</span><br><span class="line">Number(6/2)     //3</span><br></pre></td></tr></table></figure></p>
+<p>当输入具体数据时，直接输出数据。但是会对数据做以下处理：<br>(1)如果数字的最高位为0，删除最高位的0，返回有效的数据<br>(2)如果小数点后面有0，删除小数点后面无效的0<br>(3)如果输入的数据需要计算，则返回最后的计算结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number(&apos;123&apos;)           //123</span><br><span class="line">Number(&apos;abc&apos;)           //NaN</span><br><span class="line">Number(&apos;123abc&apos;)        //NaN</span><br></pre></td></tr></table></figure>
+<p>当输入字符串时，会出现3种情况：<br>(1)输入的字符串为纯数字，则返回具体数字<br>(2)输入的字符串为纯字符，则直接返回NaN<br>(3)输入的字符串同时包含数字和字符，返回NaN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number(true)        //1</span><br><span class="line">Number(false)       //0</span><br></pre></td></tr></table></figure>
+<p>当输入布尔值时，true =&gt; 1，false =&gt; 0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Number(undefined)       //NaN</span><br><span class="line">Number(null)            //0</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，输入null时返回的是0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Number(&#123;a:1,b:2,c:&#123;d:1&#125;&#125;)   //NaN</span><br><span class="line">Number([1,2,3])             //NaN</span><br><span class="line">Number([1])                 //1</span><br></pre></td></tr></table></figure>
+<p>输入引用类型的数据时，返回的值为NaN。</p>
+<p>但有一种特殊的情况就是当要转换的变量为数组，切数组的长度为1时，该数据类型可以直接转换为相应的数据</p>
+<h3 id="parseInt"><a href="#parseInt" class="headerlink" title="parseInt()"></a>parseInt()</h3><p>该方法趋向于将字符串转换为数字类型。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(112)        //112</span><br><span class="line">parseInt(112.14)     //112</span><br></pre></td></tr></table></figure></p>
+<p>输入数字时，该方法会有截取的功能，截取数字的整数部分。</p>
+<p>即可以调用该方法将数字直接转化为整型数字(没有小数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;112&apos;)     //112</span><br><span class="line">parseInt(&apos;112px&apos;)   //112</span><br><span class="line">parseInt(&apos;abc&apos;)     //NaN</span><br></pre></td></tr></table></figure>
+<p>当输入字符串时，会出现3种情况：<br>(1)输入的字符串为纯数字，则返回具体数字<br>(2)输入的字符串为纯字符，则直接返回NaN<br>(3)输入的字符串同时包含数字和字符，该方法会有截取的效果。则从第一个字符串开始，到非数字位截止。返回截取的数字部分</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">parseInt(true)          //NaN</span><br><span class="line">parseInt(undefined)     //NaN</span><br><span class="line">parseInt(null)          //NaN</span><br><span class="line">parseInt(&#123;a:1&#125;)         //NaN</span><br><span class="line">parseInt(&#123;1:1&#125;)         //NaN</span><br><span class="line">parseInt([1])           //1</span><br><span class="line">parseInt([1,2])         //1</span><br></pre></td></tr></table></figure>
+<p>当变量类型为引用值时，直接返回NaN。但需要注意的是，当定义的数组为第一位为数字时，返回该数组的第一位。</p>
+<p>该方法的关键在于，趋向于将字符串转换为数字。当定义的变量不是字符串时，通常返回NaN(数字直接返回截取后的值。数组第一位为数字时，直接返回数组第一位)</p>
+<p>该方法还可以传第二个参数，parseInt(num, radix)表示num是radix进制的数据，以radix为基底将num转换为十进制的数字。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;123a&apos;, 16)    //4666</span><br></pre></td></tr></table></figure></p>
+<p>该例子表示将16进制(包括0-9, a-f)的123a转换成十进制对应的数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseInt(&apos;112&apos;, 2)      //3</span><br><span class="line">parseInt(&apos;121&apos;, 2)      //1</span><br></pre></td></tr></table></figure>
+<p>当要转换的数据超出了该进制所包含的值时，会从超出进制的数据位对该数据进行截取，再对截取后的数据调用该方法进行转换。</p>
+<p>将’112’的二进制转换为十进制的数据时，因为二进制只能包括0和1，所以会对’112’进行截取，截取后的数据为’11’，再将’11’转化为十进制</p>
+<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3><p>将字符串转换为数字类型，parseInt()不同的是：<br>(1)可以在parseInt()的基础上保留一个小数点，即可以将数据转化为浮点型(含有小数)并去除无效的0<br>(2)没有第二个参数，即没有进制间的转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">parseFloat(&apos;123.020&apos;)       //123.02</span><br><span class="line">parseFloat(&apos;123.020.21&apos;)    //123.02</span><br></pre></td></tr></table></figure>
+<p>以上三个方法都是将变量转换为数字。</p>
+<h3 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean()"></a>Boolean()</h3><p>将变量转换为布尔值(0或1)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Boolean(123)    //true</span><br><span class="line">Boolean(&quot;&quot;)     //false</span><br></pre></td></tr></table></figure></p>
+<p>转换成布尔值为false的有：NaN, 0, “”, false, undefined, null</p>
+<p>其他值转换为布尔值均为true</p>
+<h3 id="String"><a href="#String" class="headerlink" title="String()"></a>String()</h3><p>将变量转化为字符串</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String(123)         //&quot;123&quot;</span><br><span class="line">String(true)        //&quot;true&quot;</span><br><span class="line">String(undefined)   //&quot;undefined&quot;</span><br><span class="line">String(null)        //&quot;null&quot;</span><br></pre></td></tr></table></figure>
+<p>将任意类型直接转换为字符串，即相当于num + “”</p>
+<h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3><p>将变量转化为字符串，除undefined, null(没有原型)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.toString()    //error</span><br></pre></td></tr></table></figure>
+<p>这里趋向于变量调用该方法进行转换，数字直接调用时会报错。</p>
+<p>如果传入的数据为数字类型时，应该采用如下方式处理：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num = 3;num.toString()      //&quot;3&quot;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num = 070; num.toString()   //56</span><br><span class="line">var num=0110;num.toString()     //&quot;72&quot;</span><br></pre></td></tr></table></figure>
+<p>当数字第一位为0时，会被默认为八进制，然后将其转换为十进制。即将八进制的070转换为十进制</p>
+<p>再看以下例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3.toString()        //error</span><br><span class="line">3..toString()       //&quot;3&quot;</span><br><span class="line">3...toString()      //error, Unexpected token .</span><br></pre></td></tr></table></figure></p>
+<p>3..toString()中，3..相当于3.0来调用toString()的方法进行转换。</p>
+<p>换句话说就是，如果数字直接调用toString()方法时，只有数字类型为小数(浮点型)才不会报错。否则都应该以变量声明的形式来调用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3.1.toString()      //&quot;3.1&quot;</span><br><span class="line">3.0.toString()      //&quot;3&quot;</span><br><span class="line">3.900.toString()    //&quot;3.9&quot;</span><br></pre></td></tr></table></figure>
+<p>该方法可以去除小数点后面无效的0</p>
+<p>再看其他类型的数据调用该方法时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">true.toString()             //&quot;true&quot;</span><br><span class="line">undefined.toString()        //err</span><br><span class="line">[1,2].toString()            //&quot;1,2&quot;</span><br><span class="line">&#123;a: 1, b: 2&#125;.toString()     //err</span><br></pre></td></tr></table></figure></p>
+<p>通过以上例子我们发现，当数组调用toString()方法时，会将数组直接转换为字符串。</p>
+<p>但以上数组的组成均为数字，如果数组中含有其他类型的变量时，是否依然成立呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, &apos;a&apos;, &apos;b&apos;, 8].toString()          //&quot;1,2,a,b,8&quot;</span><br><span class="line">[1, [4, &apos;a&apos;], &#123;b : 1&#125;, &apos;c&apos;].toString()  //&quot;1,4,a,[object Object],c&quot;</span><br><span class="line">[1, undefined, &apos;b&apos;, null].toString()    //&quot;1,,b,&quot;</span><br></pre></td></tr></table></figure></p>
+<p>首先，null, undefined是不能调用toString()方法的，直接调用时报错。在数组中调用时，数组对应的位置为空。</p>
+<p>对象调用toString()方法也直接报错，在数组中时，返回该数据的类型[object Object]。</p>
+<p>该方法还可以传第二个参数，variable.toString(k)表示将十进制的variable转换为k进制的数据，即将十进制转换为k进制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var num = 123; num.toString(16)     //&quot;7b&quot;</span><br></pre></td></tr></table></figure></p>
+<p>再看以下例子：将二进制10101010转换为16进制的数据</p>
+<p>分析题目并结合以上知识点可以想到，先将二进制的数据转换为十进制，再将十进制转化为十六进制<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var num2 = 10101010;</span><br><span class="line">var num10 = parseInt(num2, 2);</span><br><span class="line">var num16 = num10.toString(16);</span><br><span class="line">console.log(num16);     //&quot;aa&quot;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/22/typeof返回值/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/22/typeof返回值/" itemprop="url">typeof返回值</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-22T16:50:55+08:00">
+                2018-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="js基本数据类型"><a href="#js基本数据类型" class="headerlink" title="js基本数据类型"></a>js基本数据类型</h2><p>js里面基本数据类型分为原始值和引用值两大类。</p>
+<p>其中原始值包括数字number，字符串string，布尔值boolean，undefined，null五种。</p>
+<p>引用值包括数组array，对象object，函数function三种。</p>
+<h2 id="typeof判断数据类型"><a href="#typeof判断数据类型" class="headerlink" title="typeof判断数据类型"></a>typeof判断数据类型</h2><p>当传入一个变量时，可以用typeof来判断基本的数据类型。</p>
+<p>根据传入的数据类型进行划分，typeof的返回值包括”number” ，”string” ，”boolean” ，”undefined” , “object” ， “function”六种</p>
+<p>其调用形式如下：<br>(1)typeof num<br>(2)typeof(num)</p>
+<p>其中，typeof后面跟的为需要判断数据类型的变量。传入的变量可以直接跟在typeof后面以空格分隔开，也可以直接写在括号里</p>
+<p>看如下例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">typeof 123;        //&quot;number&quot;</span><br><span class="line">typeof NaN;        //&quot;number&quot;</span><br><span class="line">typeof Infinity;   //&quot;number&quot;</span><br></pre></td></tr></table></figure></p>
+<p>但凡是数学计算能产生的结果都是数字类型，数字类型的返回值为”number”</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;123abc&apos;;</span><br><span class="line">typeof  str;        //&quot;string&quot;  </span><br><span class="line">typeof +str;        //&quot;number&quot;</span><br><span class="line">typeof !!str;       //&quot;boolean&quot;</span><br><span class="line">typeof str + &apos;&apos;;    //&quot;string&quot;</span><br></pre></td></tr></table></figure>
+<p>输入一个字符串，字符串可以通过运算符改变其类型，typeof会根据类型返回特定的值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typeof a;    //&quot;undefined&quot;</span><br></pre></td></tr></table></figure>
+<p>在js中，一个变量未经声明就使用，只有在一种情况下不会报错，那就是将变量放在typeof里面查看类型</p>
+<p>综上总结，可以将基本数据类型和typeof的返回值做如下对应关系：<br>typeof的返回值: “number” ，”string” ，”boolean” ，”undefined” , “function” ，”object”<br>返回值为”number”包括：数字类型(number)<br>返回值为”string”包括：字符串类型(string)<br>返回值为”boolean”包括：布尔值(boolean)<br>返回值为”undefined”包括：undefined(即值未定义)<br>返回值为”function”包括：函数function<br>比较特殊的是，返回值为”object”包括：null，数组array，对象object</p>
+<p>所以当需要判断具体的”object”类型时，需要对null，array，object进行判断</p>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>typeof的返回值均为字符串，即number类型的字符串，string类型的字符串，boolean类型的字符串，undefined类型的字符串，function类型的字符串，object类型的字符串</p>
+<p>即typeof(typeof “number”) =&gt; “string”</p>
+<h3 id="特殊情况"><a href="#特殊情况" class="headerlink" title="特殊情况"></a>特殊情况</h3><p>考虑以下情况，当基本数据类型的首字母大写时，相应的typeof是否也会发生改变呢？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typeof Number       //&quot;string&quot;</span><br><span class="line">typeof String       //&quot;string&quot;</span><br><span class="line">typeof Boolean      //&quot;string&quot;</span><br><span class="line">typeof Undefined    //&quot;undefined&quot;</span><br><span class="line">typeof Null         //&quot;undefined&quot;</span><br><span class="line">typeof Array        //&quot;string&quot;</span><br><span class="line">typeof Object       //&quot;string&quot;</span><br><span class="line">typeof Function     //&quot;string&quot;</span><br></pre></td></tr></table></figure></p>
+<p>总结起来就是<br>返回值为”string”包括：Number / String / Boolean / Array / Object / Function<br>返回值为”undefined”包括：Undefined / Null</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/行内元素和块级元素/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/21/行内元素和块级元素/" itemprop="url">行内元素和块级元素</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T19:40:54+08:00">
+                2018-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/元素分类/" itemprop="url" rel="index">
+                    <span itemprop="name">元素分类</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="元素分类"><a href="#元素分类" class="headerlink" title="元素分类"></a>元素分类</h2><h3 id="块级元素-block"><a href="#块级元素-block" class="headerlink" title="块级元素(block)"></a>块级元素(block)</h3><p>常用元素：div / p / ul / li / ol / form / address / h(h1-h6)</p>
+<p>特点：元素独自占据一整行，可以给元素设置宽和高</p>
+<p>具体设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;red&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;blue&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    div &#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        height: 100px;</span><br><span class="line">        background: red;</span><br><span class="line">    &#125;</span><br><span class="line">    .blue &#123;</span><br><span class="line">        background: blue;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器中展示如下：<br><img src="/2018/09/21/行内元素和块级元素/block.PNG" alt="块级元素样式"><br>可以看到，第一个div的宽度只有100px, 但是他占据了浏览器的一整行。使得第二个div换行展示</p>
+<h3 id="行内元素-inline"><a href="#行内元素-inline" class="headerlink" title="行内元素(inline)"></a>行内元素(inline)</h3><p>常用元素：span / a / em / del / strong</p>
+<p>特点：根据自身内容占据空间大小，不能给元素设置宽和高</p>
+<p>具体设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt;1&lt;/span&gt;</span><br><span class="line">&lt;span&gt;2&lt;/span&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器中展示如下：<br><img src="/2018/09/21/行内元素和块级元素/inline.PNG" alt="行级元素样式"><br>可以看到，span根据自身的内容占据了相应的大小，后面的span紧挨着进行展示</p>
+<p>行级元素虽然不可以设置宽高，但可以给他设置字体大小(font-size)，字体颜色(color)，字体样式(font-family)等和字体相关的属性</p>
+<h3 id="行级块元素-inline-block"><a href="#行级块元素-inline-block" class="headerlink" title="行级块元素(inline-block)"></a>行级块元素(inline-block)</h3><p>也叫内联元素，常用元素：img / input</p>
+<p>特点：根据自身内容占据大小，又可以给元素设置宽和高</p>
+<p>具体设置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type = &quot;text&quot;&gt;</span><br><span class="line">&lt;input type = &quot;text&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">    input &#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">        height: 30px;</span><br><span class="line">        margin-right: 30px;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器中展示如下：<br><img src="/2018/09/21/行内元素和块级元素/inline-block.PNG" alt="行级元素样式"></p>
+<p>行级块元素input设置了宽和高，第一个input占据的宽度仅为设置的宽度，第二个input紧挨着第一个进行展示</p>
+<p>行级块元素通常会被分类在行内元素里面</p>
+<h3 id="相互转换关系"><a href="#相互转换关系" class="headerlink" title="相互转换关系"></a>相互转换关系</h3><p>块级元素默认display: block</p>
+<p>行内元素默认display: inline</p>
+<p>行级块元素默认display: inline-block</p>
+<p>当给块级元素设置display: inline或设置display: inline-block时，块级元素可以转换为行内元素或者行级块元素，并具有行级元素或行级块元素独有的特性。以此类推。</p>
+<h3 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h3><p>margin和padding为复合属性，默认顺序为(上 右 下 左)。</p>
+<p>块级元素的margin值包括(margin-top, margin-right, margin-bottom, margin-left)，padding值包括(padding-top, padding-right, padding-bottom, padding-left)</p>
+<p>但行内元素只有margin-left, margin-right, padding-left, padding-right值</p>
+<h2 id="根据默认margin和padding分类"><a href="#根据默认margin和padding分类" class="headerlink" title="根据默认margin和padding分类"></a>根据默认margin和padding分类</h2><p>只有默认margin值：body / p / form  h(h1-h6)  </p>
+<p>只有默认padding值：input / img / textarea / button </p>
+<p>有默认padding和margin：ol / ul  </p>
+<p>没有默认padding和margin：div / span</p>
+<p>body默认有8px的margin值</p>
+<p>只有清除默认的padding和margin值我们设置的css样式才不会有偏差，样式才能布满整个页面</p>
+<p>常用的处理方式：<br>一般在css全局里面定义以下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">    padding: 0;</span><br><span class="line">    margin: 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也可以在总样式文件里面定义如下内容：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td, img &#123;padding: 0; margin: 0;&#125;</span><br></pre></td></tr></table></figure></p>
+<p>即选出css中可能用到的具有margin和padding的标签，将其初始化</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/21/数组扁平化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/21/数组扁平化/" itemprop="url">数组扁平化</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-21T12:24:39+08:00">
+                2018-09-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数组的操作/" itemprop="url" rel="index">
+                    <span itemprop="name">数组的操作</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以再包含数组。或者是一个数组里面包含了很多个对象。</p>
+<p>我们通常需要的只是一维的数组，此时就需要将数组降维进行扁平化处理。</p>
+<p>数组的数据结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arrObj = [&#123;x: 1&#125;, &#123;y: 2&#125;, &#123;z: 3&#125;];</span><br></pre></td></tr></table></figure></p>
+<p>需要将以上数组转化为一维的对象，如下：<br><img src="/2018/09/21/数组扁平化/arrObj-one.PNG" alt="数组转化成的一维对象"></p>
+<p>在开始前需要先了解以下知识点：<br>(1)forEach(ele, index, arr) 有三个参数，第一个为数组的每一项，第二个为当前元素的索引，第三个为原来的数组(即调用forEach的那个数组)。也可以传入第四个参数，代表this指向。</p>
+<p>该方法和for循环的区别是：forEach()循环没有办法终止或跳出。foreach适用于循环次数未知，或者计算循环次数比较麻烦情况下使用效率更高，但是更为复杂的一些循环还是需要用到for循环效率更高</p>
+<p>(2)for in循环通常用来遍历对象。用法为：for (var prop in obj)，其中，prop为对象的属性名，obj为要遍历的对象，obj[prop]即为取出对象的属性值。</p>
+<p>for in通常和hasOwnProperty()配合使用，意为先看prop属性是否是对象本身的(该属性不在原型上)，来节约遍历成本。</p>
+<p>具体实现代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function arrFlat (arr) &#123;</span><br><span class="line">    var newObj = &#123;&#125;;</span><br><span class="line">    arr.forEach(function (ele, index) &#123;</span><br><span class="line">      	// console.log(ele);        //&#123;x: 1&#125; &#123;y: 2&#125; &#123;z: 3&#125;</span><br><span class="line">      	for (var prop in ele) &#123;</span><br><span class="line">      		if(ele.hasOwnProperty(prop)) &#123;</span><br><span class="line">      			// console.log(ele[prop])          //1 2 3</span><br><span class="line">      			newObj[prop] = ele[prop];</span><br><span class="line">      		&#125;</span><br><span class="line">      	&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(arrFlat(arrObj));       //函数调用，打印出结果</span><br></pre></td></tr></table></figure></p>
+<p>上面需要注意的是，如何取到对象的属性名并将对应的属性值赋给他，这里的处理方法是通过声明一个新的对象，然后通过原来对象的prop取到具体的属性名，即newObj[prop]。ele[prop]取到的为原来对象的属性值。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/03/二分查找法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/03/二分查找法/" itemprop="url">二分查找法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T15:27:45+08:00">
+                2018-09-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数组的操作/" itemprop="url" rel="index">
+                    <span itemprop="name">数组的操作</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="二分查找法"><a href="#二分查找法" class="headerlink" title="二分查找法"></a>二分查找法</h2><p>二分查找法也称折半查找法，适用于在已知排列顺序的有序数组查找某个特定元素。</p>
+<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><p>(1)首先，从数组的中间位置开始查找。如果要查找的元素等于中间元素，返回中间元素索引。否则，进行第二步。</p>
+<p>(2)如果要查找的元素大于中间元素，则在数组大于中间元素的那半区域进行查找；</p>
+<p>如果要查找的元素小于中间元素，则在数组小于中间元素的那半区域进行查找。</p>
+<p>然后重复第一步的操作。</p>
+<p>(3)如果要查找的元素不存在，则返回-1。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function search (data, target) &#123;</span><br><span class="line">    var start = 0,</span><br><span class="line">        end = data.length - 1;</span><br><span class="line">    while (start &lt;= end) &#123;</span><br><span class="line">        var middle = Math.floor((start + end) / 2);     //找到中间元素</span><br><span class="line">        if (target === data[middle]) &#123;</span><br><span class="line">            return middle;</span><br><span class="line">        &#125;else if (target &gt; data[middle]) &#123;</span><br><span class="line">            start = middle + 1;</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            end = middle - 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;     //要查找的元素不存在</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];</span><br><span class="line">var result = search(arr, 7);   //方法调用</span><br><span class="line">console.log(result);    //3,返回目标元素的索引</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/01/快速排序法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/01/快速排序法/" itemprop="url">快速排序法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T20:41:35+08:00">
+                2018-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数组的操作/" itemprop="url" rel="index">
+                    <span itemprop="name">数组的操作</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="快速排序法"><a href="#快速排序法" class="headerlink" title="快速排序法"></a>快速排序法</h2><p>在看阮一峰老师的快速排序法时，总能看到网上各种各样的吐槽文章，都说阮老师的实现方法有问题。那么，具体问题到底在哪呢？</p>
+<p>本着学习的心态，查找了一些相关的文章和实现方法，发现大家都是不约而同的采用阮老师的实现方法。我在阮老师的基础上做了一点改进，如下。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>(1)选基准：选择数组里面的任意一个元素作为基准数(我以中间元素为例)。</p>
+<p>(2)划分数组：<br>   小于基准数的元素放在’基准’左边；<br>   大于基准数的元素放在’基准’右边；<br>   等于基准数的元素和’基准’放在一起。</p>
+<p>(3)递归：对’基准’左边和右边两个子集，不断重复第一步和第二步，直到所有子集只剩一个元素为止。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr) &#123;</span><br><span class="line">    if (arr.length &lt;= 1) &#123;        //递归出口，当数组长度小于等于1时返回</span><br><span class="line">        return arr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var temple = Math.floor(arr.length / 2);</span><br><span class="line">    var flag = arr.splice(temple, 1)[0];</span><br><span class="line">    var left = [],</span><br><span class="line">        middle = [flag],</span><br><span class="line">        right = [];</span><br><span class="line"></span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (arr[i] &lt; flag) &#123;</span><br><span class="line">            left.push(arr[i]);</span><br><span class="line">        &#125;else if (arr[i] &gt; flag) &#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            middle.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return quickSort(left).concat(middle, quickSort(right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [2, 5, 23, 10, 7, 8, 12, 7, 6];</span><br><span class="line">var newArr = quickSort(arr);</span><br><span class="line">console.log(newArr);      //[2, 5, 6, 7, 7, 8, 10, 12, 23]</span><br></pre></td></tr></table></figure>
+<p>待排序数组每次调用quickSort方法时，都会被分成左，中，右三个数组。对左边和右边的数组再用相同的方法进行排序，最后返回排序完成的数组。</p>
+<h3 id="相关方法："><a href="#相关方法：" class="headerlink" title="相关方法："></a>相关方法：</h3><p>(1) Math.floor() 向下取整</p>
+<p>temple = Math.floor(arr.length / 2);</p>
+<p>当数组长度为偶数时，刚好取到中间左边的那位，var arr = [2, 5, 23, 10],temple == 5;</p>
+<p>当数组长度为奇数时，刚好取到中间的那位，var arr = [2, 5, 4，23, 10],temple == 4;</p>
+<p>(2) Array.splice(start, length) 从第几位开始删除数组，删除几个长度，直接操作原数组，并返回原数组，数组中的每一项为删除的数据</p>
+<p>(3) Array.concat(arr1, arr2, …) 多个数组arr1, arr2和数组Array进行拼接成一个数组，返回拼接完成后的数组</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我和阮一峰老师快排的不同主要在于多了一个middle数组来接收和’基准’一样的元素。</p>
+<p>用递归方法来实现时，需要考虑到每次进行操作时共同点在哪（即找规律，找公式）。</p>
+<p>还要考虑到当满足一定条件时跳出（即出口），否则程序将会陷入死循环。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/blog-logo.jpg"
+                alt="Better" />
+            
+              <p class="site-author-name" itemprop="name">Better</p>
+              <p class="site-description motion-element" itemprop="description">做所有不动声色的努力</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Better</span>
+
+  
+</div>
+
+
+
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; &hearts;&nbsp;前端</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type='text/javascript' src='/js/src/love.js'></script>
