@@ -381,38 +381,16 @@
 
       
         
-          
-            <a id="more"></a>
-<p>在一个项目中，可能同一个功能会在不同的地方用到过，为了节约开发成本，于是我们主张模块化开发。</p>
+          <p>在一个项目中，可能同一个功能会在不同的地方用到过，为了节约开发成本，于是我们主张模块化开发。</p>
 <p>这样不但使重复的功能可以直接复用，而且避免了多人协作开发时引入同名变量造成错误的尴尬。</p>
-<p>在js中模块通常有两种形式，函数模块和ES6中的模块。</p>
-<h2 id="函数模块"><a href="#函数模块" class="headerlink" title="函数模块"></a>函数模块</h2><p>在js中有这样的概念，主张语义化开发，尽可能少的暴露全局变量。这样做的原因是：</p>
-<p>(1)避免全局变量污染。在同一个文件里面定义多个同名的变量可能会导致变量覆盖，以致于调用的方法错误。</p>
-<p>(2)优化代码性能。浏览器在处理时，会把定义在全局的变量挂载到window的属性下，每次查找变量时，会依次查找window下的属性，过多的全局变量会导致查找变量的时间越来越长。</p>
-<p>所以在js中就有了用函数来封闭作用域的现象。</p>
-<p>函数模块就是把要实现的功能封闭在一个函数里，最后导出一个接口来供外部环境调用。他需要满足以下两个条件：</p>
-<p>(1)必须有外部的封闭函数;</p>
-<p>(2)封闭函数必须返回至少一个内部函数。</p>
-<p>具体的举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function func () &#123;</span><br><span class="line">    var n = 1;</span><br><span class="line">    var arr = [8, 5, 6]</span><br><span class="line">    function add() &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    function arrSort() &#123;</span><br><span class="line">        console.log(arr.sort());</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        add: add,</span><br><span class="line">        arrSort: arrSort</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = func();</span><br><span class="line">foo.add();          //2</span><br><span class="line">foo.arrSort();      //[5, 6, 8]</span><br></pre></td></tr></table></figure></p>
-<p>这个返回的对象中含有对内部函数的引用。内部数据变量仍然是隐藏的私有状态(只有函数内部可以被访问到)。</p>
-<p>在这里将返回的对象赋值给foo, 因此就可以通过访问对象属性名的方式来访问到函数里面方法。</p>
-<p>从模块中返回一个对象并不是必须的，也可以直接返回一个内部函数。</p>
-<p>上面是通过函数调用的方式将返回的对象赋值给一个外部变量来调用执行。该方法可以被调用多次，执行多次。</p>
-<p>如果只是想只执行一遍函数的运算过程，保留函数的运行结果来调用的话，可以选择立即执行函数。</p>
-<p>代码修改如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var foo = (function () &#123;</span><br><span class="line">    var n = 1;</span><br><span class="line">    var arr = [8, 5, 6]</span><br><span class="line">    function add() &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    function arrSort() &#123;</span><br><span class="line">        console.log(arr.sort());</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        add: add,</span><br><span class="line">        arrSort: arrSort</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">foo.add();          //2</span><br><span class="line">foo.arrSort();      //[5, 6, 8]</span><br></pre></td></tr></table></figure></p>
-<p>当想要给函数传参时，也是像以前立即函数正常的处理逻辑。</p>
-<h2 id="ES6的模块"><a href="#ES6的模块" class="headerlink" title="ES6的模块"></a>ES6的模块</h2><p>通过上面的内容我们了解到，所谓模块大概就是封装一个接口，导出一个变量(接口)来实现的。在ES6中也是一样，只不过可能导入导出的方式发生了改变。</p>
-<p>ES6中的模块必须被定义在一个独立的文件中(一个文件一个模块)，浏览器在加载时可以同步的导入模块。</p>
-<p>具体举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//myInform.js文件</span><br><span class="line">function person (name) &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125;</span><br><span class="line">export person;</span><br><span class="line"></span><br><span class="line">//sayHello.js文件</span><br><span class="line">import person from &quot;myInform&quot;;</span><br><span class="line"></span><br><span class="line">var myName = &apos;fs&apos;;</span><br><span class="line">function hello () &#123;</span><br><span class="line">    console.log(&apos;Hello &apos; + person(myName));</span><br><span class="line">&#125;</span><br><span class="line">export hello;</span><br><span class="line"></span><br><span class="line">//all.js文件</span><br><span class="line">module myInform from &quot;myInform&quot;;</span><br><span class="line">module sayHello from &quot;sayHello&quot;;</span><br><span class="line"></span><br><span class="line">console.log(myInform.person(&apos;ll&apos;));   //ll</span><br><span class="line">sayHello.hello();       //Hello fs</span><br></pre></td></tr></table></figure></p>
-<p>import可以将模块中的一个或多个API导入到当前的作用域中，并分别绑定在一个变量上(person)。</p>
-<p>module会将整个模块的API导入并绑定到一个变量上(myInform, sayHello)。</p>
-<p>export会将当前模块的一个接口(变量，函数)导出为公共API。</p>
-<h2 id="函数模块和ES6模块的区别"><a href="#函数模块和ES6模块的区别" class="headerlink" title="函数模块和ES6模块的区别"></a>函数模块和ES6模块的区别</h2><p>基于上述两种形式，考虑到ES6是JS的升级版，所以肯定是在函数模块的基础上进行了优化。</p>
-<p>具体区别如下：</p>
-<p>函数模块只有在函数运行时里面的代码才会被考虑进来，因此可以在代码运行时修改代码的API。</p>
-<p>ES6模块在编译时会被导入模块的API检查是否真的存在。如果导入的API不存在，则编译器直接报错。</p>
-
-          
+<p>在js中模块通常有两种形式，函数模块和ES6中的模块。<br></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/11/js中的模块/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
