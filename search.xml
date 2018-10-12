@@ -180,8 +180,8 @@
         <category>布局</category>
       </categories>
       <tags>
-        <tag>bfc</tag>
         <tag>浮动</tag>
+        <tag>bfc</tag>
         <tag>margin</tag>
       </tags>
   </entry>
