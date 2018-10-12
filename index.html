@@ -382,7 +382,8 @@
       
         
           
-            <p>在一个项目中，可能同一个功能会在不同的地方用到过，为了节约开发成本，于是我们主张模块化开发。这样不但使得功能可以直接复用，而且避免了多人协作开发时引入同名变量造成错误的尴尬。</p>
+            <p>在一个项目中，可能同一个功能会在不同的地方用到过，为了节约开发成本，于是我们主张模块化开发。</p>
+<p>这样不但使重复的功能可以直接复用，而且避免了多人协作开发时引入同名变量造成错误的尴尬。</p>
 <p>在js中模块通常有两种形式，函数模块和ES6中的模块。</p>
 <h2 id="函数模块"><a href="#函数模块" class="headerlink" title="函数模块"></a>函数模块</h2><p>在js中有这样的概念，主张语义化开发，尽可能少的暴露全局变量。这样做的原因是：</p>
 <p>(1)避免全局变量污染。在同一个文件里面定义多个同名的变量可能会导致变量覆盖，以致于调用的方法错误。</p>
@@ -401,7 +402,7 @@
 <p>当想要给函数传参时，也是像以前立即函数正常的处理逻辑。</p>
 <h2 id="ES6的模块"><a href="#ES6的模块" class="headerlink" title="ES6的模块"></a>ES6的模块</h2><p>通过上面的内容我们了解到，所谓模块大概就是封装一个接口，导出一个变量(接口)来实现的。在ES6中也是一样，只不过可能导入导出的方式发生了改变。</p>
 <p>ES6中的模块必须被定义在一个独立的文件中(一个文件一个模块)，浏览器在加载时可以同步的导入模块。</p>
-<p>具体举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//myInform.js文件</span><br><span class="line">function person (name) &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125;</span><br><span class="line">export person;</span><br><span class="line"></span><br><span class="line">//sayHello.js文件</span><br><span class="line">import person from &quot;myInform&quot;;</span><br><span class="line"></span><br><span class="line">var myName = &apos;fs&apos;;</span><br><span class="line">function hello () &#123;</span><br><span class="line">    console.log(&apos;Hello &apos; + person(myName));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export hello;</span><br><span class="line"></span><br><span class="line">//all.js文件</span><br><span class="line">module myInform from &quot;myInform&quot;;</span><br><span class="line">module sayHello from &quot;sayHello&quot;;</span><br><span class="line"></span><br><span class="line">console.log(myInform.person(&apos;ll&apos;));   //ll</span><br><span class="line">sayHello.hello();       //Hello fs</span><br></pre></td></tr></table></figure></p>
+<p>具体举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//myInform.js文件</span><br><span class="line">function person (name) &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125;</span><br><span class="line">export person;</span><br><span class="line"></span><br><span class="line">//sayHello.js文件</span><br><span class="line">import person from &quot;myInform&quot;;</span><br><span class="line"></span><br><span class="line">var myName = &apos;fs&apos;;</span><br><span class="line">function hello () &#123;</span><br><span class="line">    console.log(&apos;Hello &apos; + person(myName));</span><br><span class="line">&#125;</span><br><span class="line">export hello;</span><br><span class="line"></span><br><span class="line">//all.js文件</span><br><span class="line">module myInform from &quot;myInform&quot;;</span><br><span class="line">module sayHello from &quot;sayHello&quot;;</span><br><span class="line"></span><br><span class="line">console.log(myInform.person(&apos;ll&apos;));   //ll</span><br><span class="line">sayHello.hello();       //Hello fs</span><br></pre></td></tr></table></figure></p>
 <p>import可以将模块中的一个或多个API导入到当前的作用域中，并分别绑定在一个变量上(person)。</p>
 <p>module会将整个模块的API导入并绑定到一个变量上(myInform, sayHello)。</p>
 <p>export会将当前模块的一个接口(变量，函数)导出为公共API。</p>
@@ -1623,8 +1624,16 @@
       
         
           
-            <p>你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。</p>
-<p>我们通常需要的只是一维的数组，此时就需要将数组扁平化处理</p>
+            <p>你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以再包含数组。或者是一个数组里面包含了很多个对象。</p>
+<p>我们通常需要的只是一维的数组，此时就需要将数组降维进行扁平化处理。</p>
+<p>数组的数据结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arrObj = [&#123;x: 1&#125;, &#123;y: 2&#125;, &#123;z: 3&#125;];</span><br></pre></td></tr></table></figure></p>
+<p>需要将以上数组转化为一维的对象，如下：<br><img src="/2018/09/21/数组扁平化/arrObj-one.PNG" alt="数组转化成的一维对象"></p>
+<p>在开始前需要先了解以下知识点：<br>(1)forEach(ele, index, arr) 有三个参数，第一个为数组的每一项，第二个为当前元素的索引，第三个为原来的数组(即调用forEach的那个数组)。也可以传入第四个参数，代表this指向。</p>
+<p>该方法和for循环的区别是：forEach()循环没有办法终止或跳出。foreach适用于循环次数未知，或者计算循环次数比较麻烦情况下使用效率更高，但是更为复杂的一些循环还是需要用到for循环效率更高</p>
+<p>(2)for in循环通常用来遍历对象。用法为：for (var prop in obj)，其中，prop为对象的属性名，obj为要遍历的对象，obj[prop]即为取出对象的属性值。</p>
+<p>for in通常和hasOwnProperty()配合使用，意为先看prop属性是否是对象本身的(该属性不在原型上)，来节约遍历成本。</p>
+<p>具体实现代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function arrFlat (arr) &#123;</span><br><span class="line">    var newObj = &#123;&#125;;</span><br><span class="line">    arr.forEach(function (ele, index) &#123;</span><br><span class="line">      	// console.log(ele);        //&#123;x: 1&#125; &#123;y: 2&#125; &#123;z: 3&#125;</span><br><span class="line">      	for (var prop in ele) &#123;</span><br><span class="line">      		if(ele.hasOwnProperty(prop)) &#123;</span><br><span class="line">      			// console.log(ele[prop])          //1 2 3</span><br><span class="line">      			newObj[prop] = ele[prop];</span><br><span class="line">      		&#125;</span><br><span class="line">      	&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(arrFlat(arrObj));       //函数调用，打印出结果</span><br></pre></td></tr></table></figure></p>
+<p>上面需要注意的是，如何取到对象的属性名并将对应的属性值赋给他，这里的处理方法是通过声明一个新的对象，然后通过原来对象的prop取到具体的属性名，即newObj[prop]。ele[prop]取到的为原来对象的属性值。</p>
 
           
         

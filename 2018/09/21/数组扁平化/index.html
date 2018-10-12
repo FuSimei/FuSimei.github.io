@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。 我们通常需要的只是一维的数组，此时就需要将数组扁平化处理">
+<meta name="description" content="你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以再包含数组。或者是一个数组里面包含了很多个对象。 我们通常需要的只是一维的数组，此时就需要将数组降维进行扁平化处理。 数组的数据结构如下：1var arrObj = [&amp;#123;x: 1&amp;#125;, &amp;#123;y: 2&amp;#125;, &amp;#123;z: 3&amp;#125;]; 需要将以上数组转化为一维的对象，如下：">
 <meta name="keywords" content="js,Array,Object">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组扁平化">
 <meta property="og:url" content="http://yoursite.com/2018/09/21/数组扁平化/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。 我们通常需要的只是一维的数组，此时就需要将数组扁平化处理">
+<meta property="og:description" content="你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以再包含数组。或者是一个数组里面包含了很多个对象。 我们通常需要的只是一维的数组，此时就需要将数组降维进行扁平化处理。 数组的数据结构如下：1var arrObj = [&amp;#123;x: 1&amp;#125;, &amp;#123;y: 2&amp;#125;, &amp;#123;z: 3&amp;#125;]; 需要将以上数组转化为一维的对象，如下：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-21T14:17:09.894Z">
+<meta property="og:image" content="http://yoursite.com/2018/09/21/数组扁平化/arrObj-one.PNG">
+<meta property="og:updated_time" content="2018-10-12T12:49:56.327Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组扁平化">
-<meta name="twitter:description" content="你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。 我们通常需要的只是一维的数组，此时就需要将数组扁平化处理">
+<meta name="twitter:description" content="你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以再包含数组。或者是一个数组里面包含了很多个对象。 我们通常需要的只是一维的数组，此时就需要将数组降维进行扁平化处理。 数组的数据结构如下：1var arrObj = [&amp;#123;x: 1&amp;#125;, &amp;#123;y: 2&amp;#125;, &amp;#123;z: 3&amp;#125;]; 需要将以上数组转化为一维的对象，如下：">
+<meta name="twitter:image" content="http://yoursite.com/2018/09/21/数组扁平化/arrObj-one.PNG">
 
 
 
@@ -379,8 +381,16 @@
       
 
       
-        <p>你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以包含数组。或者是一个数组里面包含了很多个对象。</p>
-<p>我们通常需要的只是一维的数组，此时就需要将数组扁平化处理</p>
+        <p>你可能会看到这样一种情况，大概的描述就是一个数组里面包含了很多了数组，数组里面还可以再包含数组。或者是一个数组里面包含了很多个对象。</p>
+<p>我们通常需要的只是一维的数组，此时就需要将数组降维进行扁平化处理。</p>
+<p>数组的数据结构如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arrObj = [&#123;x: 1&#125;, &#123;y: 2&#125;, &#123;z: 3&#125;];</span><br></pre></td></tr></table></figure></p>
+<p>需要将以上数组转化为一维的对象，如下：<br><img src="/2018/09/21/数组扁平化/arrObj-one.PNG" alt="数组转化成的一维对象"></p>
+<p>在开始前需要先了解以下知识点：<br>(1)forEach(ele, index, arr) 有三个参数，第一个为数组的每一项，第二个为当前元素的索引，第三个为原来的数组(即调用forEach的那个数组)。也可以传入第四个参数，代表this指向。</p>
+<p>该方法和for循环的区别是：forEach()循环没有办法终止或跳出。foreach适用于循环次数未知，或者计算循环次数比较麻烦情况下使用效率更高，但是更为复杂的一些循环还是需要用到for循环效率更高</p>
+<p>(2)for in循环通常用来遍历对象。用法为：for (var prop in obj)，其中，prop为对象的属性名，obj为要遍历的对象，obj[prop]即为取出对象的属性值。</p>
+<p>for in通常和hasOwnProperty()配合使用，意为先看prop属性是否是对象本身的(该属性不在原型上)，来节约遍历成本。</p>
+<p>具体实现代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">function arrFlat (arr) &#123;</span><br><span class="line">    var newObj = &#123;&#125;;</span><br><span class="line">    arr.forEach(function (ele, index) &#123;</span><br><span class="line">      	// console.log(ele);        //&#123;x: 1&#125; &#123;y: 2&#125; &#123;z: 3&#125;</span><br><span class="line">      	for (var prop in ele) &#123;</span><br><span class="line">      		if(ele.hasOwnProperty(prop)) &#123;</span><br><span class="line">      			// console.log(ele[prop])          //1 2 3</span><br><span class="line">      			newObj[prop] = ele[prop];</span><br><span class="line">      		&#125;</span><br><span class="line">      	&#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    return newObj;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(arrFlat(arrObj));       //函数调用，打印出结果</span><br></pre></td></tr></table></figure></p>
+<p>上面需要注意的是，如何取到对象的属性名并将对应的属性值赋给他，这里的处理方法是通过声明一个新的对象，然后通过原来对象的prop取到具体的属性名，即newObj[prop]。ele[prop]取到的为原来对象的属性值。</p>
 
       
     </div>
