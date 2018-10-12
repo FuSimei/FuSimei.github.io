@@ -289,6 +289,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/冒泡排序和选择排序/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/30/冒泡排序和选择排序/" itemprop="url">冒泡排序和选择排序</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-30T16:46:19+08:00">
+                2018-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数组的操作/" itemprop="url" rel="index">
+                    <span itemprop="name">数组的操作</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。</p>
+<p>时间复杂度：一个程序执行所需要的时间，主要针对的是for循环</p>
+<p>空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况</p>
+<p>稳定性：如果a = b，a在b的前面，排序后a任然在b的前面</p>
+<p>不稳定性：如果a = b，a在b的前面，排序后a在b的后面</p>
+<p>具体的归纳情况可以见下图：<br><img src="/2018/08/30/冒泡排序和选择排序/sort.PNG" alt="数组的比较"></p>
+<h2 id="数组的排序方法"><a href="#数组的排序方法" class="headerlink" title="数组的排序方法"></a>数组的排序方法</h2><h3 id="冒泡排序法"><a href="#冒泡排序法" class="headerlink" title="冒泡排序法"></a>冒泡排序法</h3><p>原理：<br>依次比较数组里面每相邻的两个元素。如果前面的数比后面的数大，则将两个数交换顺序。也就是找到数组的最大数放在最后一位。</p>
+<p>重复相同的规律，每次找出剩下数组里面的最大数放在最后面，直到数组有序排列为止。</p>
+<p>具体实现(原型链编程)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.bubbleSort = function () &#123;</span><br><span class="line">    var temple;</span><br><span class="line">    for (var i = 0; i &lt; this.length - 1; i++) &#123;     //this指向被调用的对象</span><br><span class="line">        for (var j = 0; j &lt; this.length - 1 - i; j++) &#123;</span><br><span class="line">            if (this[j] &gt; this[j+1]) &#123;</span><br><span class="line">                temple = this[j];</span><br><span class="line">                this[j] = this[j+1];</span><br><span class="line">                this[j+1] = temple;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];</span><br><span class="line">var arrSort = arr.bubbleSort();     //方法调用</span><br><span class="line">console.log(arrSort);   //[1, 2, 2, 3, 4, 5, 7, 13, 34]</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，每两个数进行比较大小时，知道第n - 1个数，则可以比较出第n - 1个数和第n个数的大小。所以第一个for循环终止条件为arr.length - 1。</p>
+<p>第二个for循环时，当i = 0时，需要循环的次数为arr.length - 1,第一次循环结束的结果是选出最大的数放在数组最后，即排序后的数组为[1, 2, 5, 7, 2, 3, 4, 13, 34]。</p>
+<p>当i = 1时，循环次数为arr.length - 1 - 1，即最后一个数已经确定大小，不需要比较。还有余下数组的最后一位也不需要比较。</p>
+<p>当然啦，这样做是为了节省时间复杂度，当两圈for循环的终止条件改为arr.length也是可以的。</p>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>原理：<br>选择排序是指选出数组里面的第一个数依次和后面的每个数作比较，如果后面的数比第一个数小，交换顺序<br>（选出最小的数放在第一位）。</p>
+<p>再选出第二个数依次和后面的每个数作比较，选出余下数组里面最小的放在第二位。</p>
+<p>重复以上规律，知道数组有序为止。</p>
+<p>具体实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.selectSort = function () &#123;</span><br><span class="line">    for (var i = 0; i &lt; this.length - 1; i++) &#123;     //this指向被调用的对象</span><br><span class="line">        for (var j = i + 1; j &lt; this.length; j++) &#123;</span><br><span class="line">            if (this[i] &gt; this[j]) &#123;</span><br><span class="line">                temple = this[i];</span><br><span class="line">                this[i] = this[j];</span><br><span class="line">                this[j] = temple;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];</span><br><span class="line">var arrSelect = arr.selectSort();   //方法调用</span><br><span class="line">console.log(arrSelect);    //[1, 2, 2, 3, 4, 5, 7, 13, 34]</span><br></pre></td></tr></table></figure></p>
+<h4 id="冒泡排序和选择排序的区别"><a href="#冒泡排序和选择排序的区别" class="headerlink" title="冒泡排序和选择排序的区别"></a>冒泡排序和选择排序的区别</h4><p>比较冒泡排序和选择排序，发现他们其实实现原理都是一样的。</p>
+<p>区别在于，冒泡排序是每两个相邻元素作比较，每次排序的结果是选出当前数组中的最大元素放在数组最后。<br>选择排序是第一个元素依次和后面的每个元素比，选出最小的元素放在数组第一位。依次重复类推。</p>
+<p>冒泡排序是先确定最大元素放在最后，选择排序先确定最小元素放在第一位，所以他们最终的结果都是数组里面的数升序排列。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/29/数组去重/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1276,7 +1437,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1287,7 +1448,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1298,7 +1459,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

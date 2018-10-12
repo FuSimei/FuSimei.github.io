@@ -88,11 +88,12 @@
 <meta property="og:description" content="答笔试题就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。 下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。 写出下面程序的运行结果(1)函数的执行环境123456789101112131415var str = &amp;apos;hello&amp;apos;;var fn1 = function () &amp;#">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/10/08/笔试易错题整理/date-one.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/10/08/笔试易错题整理/date-two.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/08/笔试易错题整理/setTimeout-one.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/08/笔试易错题整理/this-one.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/08/笔试易错题整理/this-two.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/10/08/笔试易错题整理/jiegou-one.PNG">
-<meta property="og:updated_time" content="2018-10-08T14:33:54.857Z">
+<meta property="og:updated_time" content="2018-10-11T15:32:29.831Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="笔试易错题整理">
 <meta name="twitter:description" content="答笔试题就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。 下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。 写出下面程序的运行结果(1)函数的执行环境123456789101112131415var str = &amp;apos;hello&amp;apos;;var fn1 = function () &amp;#">
@@ -388,17 +389,20 @@
         <p>答笔试题就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。</p>
 <p>下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。</p>
 <p>写出下面程序的运行结果<br>(1)函数的执行环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">var fn1 = function () &#123;</span><br><span class="line">    console.log(str);       //HELLO</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">str = &apos;HELLO&apos;;</span><br><span class="line"></span><br><span class="line">var fn2 = function () &#123;</span><br><span class="line">    var str = &apos;world&apos;;</span><br><span class="line">    fn1();</span><br><span class="line">    str = &apos;WORLD&apos;;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line">fn2();</span><br></pre></td></tr></table></figure></p>
-<p>函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中函数this时，才需要注意函数的执行环境)。</p>
+<p>函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中含有this时，才需要注意函数的执行环境)。</p>
 <p>函数fn1是在全局定义的，且定义时函数内部并没有定义变量，他能访问到的变量的作用域是全局window下的。</p>
-<p>(2)定时器问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let message = &quot;Hi&quot;;</span><br><span class="line">let start = new Date();</span><br><span class="line">wait = (message) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; console.log(message), 1000);</span><br><span class="line">&#125;</span><br><span class="line">wait(&quot;Hello&quot;);</span><br><span class="line">while (new Date() - start &lt; 1000) &#123;&#125;;</span><br><span class="line">console.log(&quot;Tom&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>输出结果：<br><img src="/2018/10/08/笔试易错题整理/date-one.PNG" alt="Date输出结果"></p>
+<p>(2)Date时间问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let message = &quot;Hi&quot;;</span><br><span class="line">let start = new Date();</span><br><span class="line">wait = (message) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; console.log(message), 1000);</span><br><span class="line">&#125;</span><br><span class="line">wait(&quot;Hello&quot;);</span><br><span class="line">while (new Date() - start &lt; 1000) &#123;&#125;;</span><br><span class="line">console.log(&quot;Tom&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：<br><img src="/2018/10/08/笔试易错题整理/date-one.PNG" alt="Date输出结果"><br>首先，定时器是异步的，js是单线程的，所以定时器里面的内容会被添加到任务队列里。所以输出顺序应该是先输出Tom再输出Hello。</p>
+<p>至于为什么while循环没有陷入死循环能继续执行后面的代码呢？可以在上面代码的基础上while循环之前打印console.log(new Date() - start)会发现每次的值都不确定，大多是0，但是值一定是小于1000的。</p>
+<p>于是可以在循环里面打印出所有的值来查看，在上面的基础上修改代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while (new Date() - start &lt; 1000) &#123;</span><br><span class="line">    console.log(new Date() - start);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器看打印结果(结果只截取了部分)：<br><img src="/2018/10/08/笔试易错题整理/date-two.PNG" alt="Date输出结果"><br>会发现每次获取的结果都是不确定的，唯一可以肯定的就是结果是随获取的时间顺序递增的。我想可能是跟浏览器的刷新速度有关，浏览器每隔16ms刷新一次。</p>
 <p>(3)数组的复制及清空<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = [6, 7, 8];</span><br><span class="line">var b = a;              //[6, 7, 8]</span><br><span class="line">(function (x) &#123;</span><br><span class="line">    x.length = 0;       //[],把数组a清空</span><br><span class="line">    x.push(2, 3, 4, 5);</span><br><span class="line">&#125;(a))</span><br><span class="line"></span><br><span class="line">console.log(a);         //[2, 3, 4, 5]</span><br><span class="line">console.log(b);         //[2, 3, 4, 5]</span><br></pre></td></tr></table></figure></p>
 <p>数组存在栈里，复制时，复制的是引用值的地址。当一个值发生改变时，另外一个值也会发生改变。x.length = 0可以将数组清空为空数组。</p>
 <p>(4)闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function func () &#123;</span><br><span class="line">    var i = 0; </span><br><span class="line">    return function () &#123;</span><br><span class="line">        console.log(i++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var func1 = func(),</span><br><span class="line">    func2 = func();</span><br><span class="line">func1();        //0</span><br><span class="line">func1();        //1</span><br><span class="line">func2();        //0</span><br></pre></td></tr></table></figure></p>
 <p>考察闭包。一个函数(func)的执行结果是返回另外一个函数(return function ())，返回出去的函数任然能访问到原来的作用域链(变量i)。</p>
 <p>func1和func2保存的都为func的执行结果，即返回出去的函数return function，func1和func2互不影响。</p>
 <p>func1()执行时，第一次访问到的i为函数func里面声明的变量i。第二次执行时，访问到的i为第一次func1()的执行结果，即i++。</p>
-<p>需要注意前置++和后置++的执行顺序，前置++为先++再输出，后置++为先输出后++。这里如果改为console.log(i++);输出顺序应该是1, 2, 1</p>
+<p>需要注意前置++和后置++的执行顺序，前置++为先++再输出，后置++为先输出后++。这里如果改为console.log(++i);输出顺序应该是1, 2, 1</p>
 <p>(5)类似考察闭包的还有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function f1 () &#123;</span><br><span class="line">    var n = 99;</span><br><span class="line">    add = function () &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">    &#125;</span><br><span class="line">    function f2 () &#123;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    return f2;</span><br><span class="line">&#125;</span><br><span class="line">var result = f1();</span><br><span class="line">result();        //99</span><br><span class="line">add();</span><br><span class="line">result();        //100</span><br></pre></td></tr></table></figure></p>
 <p>函数f1()的执行结果是返回f2，f2任能访问到原来的作用域链。add执行时与执行环境无关，看原来的定义环境，能访问到i。所以第二次result()的执行结果为add()执行后的i</p>
 <p>(6)定时器里的闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let i = 0;</span><br><span class="line">var j = 0;</span><br><span class="line">var k = 0;</span><br><span class="line">for(; i &lt; 10, j &lt; 6; i++, j++) &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        k = i + j;</span><br><span class="line">        console.log(i, j, k)</span><br><span class="line">    &#125;, 0)</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(k)</span><br><span class="line">&#125;, 100)</span><br></pre></td></tr></table></figure></p>
@@ -467,6 +471,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/11/js中的模块/" rel="prev" title="js中的模块">
+                js中的模块 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -543,7 +551,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -554,7 +562,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -565,7 +573,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>

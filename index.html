@@ -289,6 +289,174 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/11/js中的模块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Better">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/blog-logo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/11/js中的模块/" itemprop="url">js中的模块</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-11T22:11:56+08:00">
+                2018-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/模块/" itemprop="url" rel="index">
+                    <span itemprop="name">模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在一个项目中，可能同一个功能会在不同的地方用到过，为了节约开发成本，于是我们主张模块化开发。这样不但使得功能可以直接复用，而且避免了多人协作开发时引入同名变量造成错误的尴尬。</p>
+<p>在js中模块通常有两种形式，函数模块和ES6中的模块。</p>
+<h2 id="函数模块"><a href="#函数模块" class="headerlink" title="函数模块"></a>函数模块</h2><p>在js中有这样的概念，主张语义化开发，尽可能少的暴露全局变量。这样做的原因是：</p>
+<p>(1)避免全局变量污染。在同一个文件里面定义多个同名的变量可能会导致变量覆盖，以致于调用的方法错误。</p>
+<p>(2)优化代码性能。浏览器在处理时，会把定义在全局的变量挂载到window的属性下，每次查找变量时，会依次查找window下的属性，过多的全局变量会导致查找变量的时间越来越长。</p>
+<p>所以在js中就有了用函数来封闭作用域的现象。</p>
+<p>函数模块就是把要实现的功能封闭在一个函数里，最后导出一个接口来供外部环境调用。他需要满足以下两个条件：</p>
+<p>(1)必须有外部的封闭函数;</p>
+<p>(2)封闭函数必须返回至少一个内部函数。</p>
+<p>具体的举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function func () &#123;</span><br><span class="line">    var n = 1;</span><br><span class="line">    var arr = [8, 5, 6]</span><br><span class="line">    function add() &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    function arrSort() &#123;</span><br><span class="line">        console.log(arr.sort());</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        add: add,</span><br><span class="line">        arrSort: arrSort</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var foo = func();</span><br><span class="line">foo.add();          //2</span><br><span class="line">foo.arrSort();      //[5, 6, 8]</span><br></pre></td></tr></table></figure></p>
+<p>这个返回的对象中含有对内部函数的引用。内部数据变量仍然是隐藏的私有状态(只有函数内部可以被访问到)。</p>
+<p>在这里将返回的对象赋值给foo, 因此就可以通过访问对象属性名的方式来访问到函数里面方法。</p>
+<p>从模块中返回一个对象并不是必须的，也可以直接返回一个内部函数。</p>
+<p>上面是通过函数调用的方式将返回的对象赋值给一个外部变量来调用执行。该方法可以被调用多次，执行多次。</p>
+<p>如果只是想只执行一遍函数的运算过程，保留函数的运行结果来调用的话，可以选择立即执行函数。</p>
+<p>代码修改如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var foo = (function () &#123;</span><br><span class="line">    var n = 1;</span><br><span class="line">    var arr = [8, 5, 6]</span><br><span class="line">    function add() &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    function arrSort() &#123;</span><br><span class="line">        console.log(arr.sort());</span><br><span class="line">    &#125;</span><br><span class="line">    return &#123;</span><br><span class="line">        add: add,</span><br><span class="line">        arrSort: arrSort</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)()</span><br><span class="line"></span><br><span class="line">foo.add();          //2</span><br><span class="line">foo.arrSort();      //[5, 6, 8]</span><br></pre></td></tr></table></figure></p>
+<p>当想要给函数传参时，也是像以前立即函数正常的处理逻辑。</p>
+<h2 id="ES6的模块"><a href="#ES6的模块" class="headerlink" title="ES6的模块"></a>ES6的模块</h2><p>通过上面的内容我们了解到，所谓模块大概就是封装一个接口，导出一个变量(接口)来实现的。在ES6中也是一样，只不过可能导入导出的方式发生了改变。</p>
+<p>ES6中的模块必须被定义在一个独立的文件中(一个文件一个模块)，浏览器在加载时可以同步的导入模块。</p>
+<p>具体举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//myInform.js文件</span><br><span class="line">function person (name) &#123;</span><br><span class="line">    return name;</span><br><span class="line">&#125;</span><br><span class="line">export person;</span><br><span class="line"></span><br><span class="line">//sayHello.js文件</span><br><span class="line">import person from &quot;myInform&quot;;</span><br><span class="line"></span><br><span class="line">var myName = &apos;fs&apos;;</span><br><span class="line">function hello () &#123;</span><br><span class="line">    console.log(&apos;Hello &apos; + person(myName));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">export hello;</span><br><span class="line"></span><br><span class="line">//all.js文件</span><br><span class="line">module myInform from &quot;myInform&quot;;</span><br><span class="line">module sayHello from &quot;sayHello&quot;;</span><br><span class="line"></span><br><span class="line">console.log(myInform.person(&apos;ll&apos;));   //ll</span><br><span class="line">sayHello.hello();       //Hello fs</span><br></pre></td></tr></table></figure></p>
+<p>import可以将模块中的一个或多个API导入到当前的作用域中，并分别绑定在一个变量上(person)。</p>
+<p>module会将整个模块的API导入并绑定到一个变量上(myInform, sayHello)。</p>
+<p>export会将当前模块的一个接口(变量，函数)导出为公共API。</p>
+<h2 id="函数模块和ES6模块的区别"><a href="#函数模块和ES6模块的区别" class="headerlink" title="函数模块和ES6模块的区别"></a>函数模块和ES6模块的区别</h2><p>基于上述两种形式，考虑到ES6是JS的升级版，所以肯定是在函数模块的基础上进行了优化。</p>
+<p>具体区别如下：</p>
+<p>函数模块只有在函数运行时里面的代码才会被考虑进来，因此可以在代码运行时修改代码的API。</p>
+<p>ES6模块在编译时会被导入模块的API检查是否真的存在。如果导入的API不存在，则编译器直接报错。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/08/笔试易错题整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -385,17 +553,20 @@
             <p>答笔试题就像是一个翻山越岭的过程，迈过了大坑又迈小坑，很多时候以为自己跨过重重险阻终于要成功时，却一不小心就入了出题者的坑。</p>
 <p>下面是我整理的一些面试中我遇到的易错题，有的问题我也不是特别清楚，欢迎大家各抒己见。</p>
 <p>写出下面程序的运行结果<br>(1)函数的执行环境<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var str = &apos;hello&apos;;</span><br><span class="line"></span><br><span class="line">var fn1 = function () &#123;</span><br><span class="line">    console.log(str);       //HELLO</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">str = &apos;HELLO&apos;;</span><br><span class="line"></span><br><span class="line">var fn2 = function () &#123;</span><br><span class="line">    var str = &apos;world&apos;;</span><br><span class="line">    fn1();</span><br><span class="line">    str = &apos;WORLD&apos;;</span><br><span class="line">&#125;</span><br><span class="line">      </span><br><span class="line">fn2();</span><br></pre></td></tr></table></figure></p>
-<p>函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中函数this时，才需要注意函数的执行环境)。</p>
+<p>函数能访问到变量的作用域和函数定义时的环境有关。与函数执行环境无关(只有函数中含有this时，才需要注意函数的执行环境)。</p>
 <p>函数fn1是在全局定义的，且定义时函数内部并没有定义变量，他能访问到的变量的作用域是全局window下的。</p>
-<p>(2)定时器问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let message = &quot;Hi&quot;;</span><br><span class="line">let start = new Date();</span><br><span class="line">wait = (message) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; console.log(message), 1000);</span><br><span class="line">&#125;</span><br><span class="line">wait(&quot;Hello&quot;);</span><br><span class="line">while (new Date() - start &lt; 1000) &#123;&#125;;</span><br><span class="line">console.log(&quot;Tom&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>输出结果：<br><img src="/2018/10/08/笔试易错题整理/date-one.PNG" alt="Date输出结果"></p>
+<p>(2)Date时间问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let message = &quot;Hi&quot;;</span><br><span class="line">let start = new Date();</span><br><span class="line">wait = (message) =&gt; &#123;</span><br><span class="line">    setTimeout(() =&gt; console.log(message), 1000);</span><br><span class="line">&#125;</span><br><span class="line">wait(&quot;Hello&quot;);</span><br><span class="line">while (new Date() - start &lt; 1000) &#123;&#125;;</span><br><span class="line">console.log(&quot;Tom&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>输出结果：<br><img src="/2018/10/08/笔试易错题整理/date-one.PNG" alt="Date输出结果"><br>首先，定时器是异步的，js是单线程的，所以定时器里面的内容会被添加到任务队列里。所以输出顺序应该是先输出Tom再输出Hello。</p>
+<p>至于为什么while循环没有陷入死循环能继续执行后面的代码呢？可以在上面代码的基础上while循环之前打印console.log(new Date() - start)会发现每次的值都不确定，大多是0，但是值一定是小于1000的。</p>
+<p>于是可以在循环里面打印出所有的值来查看，在上面的基础上修改代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">while (new Date() - start &lt; 1000) &#123;</span><br><span class="line">    console.log(new Date() - start);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在浏览器看打印结果(结果只截取了部分)：<br><img src="/2018/10/08/笔试易错题整理/date-two.PNG" alt="Date输出结果"><br>会发现每次获取的结果都是不确定的，唯一可以肯定的就是结果是随获取的时间顺序递增的。我想可能是跟浏览器的刷新速度有关，浏览器每隔16ms刷新一次。</p>
 <p>(3)数组的复制及清空<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var a = [6, 7, 8];</span><br><span class="line">var b = a;              //[6, 7, 8]</span><br><span class="line">(function (x) &#123;</span><br><span class="line">    x.length = 0;       //[],把数组a清空</span><br><span class="line">    x.push(2, 3, 4, 5);</span><br><span class="line">&#125;(a))</span><br><span class="line"></span><br><span class="line">console.log(a);         //[2, 3, 4, 5]</span><br><span class="line">console.log(b);         //[2, 3, 4, 5]</span><br></pre></td></tr></table></figure></p>
 <p>数组存在栈里，复制时，复制的是引用值的地址。当一个值发生改变时，另外一个值也会发生改变。x.length = 0可以将数组清空为空数组。</p>
 <p>(4)闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function func () &#123;</span><br><span class="line">    var i = 0; </span><br><span class="line">    return function () &#123;</span><br><span class="line">        console.log(i++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var func1 = func(),</span><br><span class="line">    func2 = func();</span><br><span class="line">func1();        //0</span><br><span class="line">func1();        //1</span><br><span class="line">func2();        //0</span><br></pre></td></tr></table></figure></p>
 <p>考察闭包。一个函数(func)的执行结果是返回另外一个函数(return function ())，返回出去的函数任然能访问到原来的作用域链(变量i)。</p>
 <p>func1和func2保存的都为func的执行结果，即返回出去的函数return function，func1和func2互不影响。</p>
 <p>func1()执行时，第一次访问到的i为函数func里面声明的变量i。第二次执行时，访问到的i为第一次func1()的执行结果，即i++。</p>
-<p>需要注意前置++和后置++的执行顺序，前置++为先++再输出，后置++为先输出后++。这里如果改为console.log(i++);输出顺序应该是1, 2, 1</p>
+<p>需要注意前置++和后置++的执行顺序，前置++为先++再输出，后置++为先输出后++。这里如果改为console.log(++i);输出顺序应该是1, 2, 1</p>
 <p>(5)类似考察闭包的还有：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function f1 () &#123;</span><br><span class="line">    var n = 99;</span><br><span class="line">    add = function () &#123;</span><br><span class="line">        n += 1;</span><br><span class="line">    &#125;</span><br><span class="line">    function f2 () &#123;</span><br><span class="line">        console.log(n);</span><br><span class="line">    &#125;</span><br><span class="line">    return f2;</span><br><span class="line">&#125;</span><br><span class="line">var result = f1();</span><br><span class="line">result();        //99</span><br><span class="line">add();</span><br><span class="line">result();        //100</span><br></pre></td></tr></table></figure></p>
 <p>函数f1()的执行结果是返回f2，f2任能访问到原来的作用域链。add执行时与执行环境无关，看原来的定义环境，能访问到i。所以第二次result()的执行结果为add()执行后的i</p>
 <p>(6)定时器里的闭包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let i = 0;</span><br><span class="line">var j = 0;</span><br><span class="line">var k = 0;</span><br><span class="line">for(; i &lt; 10, j &lt; 6; i++, j++) &#123;</span><br><span class="line">    setTimeout(() =&gt; &#123;</span><br><span class="line">        k = i + j;</span><br><span class="line">        console.log(i, j, k)</span><br><span class="line">    &#125;, 0)</span><br><span class="line">&#125;</span><br><span class="line">setTimeout(() =&gt; &#123;</span><br><span class="line">    console.log(k)</span><br><span class="line">&#125;, 100)</span><br></pre></td></tr></table></figure></p>
@@ -1794,167 +1965,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/30/冒泡排序和选择排序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Better">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/blog-logo.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/30/冒泡排序和选择排序/" itemprop="url">冒泡排序和选择排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-30T16:46:19+08:00">
-                2018-08-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数组的操作/" itemprop="url" rel="index">
-                    <span itemprop="name">数组的操作</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。</p>
-<p>时间复杂度：一个程序执行所需要的时间，主要针对的是for循环</p>
-<p>空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况</p>
-<p>稳定性：如果a = b，a在b的前面，排序后a任然在b的前面</p>
-<p>不稳定性：如果a = b，a在b的前面，排序后a在b的后面</p>
-<p>具体的归纳情况可以见下图：<br><img src="/2018/08/30/冒泡排序和选择排序/sort.PNG" alt="数组的比较"></p>
-<h2 id="数组的排序方法"><a href="#数组的排序方法" class="headerlink" title="数组的排序方法"></a>数组的排序方法</h2><h3 id="冒泡排序法"><a href="#冒泡排序法" class="headerlink" title="冒泡排序法"></a>冒泡排序法</h3><p>原理：<br>依次比较数组里面每相邻的两个元素。如果前面的数比后面的数大，则将两个数交换顺序。也就是找到数组的最大数放在最后一位。</p>
-<p>重复相同的规律，每次找出剩下数组里面的最大数放在最后面，直到数组有序排列为止。</p>
-<p>具体实现(原型链编程)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.bubbleSort = function () &#123;</span><br><span class="line">    var temple;</span><br><span class="line">    for (var i = 0; i &lt; this.length - 1; i++) &#123;     //this指向被调用的对象</span><br><span class="line">        for (var j = 0; j &lt; this.length - 1 - i; j++) &#123;</span><br><span class="line">            if (this[j] &gt; this[j+1]) &#123;</span><br><span class="line">                temple = this[j];</span><br><span class="line">                this[j] = this[j+1];</span><br><span class="line">                this[j+1] = temple;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];</span><br><span class="line">var arrSort = arr.bubbleSort();     //方法调用</span><br><span class="line">console.log(arrSort);   //[1, 2, 2, 3, 4, 5, 7, 13, 34]</span><br></pre></td></tr></table></figure></p>
-<p>需要注意的是，每两个数进行比较大小时，知道第n - 1个数，则可以比较出第n - 1个数和第n个数的大小。所以第一个for循环终止条件为arr.length - 1。</p>
-<p>第二个for循环时，当i = 0时，需要循环的次数为arr.length - 1,第一次循环结束的结果是选出最大的数放在数组最后，即排序后的数组为[1, 2, 5, 7, 2, 3, 4, 13, 34]。</p>
-<p>当i = 1时，循环次数为arr.length - 1 - 1，即最后一个数已经确定大小，不需要比较。还有余下数组的最后一位也不需要比较。</p>
-<p>当然啦，这样做是为了节省时间复杂度，当两圈for循环的终止条件改为arr.length也是可以的。</p>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><p>原理：<br>选择排序是指选出数组里面的第一个数依次和后面的每个数作比较，如果后面的数比第一个数小，交换顺序<br>（选出最小的数放在第一位）。</p>
-<p>再选出第二个数依次和后面的每个数作比较，选出余下数组里面最小的放在第二位。</p>
-<p>重复以上规律，知道数组有序为止。</p>
-<p>具体实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.selectSort = function () &#123;</span><br><span class="line">    for (var i = 0; i &lt; this.length - 1; i++) &#123;     //this指向被调用的对象</span><br><span class="line">        for (var j = i + 1; j &lt; this.length; j++) &#123;</span><br><span class="line">            if (this[i] &gt; this[j]) &#123;</span><br><span class="line">                temple = this[i];</span><br><span class="line">                this[i] = this[j];</span><br><span class="line">                this[j] = temple;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return this;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 5, 2, 7, 13, 2, 3, 4, 34];</span><br><span class="line">var arrSelect = arr.selectSort();   //方法调用</span><br><span class="line">console.log(arrSelect);    //[1, 2, 2, 3, 4, 5, 7, 13, 34]</span><br></pre></td></tr></table></figure></p>
-<h4 id="冒泡排序和选择排序的区别"><a href="#冒泡排序和选择排序的区别" class="headerlink" title="冒泡排序和选择排序的区别"></a>冒泡排序和选择排序的区别</h4><p>比较冒泡排序和选择排序，发现他们其实实现原理都是一样的。</p>
-<p>区别在于，冒泡排序是每两个相邻元素作比较，每次排序的结果是选出当前数组中的最大元素放在数组最后。<br>选择排序是第一个元素依次和后面的每个元素比，选出最小的元素放在数组第一位。依次重复类推。</p>
-<p>冒泡排序是先确定最大元素放在最后，选择排序先确定最小元素放在第一位，所以他们最终的结果都是数组里面的数升序排列。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2009,7 +2019,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2020,7 +2030,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2031,7 +2041,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
