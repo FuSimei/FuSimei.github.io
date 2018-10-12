@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。 隐式类型转换转换为数字类型进行比较运算。以下几种情况会有数据的默认转换： isNaN()翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为">
+<meta name="description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。 隐式类型转换转换为数字类型进行比较运算。以下几种情况会有数据的默认转换：">
 <meta name="keywords" content="js,类型转换">
 <meta property="og:type" content="article">
 <meta property="og:title" content="隐式类型转换">
 <meta property="og:url" content="http://yoursite.com/2018/09/24/隐式类型转换/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。 隐式类型转换转换为数字类型进行比较运算。以下几种情况会有数据的默认转换： isNaN()翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为">
+<meta property="og:description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。 隐式类型转换转换为数字类型进行比较运算。以下几种情况会有数据的默认转换：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-29T14:48:41.206Z">
+<meta property="og:updated_time" content="2018-10-12T15:07:07.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="隐式类型转换">
-<meta name="twitter:description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。 隐式类型转换转换为数字类型进行比较运算。以下几种情况会有数据的默认转换： isNaN()翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为">
+<meta name="twitter:description" content="你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？ 上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。 隐式类型转换转换为数字类型进行比较运算。以下几种情况会有数据的默认转换：">
 
 
 
@@ -381,7 +381,7 @@
       
         <p>你可能见到过这样的情况：”5” - 3 == 2和”5” + 3 == “53”，可是这是为什么呢？</p>
 <p>上节提到过关于强制类型转换到的概念，通过调用方法来实现数据在不同类型间的转换。同样的，既然有强制类型转换，那么也会有隐式类型转换。</p>
-<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>转换为数字类型进行比较运算。以下几种情况会有数据的默认转换：</p>
+<h2 id="隐式类型转换"><a href="#隐式类型转换" class="headerlink" title="隐式类型转换"></a>隐式类型转换</h2><p>转换为数字类型进行比较运算。以下几种情况会有数据的默认转换：<br><a id="more"></a></p>
 <h3 id="isNaN"><a href="#isNaN" class="headerlink" title="isNaN()"></a>isNaN()</h3><p>翻译过来意思就是：是NaN吗？此方法会先调用Number()的方法将数据转化为数字类型来进行比较。</p>
 <p>数字类型包括四个值：具体的数字，NaN，Infinity，-Infinity</p>
 <p>如果转换为数字时，返回的值刚好是NaN，则调用isNaN()时返回true。</p>

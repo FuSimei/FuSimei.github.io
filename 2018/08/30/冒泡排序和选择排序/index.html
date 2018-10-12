@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度：一个程序执行所需要的时间，主要针对的是for循环 空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况 稳定性：如果a = b，a在b的前面，排序后a任然在b的前面 不稳定性：如果a = b，a在b的前面，排序后a在b的后面 具体的归纳情况可以见下图： 数组的排序方法冒泡排序法原理：依次比较数组里面">
+<meta name="description" content="关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度：一个程序执行所需要的时间，主要针对的是for循环 空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况 稳定性：如果a = b，a在b的前面，排序后a任然在b的前面 不稳定性：如果a = b，a在b的前面，排序后a在b的后面">
 <meta name="keywords" content="js,Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冒泡排序和选择排序">
 <meta property="og:url" content="http://yoursite.com/2018/08/30/冒泡排序和选择排序/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度：一个程序执行所需要的时间，主要针对的是for循环 空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况 稳定性：如果a = b，a在b的前面，排序后a任然在b的前面 不稳定性：如果a = b，a在b的前面，排序后a在b的后面 具体的归纳情况可以见下图： 数组的排序方法冒泡排序法原理：依次比较数组里面">
+<meta property="og:description" content="关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度：一个程序执行所需要的时间，主要针对的是for循环 空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况 稳定性：如果a = b，a在b的前面，排序后a任然在b的前面 不稳定性：如果a = b，a在b的前面，排序后a在b的后面">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/08/30/冒泡排序和选择排序/sort.PNG">
-<meta property="og:updated_time" content="2018-09-01T14:29:50.314Z">
+<meta property="og:updated_time" content="2018-10-12T15:13:54.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="冒泡排序和选择排序">
-<meta name="twitter:description" content="关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度：一个程序执行所需要的时间，主要针对的是for循环 空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况 稳定性：如果a = b，a在b的前面，排序后a任然在b的前面 不稳定性：如果a = b，a在b的前面，排序后a在b的后面 具体的归纳情况可以见下图： 数组的排序方法冒泡排序法原理：依次比较数组里面">
+<meta name="twitter:description" content="关于数组的操作，经常会涉及到时间复杂度，空间复杂度，稳定性和不稳定性几个概念。 时间复杂度：一个程序执行所需要的时间，主要针对的是for循环 空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况 稳定性：如果a = b，a在b的前面，排序后a任然在b的前面 不稳定性：如果a = b，a在b的前面，排序后a在b的后面">
 <meta name="twitter:image" content="http://yoursite.com/2018/08/30/冒泡排序和选择排序/sort.PNG">
 
 
@@ -386,6 +386,7 @@
 <p>空间复杂度：程序所需的存储空间，可以估算出内存的大概使用情况</p>
 <p>稳定性：如果a = b，a在b的前面，排序后a任然在b的前面</p>
 <p>不稳定性：如果a = b，a在b的前面，排序后a在b的后面</p>
+<a id="more"></a>
 <p>具体的归纳情况可以见下图：<br><img src="/2018/08/30/冒泡排序和选择排序/sort.PNG" alt="数组的比较"></p>
 <h2 id="数组的排序方法"><a href="#数组的排序方法" class="headerlink" title="数组的排序方法"></a>数组的排序方法</h2><h3 id="冒泡排序法"><a href="#冒泡排序法" class="headerlink" title="冒泡排序法"></a>冒泡排序法</h3><p>原理：<br>依次比较数组里面每相邻的两个元素。如果前面的数比后面的数大，则将两个数交换顺序。也就是找到数组的最大数放在最后一位。</p>
 <p>重复相同的规律，每次找出剩下数组里面的最大数放在最后面，直到数组有序排列为止。</p>

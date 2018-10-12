@@ -79,20 +79,20 @@
 
 
 
-<meta name="description" content="参考文献：https://www.cnblogs.com/attitudeY/p/6790219.html和https://blog.csdn.net/zhouziyu2011/article/details/62236006 树树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：图片来源：点击查看你所看到的每个元素叫做一个节点，一棵树可以有多个节点。 特殊的是，">
+<meta name="description" content="参考文献：https://www.cnblogs.com/attitudeY/p/6790219.html和https://blog.csdn.net/zhouziyu2011/article/details/62236006 树树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：图片来源：点击查看">
 <meta name="keywords" content="数据结构，二叉树，深度优先，广度优先">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树的遍历">
 <meta property="og:url" content="http://yoursite.com/2018/08/15/二叉树的遍历/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="参考文献：https://www.cnblogs.com/attitudeY/p/6790219.html和https://blog.csdn.net/zhouziyu2011/article/details/62236006 树树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：图片来源：点击查看你所看到的每个元素叫做一个节点，一棵树可以有多个节点。 特殊的是，">
+<meta property="og:description" content="参考文献：https://www.cnblogs.com/attitudeY/p/6790219.html和https://blog.csdn.net/zhouziyu2011/article/details/62236006 树树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：图片来源：点击查看">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/08/15/二叉树的遍历/tree.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/08/15/二叉树的遍历/bst.jpg">
-<meta property="og:updated_time" content="2018-08-16T09:57:08.007Z">
+<meta property="og:updated_time" content="2018-10-12T15:13:54.933Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树的遍历">
-<meta name="twitter:description" content="参考文献：https://www.cnblogs.com/attitudeY/p/6790219.html和https://blog.csdn.net/zhouziyu2011/article/details/62236006 树树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：图片来源：点击查看你所看到的每个元素叫做一个节点，一棵树可以有多个节点。 特殊的是，">
+<meta name="twitter:description" content="参考文献：https://www.cnblogs.com/attitudeY/p/6790219.html和https://blog.csdn.net/zhouziyu2011/article/details/62236006 树树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：图片来源：点击查看">
 <meta name="twitter:image" content="http://yoursite.com/2018/08/15/二叉树的遍历/tree.PNG">
 
 
@@ -383,7 +383,9 @@
 
       
         <p>参考文献：<a href="https://www.cnblogs.com/attitudeY/p/6790219.html" target="_blank" rel="noopener">https://www.cnblogs.com/attitudeY/p/6790219.html</a>和<br><a href="https://blog.csdn.net/zhouziyu2011/article/details/62236006" target="_blank" rel="noopener">https://blog.csdn.net/zhouziyu2011/article/details/62236006</a></p>
-<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><p>树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：<br><img src="/2018/08/15/二叉树的遍历/tree.PNG" alt="树状图"><br>图片来源：<a href="http://zzfe.top/2016/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84JavaScript%E6%8F%8F%E8%BF%B0--%E6%A0%88/" target="_blank" rel="noopener">点击查看</a><br>你所看到的每个元素叫做一个节点，一棵树可以有多个节点。</p>
+<h2 id="树"><a href="#树" class="headerlink" title="树"></a>树</h2><p>树状图是一种数据结构，把他叫做树是因为他像一棵倒挂的树，根朝上，叶朝下。大概结构如下：<br><img src="/2018/08/15/二叉树的遍历/tree.PNG" alt="树状图"><br>图片来源：<a href="http://zzfe.top/2016/03/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84JavaScript%E6%8F%8F%E8%BF%B0--%E6%A0%88/" target="_blank" rel="noopener">点击查看</a></p>
+<a id="more"></a>
+<p>你所看到的每个元素叫做一个节点，一棵树可以有多个节点。</p>
 <p>特殊的是，二叉树的节点不超过两个。最上面的没有父节点的（23）称为根节点，以根节点为分界点，可以把二叉树树分为左子树和右子树，如上图。二叉树常被用于实现二叉查找树和二叉堆。</p>
 <h2 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h2><h3 id="深度优先遍历"><a href="#深度优先遍历" class="headerlink" title="深度优先遍历"></a>深度优先遍历</h3><p>对于一棵二叉树，深度优先遍历是沿着树的深度遍历树的节点层数，尽可能深的搜索树的分支，其中，每个节点只能遍历一次。</p>
 <p>深度优先遍历分为先序遍历，中序遍历，后序遍历。<br>先序遍历：对任意子树，先访问根，然后遍历其左子树，最后遍历右子树。<br>中序遍历：对任意子树，先遍历其左子树，然后访问根，最后遍历右子树。<br>后序遍历：对任意子树，先遍历其左子树，然后遍历右子树，最后访问根。</p>

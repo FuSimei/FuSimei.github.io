@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="在js里面声明变量时并没有直接定义该变量是什么类型，变量的类型由为他赋值时所定义的值所决定(var num = 123,定义了该变量为数字)。 但是有这么一种情况，当我们需要的变量是一个数字类型，但用户输入时给定的却是一个字符串。除了给用户提示输入正确的数据类型外，是否可以从前端的角度做一些关于数据类型的处理？ 这就出现了数据类型的转换。当一个变量从某种类型转化为另外一种类型时，则可以调用对应变量">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-24T02:33:00.195Z">
+<meta property="og:updated_time" content="2018-10-12T15:07:07.842Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="强制类型转换">
 <meta name="twitter:description" content="在js里面声明变量时并没有直接定义该变量是什么类型，变量的类型由为他赋值时所定义的值所决定(var num = 123,定义了该变量为数字)。 但是有这么一种情况，当我们需要的变量是一个数字类型，但用户输入时给定的却是一个字符串。除了给用户提示输入正确的数据类型外，是否可以从前端的角度做一些关于数据类型的处理？ 这就出现了数据类型的转换。当一个变量从某种类型转化为另外一种类型时，则可以调用对应变量">
@@ -382,6 +382,7 @@
         <p>在js里面声明变量时并没有直接定义该变量是什么类型，变量的类型由为他赋值时所定义的值所决定(var num = 123,定义了该变量为数字)。</p>
 <p>但是有这么一种情况，当我们需要的变量是一个数字类型，但用户输入时给定的却是一个字符串。除了给用户提示输入正确的数据类型外，是否可以从前端的角度做一些关于数据类型的处理？</p>
 <p>这就出现了数据类型的转换。当一个变量从某种类型转化为另外一种类型时，则可以调用对应变量类型的方法。</p>
+<a id="more"></a>
 <h2 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h2><p>针对js中的数据类型原始值(number，string，boolean，undefined，null)和引用值(array，object，function)，当不同的数据类型调用不同的方法时，看其相应的返回值。</p>
 <h3 id="Number"><a href="#Number" class="headerlink" title="Number()"></a>Number()</h3><p>该方法会把任意类型的数据转换为数字类型。</p>
 <p>数字类型包括四个值：具体的数字，NaN，Infinity，-Infinity<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Number(123.0)   //123</span><br><span class="line">Number(0.300)   //0.3</span><br><span class="line">Number(030)     //30</span><br><span class="line">Number(0/0)     //NaN</span><br><span class="line">Number(1/0)     //Infinity</span><br><span class="line">Number(-1/0)    //-Infinity</span><br><span class="line">Number(6/2)     //3</span><br></pre></td></tr></table></figure></p>

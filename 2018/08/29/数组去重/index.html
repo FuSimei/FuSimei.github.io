@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组 具体实现（原型链上编程）：12345678910111213141516171819Array.prototype.unique = function (">
+<meta name="description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组">
 <meta name="keywords" content="js,Array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组去重">
 <meta property="og:url" content="http://yoursite.com/2018/08/29/数组去重/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组 具体实现（原型链上编程）：12345678910111213141516171819Array.prototype.unique = function (">
+<meta property="og:description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/08/29/数组去重/set-array.PNG">
-<meta property="og:updated_time" content="2018-09-01T14:23:07.071Z">
+<meta property="og:updated_time" content="2018-10-12T15:13:54.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组去重">
-<meta name="twitter:description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组 具体实现（原型链上编程）：12345678910111213141516171819Array.prototype.unique = function (">
+<meta name="twitter:description" content="数组去重数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。 原生方法原理：建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组">
 <meta name="twitter:image" content="http://yoursite.com/2018/08/29/数组去重/set-array.PNG">
 
 
@@ -383,6 +383,7 @@
       
         <h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><p>数组去重是后续经常会用到以及面试中经常用到的知识点，最近在复习中整理了以下几种方法仅供大家参考。</p>
 <h3 id="原生方法"><a href="#原生方法" class="headerlink" title="原生方法"></a>原生方法</h3><p>原理：<br>建立一个新数组，取出原数组的每一项和新数组的每一项作对比，将原数组中存在而新数组中不存在的元素添加到新数组中，最后返回新数组</p>
+<a id="more"></a>
 <p>具体实现（原型链上编程）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.unique = function () &#123;</span><br><span class="line">	var newArr = [this[0]];     //谁调用的unique方法，this指向谁（arr)</span><br><span class="line">	for (var i = 0; i &lt; this.length; i++) &#123;</span><br><span class="line">		var flag = true;</span><br><span class="line">		for (var j = 0; j &lt; newArr.length; j++) &#123;</span><br><span class="line">			if (this[i] === newArr[j]) &#123;</span><br><span class="line">				flag = false;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		if (flag) &#123;</span><br><span class="line">			newArr.push(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">    &#125;</span><br><span class="line">	return newArr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr = [1, 1, 2, 1, 13, 2, 3, 4, 34];</span><br><span class="line">var uniqueArr = arr.unique();	    //方法调用</span><br><span class="line">console.log(uniqueArr); 	    //[1, 2, 13, 3, 4, 34]</span><br></pre></td></tr></table></figure></p>
 <p>需要注意的是：<br>1.第二个for循环遍历的次数为newArr.length，如果newArr为空，则不会进入for循环，将不会执行后面的语句。</p>
 <p>2.第二个for循环里不能只是简单的根据条件判断arr[i] !== newArr[j]便试图直接调用newArr.push(arr[i])的方法来进行添加。</p>
