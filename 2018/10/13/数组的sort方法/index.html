@@ -79,18 +79,20 @@
 
 
 
-<meta name="description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 145150504&amp;#125;,    &amp;#123;name:">
+<meta name="description" content="数组的排序是面试以及实际应用中都会经常用到的知识点。除了被我们熟知的冒泡排序，快速排序的排序算法之外，js中也封装了相应的API以供调用。 arr.sort()对数组中的元素进行排序，直接操作原数组，默认为升序排列。 下面会对sort()的具体用法，在不同场景下的区别，具体的实现原理进行介绍。以及如何根据已知的方法对数组进行无序排列。">
 <meta name="keywords" content="js,Array,Object">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数组的sort方法">
 <meta property="og:url" content="http://yoursite.com/2018/10/13/数组的sort方法/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 145150504&amp;#125;,    &amp;#123;name:">
+<meta property="og:description" content="数组的排序是面试以及实际应用中都会经常用到的知识点。除了被我们熟知的冒泡排序，快速排序的排序算法之外，js中也封装了相应的API以供调用。 arr.sort()对数组中的元素进行排序，直接操作原数组，默认为升序排列。 下面会对sort()的具体用法，在不同场景下的区别，具体的实现原理进行介绍。以及如何根据已知的方法对数组进行无序排列。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-13T12:11:06.569Z">
+<meta property="og:image" content="http://yoursite.com/2018/10/13/数组的sort方法/no-order.PNG">
+<meta property="og:updated_time" content="2018-10-13T12:37:51.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组的sort方法">
-<meta name="twitter:description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 145150504&amp;#125;,    &amp;#123;name:">
+<meta name="twitter:description" content="数组的排序是面试以及实际应用中都会经常用到的知识点。除了被我们熟知的冒泡排序，快速排序的排序算法之外，js中也封装了相应的API以供调用。 arr.sort()对数组中的元素进行排序，直接操作原数组，默认为升序排列。 下面会对sort()的具体用法，在不同场景下的区别，具体的实现原理进行介绍。以及如何根据已知的方法对数组进行无序排列。">
+<meta name="twitter:image" content="http://yoursite.com/2018/10/13/数组的sort方法/no-order.PNG">
 
 
 
@@ -379,12 +381,10 @@
       
 
       
-        <p>在实际的应用场景中我们可能会遇到这样的现象：</p>
-<p>从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。</p>
-<p>大概举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [</span><br><span class="line">    &#123;name: &apos;luck&apos;, age: 15, id: 145150504&#125;,</span><br><span class="line">    &#123;name: &apos;fsm&apos;, age: 18, id: 1542559322&#125;,</span><br><span class="line">    &#123;name: &apos;lzl&apos;, age: 22, id: 1552440205&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
-<p>你会如何处理呢？</p>
+        <p>数组的排序是面试以及实际应用中都会经常用到的知识点。除了被我们熟知的冒泡排序，快速排序的排序算法之外，js中也封装了相应的API以供调用。</p>
+<p>arr.sort()对数组中的元素进行排序，直接操作原数组，默认为升序排列。</p>
+<p>下面会对sort()的具体用法，在不同场景下的区别，具体的实现原理进行介绍。以及如何根据已知的方法对数组进行无序排列。</p>
 <a id="more"></a>
-<p>在正式开始前，可能还需要补充以下知识点：<br>arr.sort()对数组中的元素进行排序，直接操作原数组，默认为升序排列</p>
 <p>当数组中的元素为字符时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [&apos;b&apos;, &apos;e&apos;, &apos;d&apos;, &apos;a&apos;];</span><br><span class="line">arr.sort();</span><br><span class="line">console.log(arr);       //[&quot;a&quot;, &quot;b&quot;, &quot;d&quot;, &quot;e&quot;]</span><br></pre></td></tr></table></figure></p>
 <p>当数组中的元素为数字时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var arr = [5, 8, 2, 6, 1];</span><br><span class="line">arr.sort();</span><br><span class="line">console.log(arr);       //[1, 2, 5, 6, 8]</span><br></pre></td></tr></table></figure></p>
 <p>当直接调用arr.sort()方法时，默认为按照ASCII码对数组中的元素进行排列</p>
@@ -394,7 +394,7 @@
 <p>直接调用arr.sort()方法进行比较时，比较的是ASCII值，与数字位数无关</p>
 <p>那么如果我们想不论数字位数，直接根据数字大小进行排序；或者是对数组进行降序排列应该怎么处理呢？</p>
 <p>arr.sort()中可以传入一个回调函数用来对数组中的元素进行处理。原理如下：</p>
-<p>当function返回值为负数时，两个相比较的数，前面的数在前(两个数不交换顺序)；<br>当function返回值为正数时，两个相比较的数，后面的数在前(两个数要交换顺序)。</p>
+<p><span color="red">当function返回值为负数时，两个相比较的数，前面的数在前(两个数不交换顺序)；</span><br>当function返回值为正数时，两个相比较的数，后面的数在前(两个数要交换顺序)。</p>
 <p>按照上面的原理，我们进一步探索sort方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 5, 8, 2, 61, 1];</span><br><span class="line"></span><br><span class="line">arr.sort(function (a, b) &#123;</span><br><span class="line">    if(a &gt; b) &#123;</span><br><span class="line">            return 1;</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">             return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">console.log(arr);       // [1, 2, 5, 8, 10, 61]</span><br></pre></td></tr></table></figure></p>
 <p>当a &gt; b时，返回正数，两个数交换顺序，将小的数(b)放在前面。</p>
 <p>你可能会奇怪上面并没有提到当两个数相等时该如何处理？</p>
@@ -408,8 +408,12 @@
 <p>再选出第二个数依次和后面的数作比较，选出余下数组里面最小的放在第二位；</p>
 <p>重复以上规律，直到数组有序为止。</p>
 <p>具体实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 5, 8, 2, 61, 1];</span><br><span class="line">function selectSort (arr) &#123;</span><br><span class="line">    var temple;</span><br><span class="line">    for (var i = 0; i &lt; arr.length - 1; i++) &#123;      //取出数组每一位</span><br><span class="line">        for (var j = i + 1; j &lt; arr.length; j++) &#123;      //循环次数</span><br><span class="line">            if (arr[i] &gt; arr[j]) &#123;</span><br><span class="line">                temple = arr[i];</span><br><span class="line">                arr[i] = arr[j];</span><br><span class="line">                arr[j] = temple;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(selectSort(arr));       //[1, 2, 5, 8, 10, 61]</span><br></pre></td></tr></table></figure></p>
-<p>综上所述，最终可以把arr.sort()总结为：<br>(1)默认对字符进行排序，直接调用arr.sort()<br>(2)升序排列(从小到大)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(function (a, b) &#123;</span><br><span class="line">    return a - b;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><span color="red">综上所述，最终可以把arr.sort()总结为：</span><br>(1)默认对字符进行排序，直接调用arr.sort()<br>(2)升序排列(从小到大)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(function (a, b) &#123;</span><br><span class="line">    return a - b;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>(3)降序排列(从大到小)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(function (a, b) &#123;</span><br><span class="line">    return b - a;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>应用：将数组乱序排列，每次乱序的结果不一致。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var arr = [10, 5, 8, 2, 61, 1];</span><br><span class="line">setInterval(function () &#123;</span><br><span class="line">    arr.sort(function (a, b) &#123;</span><br><span class="line">        return Math.random() - 0.3;</span><br><span class="line">    &#125;)</span><br><span class="line">    console.log(arr);</span><br><span class="line">&#125;, 500)</span><br></pre></td></tr></table></figure></p>
+<p>运算结果如下：<br><img src="/2018/10/13/数组的sort方法/no-order.PNG" alt="数组乱序排列结果"></p>
+<p>Math.random()产生随机数，随机数的范围为[0, 1);当Math.random() - 0.5，随机数的范围为[-0.5, 0.5)。</p>
+<p>调用arr.sort()，当返回正数时，a, b交换顺序；返回负数时，a, b顺序不变。</p>
 
       
     </div>
@@ -453,6 +457,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/13/根据某个属性将对象排序/" rel="prev" title="根据某个属性将对象排序">
+                根据某个属性将对象排序 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -529,7 +537,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
