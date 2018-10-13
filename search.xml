@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[根据某个属性将对象排序]]></title>
     <url>%2F2018%2F10%2F13%2F%E6%A0%B9%E6%8D%AE%E6%9F%90%E4%B8%AA%E5%B1%9E%E6%80%A7%E5%B0%86%E5%AF%B9%E8%B1%A1%E6%8E%92%E5%BA%8F%2F</url>
-    <content type="text"><![CDATA[在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [ &#123;name: &apos;luck&apos;, age: 15, id: 145150504&#125;, &#123;name: &apos;fsm&apos;, age: 18, id: 1542559322&#125;, &#123;name: &apos;lzl&apos;, age: 22, id: 1552440205&#125;] 你会如何处理呢？ 在正式开始前，可能还需要补充以下知识点：这里]]></content>
+    <content type="text"><![CDATA[在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [ &#123;name: &apos;luck&apos;, age: 15, id: 1345150504&#125;, &#123;name: &apos;fsm&apos;, age: 18, id: 1542559322&#125;, &#123;name: &apos;lzl&apos;, age: 22, id: 1552440205&#125;] 你会如何处理呢？ 在正式开始前，可能还需要补充以下知识点：数组的sort方法 简单来说就是:(1)将数组中的元素升序排列(从小到大)123arr.sort(function (a, b) &#123; return a - b;&#125;) (2)降序排列123arr.sort(function (a, b) &#123; return b - a;&#125;)]]></content>
       <categories>
         <category>数组的操作</category>
       </categories>
@@ -206,8 +206,8 @@
         <category>布局</category>
       </categories>
       <tags>
-        <tag>浮动</tag>
         <tag>bfc</tag>
+        <tag>浮动</tag>
         <tag>margin</tag>
       </tags>
   </entry>

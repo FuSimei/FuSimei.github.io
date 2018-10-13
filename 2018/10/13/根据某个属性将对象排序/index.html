@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 145150504&amp;#125;,    &amp;#123;name:">
+<meta name="description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 1345150504&amp;#125;,    &amp;#123;name:">
 <meta name="keywords" content="js,Array,Object">
 <meta property="og:type" content="article">
 <meta property="og:title" content="根据某个属性将对象排序">
 <meta property="og:url" content="http://yoursite.com/2018/10/13/根据某个属性将对象排序/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 145150504&amp;#125;,    &amp;#123;name:">
+<meta property="og:description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 1345150504&amp;#125;,    &amp;#123;name:">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-13T12:39:16.874Z">
+<meta property="og:updated_time" content="2018-10-13T14:38:49.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="根据某个属性将对象排序">
-<meta name="twitter:description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 145150504&amp;#125;,    &amp;#123;name:">
+<meta name="twitter:description" content="在实际的应用场景中我们可能会遇到这样的现象： 从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。 大概举例如下：12345var arr = [    &amp;#123;name: &amp;apos;luck&amp;apos;, age: 15, id: 1345150504&amp;#125;,    &amp;#123;name:">
 
 
 
@@ -381,10 +381,12 @@
       
         <p>在实际的应用场景中我们可能会遇到这样的现象：</p>
 <p>从后台请求得到一个数组，数组中的每一项都是对象，需要你根据对象的某个属性名将对象进行排序。例如根据首字母对省份地区的排序，根据学号对学生进行排序等。</p>
-<p>大概举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [</span><br><span class="line">    &#123;name: &apos;luck&apos;, age: 15, id: 145150504&#125;,</span><br><span class="line">    &#123;name: &apos;fsm&apos;, age: 18, id: 1542559322&#125;,</span><br><span class="line">    &#123;name: &apos;lzl&apos;, age: 22, id: 1552440205&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
+<p>大概举例如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arr = [</span><br><span class="line">    &#123;name: &apos;luck&apos;, age: 15, id: 1345150504&#125;,</span><br><span class="line">    &#123;name: &apos;fsm&apos;, age: 18, id: 1542559322&#125;,</span><br><span class="line">    &#123;name: &apos;lzl&apos;, age: 22, id: 1552440205&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
 <p>你会如何处理呢？</p>
 <a id="more"></a>
-<p>在正式开始前，可能还需要补充以下知识点：<br><a href="./数组的sort方法">这里</a> </p>
+<p>在正式开始前，可能还需要补充以下知识点：<br><a href="./数组的sort方法">数组的sort方法</a> </p>
+<p>简单来说就是:<br>(1)将数组中的元素升序排列(从小到大)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(function (a, b) &#123;</span><br><span class="line">    return a - b;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>(2)降序排列<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">arr.sort(function (a, b) &#123;</span><br><span class="line">    return b - a;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
