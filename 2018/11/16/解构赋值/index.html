@@ -79,18 +79,28 @@
 
 
 
-<meta name="description" content="上节大概的谈了一下什么是解构赋值，解构赋值大概要怎么用，现在该谈谈解构赋值具体的应用场景了。">
+<meta name="description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 什么是解构赋值基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a = 1,    b = 2,    c = 3; 这里的let声明可以简单理解为var，上面的代码应用解构赋值可以改为：1let [a, b, c] = [1, 2, 3];">
 <meta name="keywords" content="js,ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解构赋值的用途">
-<meta property="og:url" content="http://yoursite.com/2018/11/16/解构赋值的用途/index.html">
+<meta property="og:title" content="解构赋值">
+<meta property="og:url" content="http://yoursite.com/2018/11/16/解构赋值/index.html">
 <meta property="og:site_name" content="前端">
-<meta property="og:description" content="上节大概的谈了一下什么是解构赋值，解构赋值大概要怎么用，现在该谈谈解构赋值具体的应用场景了。">
+<meta property="og:description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 什么是解构赋值基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a = 1,    b = 2,    c = 3; 这里的let声明可以简单理解为var，上面的代码应用解构赋值可以改为：1let [a, b, c] = [1, 2, 3];">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/one-one.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/no-num.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/one-more.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/err.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/default-num.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/obj-one.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/obj-two.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/obj-default.PNG">
+<meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/str-one.PNG">
 <meta property="og:updated_time" content="2018-11-16T12:11:19.326Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解构赋值的用途">
-<meta name="twitter:description" content="上节大概的谈了一下什么是解构赋值，解构赋值大概要怎么用，现在该谈谈解构赋值具体的应用场景了。">
+<meta name="twitter:title" content="解构赋值">
+<meta name="twitter:description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 什么是解构赋值基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a = 1,    b = 2,    c = 3; 这里的let声明可以简单理解为var，上面的代码应用解构赋值可以改为：1let [a, b, c] = [1, 2, 3];">
+<meta name="twitter:image" content="http://yoursite.com/2018/11/16/解构赋值/one-one.PNG">
 
 
 
@@ -120,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/16/解构赋值的用途/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/16/解构赋值/"/>
 
 
 
 
 
-  <title>解构赋值的用途 | 前端</title>
+  <title>解构赋值 | 前端</title>
   
 
 
@@ -290,7 +300,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/解构赋值的用途/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/解构赋值/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Better">
@@ -307,7 +317,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">解构赋值的用途</h1>
+          <h1 class="post-title" itemprop="name headline">解构赋值</h1>
         
 
         <div class="post-meta">
@@ -319,7 +329,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T20:07:37+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T16:27:06+08:00">
                 2018-11-16
               </time>
             
@@ -379,7 +389,24 @@
       
 
       
-        <p>上节大概的谈了一下什么是解构赋值，解构赋值大概要怎么用，现在该谈谈解构赋值具体的应用场景了。</p>
+        <p>一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。</p>
+<h2 id="什么是解构赋值"><a href="#什么是解构赋值" class="headerlink" title="什么是解构赋值"></a>什么是解构赋值</h2><h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>大概最常用的几种用法如下：<br>(1)声明多个变量时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a = 1,</span><br><span class="line">    b = 2,</span><br><span class="line">    c = 3;</span><br></pre></td></tr></table></figure></p>
+<p>这里的let声明可以简单理解为var，上面的代码应用解构赋值可以改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a, b, c] = [1, 2, 3];</span><br></pre></td></tr></table></figure></p>
+<p>(2)解构赋值就是左右两边的模式匹配(对应的位置找对应的值)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [one, [two, [three]]] = [1, [2, [3]]];</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/16/解构赋值/one-one.PNG" alt="运行结果"><br>他允许某个值不传入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a, b, c] = [1, , 2];</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/16/解构赋值/no-num.PNG" alt="运行结果"><br>允许某个变量对应多个值(rest运算符)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a, b, ...c] = [1, 2, 3, 4, 5, 6];</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/16/解构赋值/one-more.PNG" alt="运行结果"><br>此时rest运算符(…)只能放在最后一个元素(c)，如果前面元素用会报错，查看报错信息提醒如下：<br><img src="/2018/11/16/解构赋值/err.PNG" alt="运行结果"><br>(3)默认解构赋值<br>当右边严格等于(====)undefined时，左边按照原来定义的值来进行解构赋值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [x = 1, y = 2, j = 3] = [8];</span><br></pre></td></tr></table></figure></p>
+<p>右边的数组中只有一项，对应左边的第一项x，左边另外两项并没有被赋予值，等于undefined，进行默认解构赋值<br><img src="/2018/11/16/解构赋值/default-num.PNG" alt="运行结果"></p>
+<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><p>对象由属性名和属性值组成，通常情况都是根据对象的属性名查找对应的属性值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let &#123;a, b, c&#125; = &#123;a: 1, b: 2, c: 3&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>左边和右边进行匹配，查找对应项的值。<br><img src="/2018/11/16/解构赋值/obj-one.PNG" alt="运行结果"></p>
+<p>在赋值号左边也可以将属性值用变量进行占位，模式匹配时，相应的属性名对应属性名，属性值对应属性值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let &#123;bar: baz&#125; = &#123;bar: 3&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/16/解构赋值/obj-two.PNG" alt="运行结果"></p>
+<p>指定默认值时：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var &#123;x, y = 5&#125; = &#123;x: 1&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/2018/11/16/解构赋值/obj-default.PNG" alt="运行结果"></p>
+<h3 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a, b, c, d, e] = &apos;hello&apos;;</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/16/解构赋值/str-one.PNG" alt="运行结果"></p>
+<h3 id="函数的解构赋值"><a href="#函数的解构赋值" class="headerlink" title="函数的解构赋值"></a>函数的解构赋值</h3><p>函数调用时，对应的实参和形参进行解构赋值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add([x, y])&#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add([1, 2]));   // 3</span><br></pre></td></tr></table></figure></p>
+<p>具体的用法可以查看阮一峰老师的博客<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">点击这里</a></p>
 
       
     </div>
@@ -412,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/16/解构赋值/" rel="next" title="解构赋值">
-                <i class="fa fa-chevron-left"></i> 解构赋值
+              <a href="/2018/10/15/数组中出现次数最多的元素/" rel="next" title="数组中出现次数最多的元素">
+                <i class="fa fa-chevron-left"></i> 数组中出现次数最多的元素
               </a>
             
           </div>
@@ -421,6 +448,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/11/16/解构赋值的用途/" rel="prev" title="解构赋值的用途">
+                解构赋值的用途 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -477,8 +508,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -542,6 +582,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是解构赋值"><span class="nav-number">1.</span> <span class="nav-text">什么是解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本用法"><span class="nav-number">1.1.</span> <span class="nav-text">基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的解构赋值"><span class="nav-number">1.2.</span> <span class="nav-text">对象的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的解构赋值"><span class="nav-number">1.3.</span> <span class="nav-text">字符串的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数的解构赋值"><span class="nav-number">1.4.</span> <span class="nav-text">函数的解构赋值</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
