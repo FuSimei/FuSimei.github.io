@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 什么是解构赋值ES6允许按照一定的模式，从数组和对象中提取，并对变量进行赋值。 基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a = 1,    b = 2,    c = 3; 这里的let声明可以简单理解为var，上面的代码应用解构赋值">
+<meta name="description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 下面的内容主要针对什么是解构赋值和解构赋值的语法规则来进行介绍，并提出了解构赋值在不同数据类型中的用法。 什么是解构赋值ES6允许按照一定的模式，从数组和对象中提取，并对变量进行赋值。 基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a =">
 <meta name="keywords" content="js,ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解构赋值">
 <meta property="og:url" content="http://yoursite.com/2018/11/16/解构赋值/index.html">
 <meta property="og:site_name" content="前端">
-<meta property="og:description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 什么是解构赋值ES6允许按照一定的模式，从数组和对象中提取，并对变量进行赋值。 基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a = 1,    b = 2,    c = 3; 这里的let声明可以简单理解为var，上面的代码应用解构赋值">
+<meta property="og:description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 下面的内容主要针对什么是解构赋值和解构赋值的语法规则来进行介绍，并提出了解构赋值在不同数据类型中的用法。 什么是解构赋值ES6允许按照一定的模式，从数组和对象中提取，并对变量进行赋值。 基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a =">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/one-one.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/no-num.PNG">
@@ -101,10 +101,10 @@
 <meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/obj-default.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/arr-obj.PNG">
 <meta property="og:image" content="http://yoursite.com/2018/11/16/解构赋值/str-one.PNG">
-<meta property="og:updated_time" content="2018-11-16T13:19:41.020Z">
+<meta property="og:updated_time" content="2018-11-16T13:30:49.467Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="解构赋值">
-<meta name="twitter:description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 什么是解构赋值ES6允许按照一定的模式，从数组和对象中提取，并对变量进行赋值。 基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a = 1,    b = 2,    c = 3; 这里的let声明可以简单理解为var，上面的代码应用解构赋值">
+<meta name="twitter:description" content="一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。 下面的内容主要针对什么是解构赋值和解构赋值的语法规则来进行介绍，并提出了解构赋值在不同数据类型中的用法。 什么是解构赋值ES6允许按照一定的模式，从数组和对象中提取，并对变量进行赋值。 基本用法大概最常用的几种用法如下：(1)声明多个变量时123let a =">
 <meta name="twitter:image" content="http://yoursite.com/2018/11/16/解构赋值/one-one.PNG">
 
 
@@ -395,8 +395,10 @@
 
       
         <p>一开始用的解构赋值很简单，后来学习了一些react基础，发现里面应用了大量的解构赋值，由于个人一直理解的都很肤浅，所以决定整理学习一下。</p>
+<p>下面的内容主要针对什么是解构赋值和解构赋值的语法规则来进行介绍，并提出了解构赋值在不同数据类型中的用法。</p>
 <h2 id="什么是解构赋值"><a href="#什么是解构赋值" class="headerlink" title="什么是解构赋值"></a>什么是解构赋值</h2><p>ES6允许按照一定的模式，从数组和对象中提取，并对变量进行赋值。</p>
 <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>大概最常用的几种用法如下：<br>(1)声明多个变量时<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let a = 1,</span><br><span class="line">    b = 2,</span><br><span class="line">    c = 3;</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>这里的let声明可以简单理解为var，上面的代码应用解构赋值可以改为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a, b, c] = [1, 2, 3];</span><br></pre></td></tr></table></figure></p>
 <p>(2)解构赋值就是左右两边的模式匹配(对应的位置找对应的值)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [one, [two, [three]]] = [1, [2, [3]]];</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2018/11/16/解构赋值/one-one.PNG" alt="运行结果"><br>他允许某个值不传入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a, b, c] = [1, , 2];</span><br></pre></td></tr></table></figure></p>
@@ -422,8 +424,8 @@
 <h3 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h3><p>字符串会转化成一个类数组的对象，类数组含有length属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">let [a, b, c, d, e] = &apos;hello&apos;;</span><br></pre></td></tr></table></figure></p>
 <p><img src="/2018/11/16/解构赋值/str-one.PNG" alt="运行结果"><br>属性名不是变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">let &#123;length&#125; = &apos;fsm&apos;;</span><br><span class="line">length  //3</span><br></pre></td></tr></table></figure></p>
 <h3 id="函数的解构赋值"><a href="#函数的解构赋值" class="headerlink" title="函数的解构赋值"></a>函数的解构赋值</h3><p>函数调用时，对应的实参和形参进行解构赋值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function add([x, y])&#123;</span><br><span class="line">    return x + y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add([1, 2]));   // 3</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function move(&#123;x = 0, y = 0&#125; = &#123;&#125;) &#123;</span><br><span class="line">    console.log([x, y]);</span><br><span class="line">&#125;</span><br><span class="line">move(&#123;x: 3, y: 8&#125;);     //[3, 8]</span><br><span class="line">move(&#123;x: 3&#125;);           //[3, 0]</span><br><span class="line">move(&#123;&#125;);               //[0, 0]</span><br><span class="line">move();                 //[0, 0]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function deal(&#123;x, y&#125; = &#123;x: 0, y: 0&#125;) &#123;</span><br><span class="line">    console.log([x, y]);</span><br><span class="line">&#125;</span><br><span class="line">deal(&#123;x: 3, y: 8&#125;);     //[3, 8]</span><br><span class="line">deal(&#123;x: 3&#125;);           //[3, undefined]</span><br><span class="line">deal(&#123;&#125;);               //[undefined, undefined]</span><br><span class="line">deal();                 //[0, 0]</span><br></pre></td></tr></table></figure>
+<p>当用不同的形式调用函数执行时，主要看实参是否传入，是以何种形式传入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function move(&#123;x = 0, y = 0&#125; = &#123;&#125;) &#123;</span><br><span class="line">    console.log([x, y]);</span><br><span class="line">&#125;</span><br><span class="line">move(&#123;x: 3, y: 8&#125;);     //[3, 8]</span><br><span class="line">move(&#123;x: 3&#125;);           //[3, 0]</span><br><span class="line">move(&#123;&#125;);               //[0, 0]</span><br><span class="line">move();                 //[0, 0]</span><br></pre></td></tr></table></figure></p>
+<p>传入参数时，看参数是否严格等于undefined。没有传入参数时，函数正常执行，根据原来的形式进行解构<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function deal(&#123;x, y&#125; = &#123;x: 0, y: 0&#125;) &#123;</span><br><span class="line">    console.log([x, y]);</span><br><span class="line">&#125;</span><br><span class="line">deal(&#123;x: 3, y: 8&#125;);     //[3, 8]</span><br><span class="line">deal(&#123;x: 3&#125;);           //[3, undefined]</span><br><span class="line">deal(&#123;&#125;);               //[undefined, undefined]</span><br><span class="line">deal();                 //[0, 0]</span><br></pre></td></tr></table></figure></p>
 <p>具体的用法可以查看阮一峰老师的博客<a href="http://es6.ruanyifeng.com/#docs/destructuring" target="_blank" rel="noopener">点击这里</a></p>
 
       
