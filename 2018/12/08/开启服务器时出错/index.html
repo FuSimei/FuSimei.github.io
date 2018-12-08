@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/12/08/开启服务器时出错/webpack-tree.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/12/08/开启服务器时出错/react-tree.jpg">
 <meta property="og:image" content="http://yoursite.com/2018/12/08/开启服务器时出错/tree.jpg">
-<meta property="og:updated_time" content="2018-12-08T14:59:41.141Z">
+<meta property="og:updated_time" content="2018-12-08T15:08:46.511Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开启服务器时出错">
 <meta name="twitter:description" content="今天在写一个练习的demo时，遇到一个问题，大概就是在cmd终端中当npm install下载好项目需要的依赖后，在本地开启一个服务器时遇到了如下报错：">
@@ -385,12 +385,12 @@
       
 
       
-        <p>今天在写一个练习的demo时，遇到一个问题，大概就是在cmd终端中当npm install下载好项目需要的依赖后，在本地开启一个服务器时遇到了如下报错：<br><img src="/2018/12/08/开启服务器时出错/err-one.jpg" alt="npm报错提示"><br><a id="more"></a><br><img src="/2018/12/08/开启服务器时出错/err-two.jpg" alt="npm报错提示"></p>
+        <p>今天在写一个练习的demo时，遇到一个问题，大概就是在cmd终端中当npm install下载好项目需要的依赖后，在本地开启一个服务器时遇到了如下报错：<br><img src="/2018/12/08/开启服务器时出错/err-one.jpg" alt="npm报错提示"><a id="more"></a><br><img src="/2018/12/08/开启服务器时出错/err-two.jpg" alt="npm报错提示"></p>
 <p>查看报错信息，发现错误提示的是，在我创建的项目中，webpack的版本是4.19.1，打开我的项目中查看webpack版本显示如下：<br><img src="/2018/12/08/开启服务器时出错/webpack-tree.jpg" alt="webpack版本信息"></p>
-<p>根据cmd中提示的信息打开目录C:\Users\simei.fu\learnSpace\hello-react\node_modules\webpack,发现其中webpack的版本是4.19.0，两者webpack版本不统一，导致出错。</p>
-<p>所以解决办法可以修改C:\Users\simei.fu\learnSpace\hello-react\node_modules\webpack中webpack的版本为4.19.1，修改后文件信息如下：<br><img src="/2018/12/08/开启服务器时出错/react-tree.jpg" alt="webpack版本信息"></p>
+<p>根据cmd中提示的信息打开目录<br>C:\Users\simei.fu\learnSpace\hello-react\node_modules\webpack,发现其中webpack的版本是4.19.0，两者webpack版本不统一，导致出错。</p>
+<p>所以解决办法可以修改<br>C:\Users\simei.fu\learnSpace\hello-react\node_modules\webpack中webpack的版本为4.19.1，修改后文件信息如下：<br><img src="/2018/12/08/开启服务器时出错/react-tree.jpg" alt="webpack版本信息"></p>
 <p>也可以根据提示信息检查目录下的文件，<br><img src="/2018/12/08/开启服务器时出错/tree.jpg" alt="查看目录"><br>我这里是因为在写其他项目时，可能下载了其他依赖在本地，所以我的处理办法就是直接删除了node-modules文件。</p>
-<p>需要注意的是，这里的node-modules并不是安装node时的依赖文件，每个克隆下来的项目运行时都需要先下载依赖，生成自己的node-modules文件。</p>
+<p>需要注意的是，这里的node-modules并不是安装node时的依赖文件，每个克隆下来的项目运行时都需要先下载依赖，生成自己的node-modules文件，所以我们需要注意每次尽量让生成的node-modules文件在对应项目的文件夹下。</p>
 
       
     </div>
